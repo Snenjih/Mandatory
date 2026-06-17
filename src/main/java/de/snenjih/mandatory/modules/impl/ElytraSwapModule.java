@@ -1,6 +1,6 @@
 package de.snenjih.mandatory.modules.impl;
 
-import de.snenjih.mandatory.modules.api.Module;
+import de.snenjih.mandatory.modules.api.BaseModule;
 import de.snenjih.mandatory.modules.api.ModuleCategory;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -16,35 +16,22 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 
-public class ElytraSwapModule implements Module {
+public class ElytraSwapModule extends BaseModule {
 
-    private static final String     ID   = "elytra_swap";
-    // Sprite identifier for the GUI atlas (assets/mandatory/textures/gui/sprites/modules/elytra_swap.png)
-    private static final Identifier ICON = Identifier.of("mandatory", "modules/elytra_swap");
-
-    // In PlayerScreenHandler: HEAD=5, CHEST=6, LEGS=7, FEET=8
     private static final int CHEST_SLOT = 6;
 
-    private boolean enabled = false;
-
-    @Override public String getId()          { return ID; }
-    @Override public String getName()        { return "Elytra Swap"; }
-    @Override public String getDescription() { return "Right-click elytra/chestplate to swap."; }
-    @Override public Identifier getIconTexture() { return ICON; }
-    @Override public ModuleCategory getCategory() { return ModuleCategory.UTILITY; }
-    @Override public boolean isEnabled()     { return enabled; }
-
-    @Override
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public ElytraSwapModule() {
+        super(
+            "elytra_swap",
+            "Elytra Swap",
+            "Right-click elytra/chestplate to swap.",
+            ModuleCategory.UTILITY,
+            Identifier.of("mandatory", "modules/elytra_swap")
+        );
     }
 
-    /**
-     * Called from ClientInteractionMixin on right-click.
-     * Returns PASS to let vanilla continue; SUCCESS/FAIL to cancel it.
-     */
-    public ActionResult trySwap(ClientPlayerEntity player, Hand hand) {
-        if (!enabled) return ActionResult.PASS;
+    @Override
+    public ActionResult onInteractItem(ClientPlayerEntity player, Hand hand) {
         if (hand != Hand.MAIN_HAND) return ActionResult.PASS;
 
         MinecraftClient mc = MinecraftClient.getInstance();

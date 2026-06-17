@@ -1,6 +1,7 @@
 package de.snenjih.mandatory.menu;
 
 import de.snenjih.mandatory.config.ModConfig;
+import de.snenjih.mandatory.modules.api.BaseModule;
 import de.snenjih.mandatory.modules.api.Module;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public final class ModuleRegistry {
     private static ModuleRegistry instance;
 
     private final List<Module> modules = new ArrayList<>();
-    private final ModConfig config;
+    private final ModConfig    config;
 
     private ModuleRegistry(ModConfig config) {
         this.config = config;
@@ -30,16 +31,18 @@ public final class ModuleRegistry {
     }
 
     public void register(Module module) {
-        boolean saved = config.isEnabled(module.getId(), module.isEnabled());
-        module.setEnabled(saved);
-        if (saved) module.onEnable();
+        // Load settings before enabling so onEnable() can read them
+        if (module instanceof BaseModule bm) {
+            config.loadModuleSettings(bm);
+        }
+        boolean saved = config.isEnabled(module.getId(), false);
+        module.setEnabled(saved); // BaseModule.setEnabled() triggers onEnable() if needed
         modules.add(module);
     }
 
     public void toggle(Module module) {
         boolean next = !module.isEnabled();
-        module.setEnabled(next);
-        if (next) module.onEnable(); else module.onDisable();
+        module.setEnabled(next); // BaseModule.setEnabled() handles lifecycle calls
         config.setEnabled(module.getId(), next);
     }
 
@@ -49,5 +52,9 @@ public final class ModuleRegistry {
 
     public Optional<Module> getById(String id) {
         return modules.stream().filter(m -> m.getId().equals(id)).findFirst();
+    }
+
+    public ModConfig getConfig() {
+        return config;
     }
 }

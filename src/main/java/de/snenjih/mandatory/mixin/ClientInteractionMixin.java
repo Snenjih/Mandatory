@@ -1,7 +1,7 @@
 package de.snenjih.mandatory.mixin;
 
 import de.snenjih.mandatory.menu.ModuleRegistry;
-import de.snenjih.mandatory.modules.impl.ElytraSwapModule;
+import de.snenjih.mandatory.modules.api.Module;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,23 +15,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(ClientPlayerInteractionManager.class)
 public class ClientInteractionMixin {
 
-    @Inject(
-        method = "interactItem",
-        at = @At("HEAD"),
-        cancellable = true
-    )
+    @Inject(method = "interactItem", at = @At("HEAD"), cancellable = true)
     private void onInteractItem(PlayerEntity player, Hand hand,
-                                 CallbackInfoReturnable<ActionResult> cir) {
+                                CallbackInfoReturnable<ActionResult> cir) {
         if (!(player instanceof ClientPlayerEntity clientPlayer)) return;
 
-        ModuleRegistry.getInstance().getById("elytra_swap").ifPresent(module -> {
-            if (module instanceof ElytraSwapModule esm) {
-                ActionResult result = esm.trySwap(clientPlayer, hand);
-                if (result != ActionResult.PASS) {
-                    cir.setReturnValue(result);
-                    cir.cancel();
-                }
+        for (Module module : ModuleRegistry.getInstance().getAll()) {
+            if (!module.isEnabled()) continue;
+            ActionResult result = module.onInteractItem(clientPlayer, hand);
+            if (result != ActionResult.PASS) {
+                cir.setReturnValue(result);
+                cir.cancel();
+                return;
             }
-        });
+        }
     }
 }
