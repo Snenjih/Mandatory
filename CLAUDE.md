@@ -1,0 +1,193 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+**MandatoryMod** is a client-side Fabric mod for Minecraft 1.21.11. It is a vanilla+ mod — no new items, blocks, or server-side content. All features are purely client-side and optional. The mod adds a carousel-style menu (accessible from the pause menu) for toggling modular features.
+
+- **Group ID / Package root:** `de.Snenjih` / `de.snenjih.mandatory`
+- **Mod ID:** `mandatory`
+- **GitHub:** https://github.com/Snenjih/Mandatory
+
+---
+
+## Build Commands
+
+```bash
+# Full build (produces JAR in build/libs/)
+./gradlew build
+
+# Compile only (fast feedback on errors)
+./gradlew compileJava
+
+# Launch Minecraft client with the mod loaded
+./gradlew runClient
+
+# Bump version (edits gradle.properties only)
+./scripts/bump-version.sh 1.2.3
+
+# Bump, commit, tag, and push in one step
+./scripts/bump-version.sh 1.2.3 -y
+```
+
+The release JAR is `build/libs/mandatory-<version>.jar`. The `-dev` and `-sources` JARs are build artifacts only.
+
+---
+
+## Tech Stack
+
+| Dependency | Version |
+|---|---|
+| Minecraft | 1.21.11 |
+| Fabric Loader | 0.19.3 |
+| Fabric API | 0.141.4+1.21.11 |
+| Yarn Mappings | 1.21.11+build.6 |
+| Fabric Loom | 1.17.11 (set in `settings.gradle.kts` pluginManagement) |
+| Java | 21 |
+
+The Loom version is declared in `settings.gradle.kts` → `pluginManagement.plugins`, **not** inside `build.gradle.kts`. `build.gradle.kts` uses `id("fabric-loom")` with no version.
+
+All dependency versions live in `gradle.properties`. `mod_version` is the only field `bump-version.sh` touches.
+
+---
+
+## Architecture
+
+### Module System
+
+Every feature is a self-contained class implementing `modules/api/Module.java`:
+
+```java
+public interface Module {
+    String getId();           // unique key, e.g. "elytra_swap"
+    String getName();         // display name in carousel
+    String getDescription();
+    Identifier getIconTexture(); // sprite identifier (see Icons section)
+    ModuleCategory getCategory();
+    boolean isEnabled();
+    void setEnabled(boolean enabled);
+    default void onEnable() {}
+    default void onDisable() {}
+    default void onClientTick(MinecraftClient client) {}
+}
+```
+
+Features subscribe to Minecraft events inside `onEnable()` and unsubscribe inside `onDisable()`. **Never** register permanent listeners in the constructor.
+
+### Adding a New Feature
+
+1. Create `modules/impl/MyFeatureModule.java` implementing `Module`.
+2. Add one line in `MandatoryMod.onInitializeClient()`:
+   ```java
+   registry.register(new MyFeatureModule());
+   ```
+3. Add a 32×32 PNG icon to:
+   ```
+   src/main/resources/assets/mandatory/textures/gui/sprites/modules/<feature_id>.png
+   ```
+   Return `Identifier.of("mandatory", "modules/<feature_id>")` from `getIconTexture()`.
+   Minecraft's GUI sprite atlas picks up anything under `textures/gui/sprites/` automatically.
+4. Add translation keys to `assets/mandatory/lang/en_us.json` if needed.
+5. If the feature needs to intercept game events, write a new Mixin in `mixin/` and register it in `mandatory.mixins.json`.
+
+### Registry & Config
+
+`ModuleRegistry` (singleton, created in `MandatoryMod`) holds the ordered list of modules shown in the carousel. `ModuleRegistry.register()` restores the saved enabled-state from `ModConfig` before adding the module to the list. `ModuleRegistry.toggle()` flips a module and immediately persists via `ModConfig`.
+
+`ModConfig` reads/writes `<minecraft>/config/mandatory.json` as a flat `Map<String, Boolean>` (moduleId → enabled).
+
+### Menu / Carousel
+
+`CarouselScreen` extends `Screen` and is opened from the pause menu via `GameMenuScreenMixin` (injects a "Mandatory" button above the vanilla "Back to Game" button).
+
+- Scroll physics: `scrollVelocity` decays by factor `0.85` each tick; snaps to nearest card index when velocity drops below `0.5`.
+- The active card is `Math.round(scrollOffset / CARD_SPACING)`.
+- `CarouselRenderer` is a pure rendering helper; it has no state.
+- Toggle button is drawn at `height/2 + CARD_HEIGHT/2 + 10`, width 120.
+
+### Mixins
+
+| Class | Target | Purpose |
+|---|---|---|
+| `GameMenuScreenMixin` | `GameMenuScreen.init` | Adds "Mandatory" button to pause menu |
+| `ClientInteractionMixin` | `ClientPlayerInteractionManager.interactItem` | Routes right-click to active modules (currently only ElytraSwap) |
+
+Mixins are `@At("HEAD")` + `cancellable = true`. A module returns `ActionResult.PASS` to let vanilla continue, `SUCCESS` or `FAIL` to cancel. The interaction mixin only delegates to modules that specifically handle the event — other modules never see it.
+
+---
+
+## 1.21.11 API Specifics (Breaking vs. Older MC)
+
+These are NOT obvious from class names; they caused build failures and must be followed:
+
+- **No `ArmorItem`** — check chest-equippable items via:
+  ```java
+  EquippableComponent eq = stack.get(DataComponentTypes.EQUIPPABLE);
+  eq != null && eq.slot() == EquipmentSlot.CHEST
+  ```
+  This covers both Elytra and all chestplates with one check.
+
+- **No `EnchantmentHelper.hasBindingCurse(ItemStack)`** — use component API:
+  ```java
+  stack.getEnchantments().getEnchantments().stream()
+      .anyMatch(e -> e.matchesKey(Enchantments.BINDING_CURSE))
+  ```
+
+- **`isFallFlying()` → `isGliding()`** on `LivingEntity`.
+
+- **`PlayerInventory.selectedSlot` is private** → use `getSelectedSlot()`.
+
+- **`DrawContext.drawBorder()` is gone** → use `drawStrokedRectangle(x, y, w, h, color)`.
+
+- **`DrawContext.drawTexture()` with RenderLayer is gone** → for GUI sprites use:
+  ```java
+  ctx.drawGuiTexture(RenderPipelines.GUI_TEXTURED, spriteId, x, y, w, h);
+  // import net.minecraft.client.gl.RenderPipelines
+  ```
+
+- **Mouse event signatures changed** — `Screen` overrides now receive a `Click` record:
+  ```java
+  mouseClicked(Click click, boolean releaseOnly)  // click.x(), click.y(), click.button()
+  mouseReleased(Click click)
+  mouseDragged(Click click, double deltaX, double deltaY)
+  ```
+
+---
+
+## Inventory Slot Numbers (PlayerScreenHandler)
+
+Required for any feature that programmatically moves items:
+
+| Slot | Meaning |
+|---|---|
+| 5 | Helmet (HEAD) |
+| **6** | **Chestplate / Elytra (CHEST)** |
+| 7 | Leggings (LEGS) |
+| 8 | Boots (FEET) |
+| 9–35 | Main inventory |
+| 36–44 | Hotbar (0–8) |
+| 45 | Offhand |
+
+Hotbar active slot: `36 + player.getInventory().getSelectedSlot()`
+
+Vanilla-compatible inventory swap (works without the inventory screen open, syncs with server):
+```java
+int syncId = player.playerScreenHandler.syncId;
+mc.interactionManager.clickSlot(syncId, hotbarSlot, 0, SlotActionType.PICKUP, player);
+mc.interactionManager.clickSlot(syncId, CHEST_SLOT, 0, SlotActionType.PICKUP, player);
+mc.interactionManager.clickSlot(syncId, hotbarSlot, 0, SlotActionType.PICKUP, player); // only if chest was non-empty
+```
+
+---
+
+## CI / CD
+
+- **CI** (`.github/workflows/ci.yml`): runs `./gradlew build` on every push and PR; uploads JAR artifact for 7 days.
+- **Release** (`.github/workflows/release.yml`): triggered by `v*` tags; builds, generates a commit-based changelog since the previous tag, and publishes a GitHub Release with the JAR attached.
+- **`scripts/bump-version.sh`**: updates `mod_version` in `gradle.properties` and optionally commits + tags + pushes with `-y`.
+
+To release a new version:
+```bash
+./scripts/bump-version.sh 1.1.0 -y   # commits, tags v1.1.0, pushes → triggers release workflow
+```
