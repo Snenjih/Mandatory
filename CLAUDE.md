@@ -56,28 +56,30 @@ All dependency versions live in `gradle.properties`. `mod_version` is the only f
 
 ### Module System
 
-Every feature is a self-contained class implementing `modules/api/Module.java`:
+Every feature is a self-contained class **extending `BaseModule`** (in `modules/api/`):
 
 ```java
-public interface Module {
-    String getId();           // unique key, e.g. "elytra_swap"
-    String getName();         // display name in carousel
-    String getDescription();
-    Identifier getIconTexture(); // sprite identifier (see Icons section)
-    ModuleCategory getCategory();
-    boolean isEnabled();
-    void setEnabled(boolean enabled);
-    default void onEnable() {}
-    default void onDisable() {}
-    default void onClientTick(MinecraftClient client) {}
+public class MyFeatureModule extends BaseModule {
+    public MyFeatureModule() {
+        super("my_feature", "My Feature", "Description.", ModuleCategory.UTILITY,
+              Identifier.of("mandatory", "modules/my_feature"));
+        // optional: registerKeybind("key.mandatory.my_feature", GLFW.GLFW_KEY_UNKNOWN);
+        // optional: addSetting(new BooleanSetting("some_opt", "Label", false));
+    }
+    @Override public void onEnable()  { /* subscribe to events */ }
+    @Override public void onDisable() { /* unsubscribe */ }
 }
 ```
+
+`BaseModule.setEnabled()` calls `onEnable()`/`onDisable()` automatically — **do not call them explicitly from `ModuleRegistry`**; they fire once via `setEnabled()`.
+
+Available hooks (all `default` no-ops on `Module`): `onClientTick`, `onRenderHud`, `onRenderWorld`, `onJoinWorld`, `onLeaveWorld`, `onSendChat`, `onReceiveChat`, `onInteractItem`, `onAttackEntity`.
 
 Features subscribe to Minecraft events inside `onEnable()` and unsubscribe inside `onDisable()`. **Never** register permanent listeners in the constructor.
 
 ### Adding a New Feature
 
-1. Create `modules/impl/MyFeatureModule.java` implementing `Module`.
+1. Create `modules/impl/MyFeatureModule.java` extending `BaseModule`.
 2. Add one line in `MandatoryMod.onInitializeClient()`:
    ```java
    registry.register(new MyFeatureModule());
@@ -95,7 +97,12 @@ Features subscribe to Minecraft events inside `onEnable()` and unsubscribe insid
 
 `ModuleRegistry` (singleton, created in `MandatoryMod`) holds the ordered list of modules shown in the carousel. `ModuleRegistry.register()` restores the saved enabled-state from `ModConfig` before adding the module to the list. `ModuleRegistry.toggle()` flips a module and immediately persists via `ModConfig`.
 
-`ModConfig` reads/writes `<minecraft>/config/mandatory.json` as a flat `Map<String, Boolean>` (moduleId → enabled).
+`ModConfig` reads/writes `<minecraft>/config/mandatory.json` as nested JSON (v2 format):
+```json
+{ "_version": 2, "elytra_swap": { "enabled": true, "some_setting": 3.0 } }
+```
+Old flat-boolean files (v1) are auto-migrated on load. `ModConfig.getInstance()` is a static accessor.
+`ModuleRegistry.register()` loads settings from config before calling `setEnabled()`.
 
 ### Menu / Carousel
 
@@ -111,7 +118,7 @@ Features subscribe to Minecraft events inside `onEnable()` and unsubscribe insid
 | Class | Target | Purpose |
 |---|---|---|
 | `GameMenuScreenMixin` | `GameMenuScreen.init` | Adds "Mandatory" button to pause menu |
-| `ClientInteractionMixin` | `ClientPlayerInteractionManager.interactItem` | Routes right-click to active modules (currently only ElytraSwap) |
+| `ClientInteractionMixin` | `ClientPlayerInteractionManager.interactItem` | Routes right-click — calls `module.onInteractItem()` on all enabled modules in order |
 
 Mixins are `@At("HEAD")` + `cancellable = true`. A module returns `ActionResult.PASS` to let vanilla continue, `SUCCESS` or `FAIL` to cancel. The interaction mixin only delegates to modules that specifically handle the event — other modules never see it.
 
@@ -120,6 +127,14 @@ Mixins are `@At("HEAD")` + `cancellable = true`. A module returns `ActionResult.
 ## 1.21.11 API Specifics (Breaking vs. Older MC)
 
 These are NOT obvious from class names; they caused build failures and must be followed:
+
+### Fabric API 0.141.4 — rendering & input gotchas
+
+- **`HudRenderCallback` is `@Deprecated`** → use `HudElementRegistry.addLast(Identifier, HudElement)` from `net.fabricmc.fabric.api.client.rendering.v1.hud`
+- **`WorldRenderContext` / `WorldRenderEvents`** live in the **subpackage** `net.fabricmc.fabric.api.client.rendering.v1.world` — not `.v1` directly
+- **`RenderTickCounter.getTickDelta()` does not exist** → use `getTickProgress(boolean)`
+- **`KeyBinding` constructor takes `KeyBinding.Category`** (a Record), not a `String` — create with `KeyBinding.Category.create(Identifier.of("mandatory", "mandatory"))`
+- **`ClientSendMessageEvents.CHAT` is void** (notify-only) → use `.ALLOW_CHAT` (returns `boolean`: `true` = allow, `false` = cancel) for intercepting/cancelling outgoing chat
 
 - **No `ArmorItem`** — check chest-equippable items via:
   ```java
