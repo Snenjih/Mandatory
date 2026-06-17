@@ -206,3 +206,39 @@ To release a new version:
 ```bash
 ./scripts/bump-version.sh 1.1.0 -y   # commits, tags v1.1.0, pushes → triggers release workflow
 ```
+
+---
+
+## Task System
+
+All planned features are tracked in `tasks/TASKS.md`. When the user says **"mach eine task"**, **"do a task"**, or **"implement a task"**, follow this exact workflow:
+
+1. **Read `tasks/TASKS.md`** — find the next entry with status `[ ] TODO`.
+2. **Read the full spec file** listed on that line (e.g. `tasks/utility/auto_totem.md`).
+3. **Implement the module** exactly as specified: class name, ID, settings, event hooks, mixins, translation keys, icon path.
+4. **Register** the new module in `MandatoryMod.onInitializeClient()`.
+5. **Mark done** in `tasks/TASKS.md`: change `[ ]` → `[x]` on the task line.
+6. **Mark done** inside the task spec file itself: `Status: [ ] TODO` → `Status: [x] DONE`.
+7. **Build & test** — run `./gradlew compileJava` and verify it compiles with zero errors. If it fails, fix all errors before proceeding.
+8. **Commit** — stage and commit all changed files with a message following the pattern `feat: add <ModuleName> module`. Example:
+   ```bash
+   git add src/ tasks/
+   git commit -m "feat: add StackRefill module"
+   ```
+
+**Always keep `tasks/TASKS.md` up to date.** After completing any task, update both files before finishing. Never skip the build step — a task is only done when the code compiles cleanly.
+
+### Task File Format
+
+Each `tasks/<category>/<module_id>.md` contains:
+- Module ID, class name, category
+- Full settings spec (type, default, range/options, label, description)
+- Implementation notes (which event hooks, mixin targets if needed, core algorithm)
+- Edge cases to handle
+- Translation keys for `en_us.json`
+- Icon path and visual description
+
+### Rules
+- Never implement a task partially — either fully complete it or leave `[ ] TODO`.
+- If a task requires a new Mixin, add the class to `mixin/` AND register it in `mandatory.mixins.json`.
+- Each new module needs a 32×32 PNG icon at `src/main/resources/assets/mandatory/textures/gui/sprites/modules/<id>.png`.
