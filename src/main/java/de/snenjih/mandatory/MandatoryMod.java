@@ -6,8 +6,10 @@ import de.snenjih.mandatory.hud.NotificationManager;
 import de.snenjih.mandatory.input.KeybindManager;
 import de.snenjih.mandatory.menu.ModuleRegistry;
 import de.snenjih.mandatory.modules.api.Module;
+import de.snenjih.mandatory.modules.impl.AutoEatModule;
 import de.snenjih.mandatory.modules.impl.AutoTotemModule;
 import de.snenjih.mandatory.modules.impl.ElytraSwapModule;
+import de.snenjih.mandatory.modules.impl.StackRefillModule;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -38,6 +40,8 @@ public class MandatoryMod implements ClientModInitializer {
         ModuleRegistry registry = ModuleRegistry.create(config);
         registry.register(new ElytraSwapModule());
         registry.register(new AutoTotemModule());
+        registry.register(new StackRefillModule());
+        registry.register(new AutoEatModule());
 
         registerEvents(registry);
     }

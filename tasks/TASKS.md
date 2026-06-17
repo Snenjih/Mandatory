@@ -10,8 +10,8 @@
 | Status | Module | Spec File |
 |---|---|---|
 | [x] DONE | Auto Totem | [tasks/utility/auto_totem.md](utility/auto_totem.md) |
-| [ ] TODO | Stack Refill | [tasks/utility/stack_refill.md](utility/stack_refill.md) |
-| [ ] TODO | Auto Eat | [tasks/utility/auto_eat.md](utility/auto_eat.md) |
+| [x] DONE | Stack Refill | [tasks/utility/stack_refill.md](utility/stack_refill.md) |
+| [x] DONE | Auto Eat | [tasks/utility/auto_eat.md](utility/auto_eat.md) |
 | [ ] TODO | Tool Selector | [tasks/utility/tool_selector.md](utility/tool_selector.md) |
 | [ ] TODO | Smart Replace | [tasks/utility/smart_replace.md](utility/smart_replace.md) |
 | [ ] TODO | Anti AFK | [tasks/utility/anti_afk.md](utility/anti_afk.md) |

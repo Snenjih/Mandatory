@@ -7,5 +7,17 @@
   "mandatory.elytra_swap.blocked.flying": "Cannot swap while gliding!",
   "mandatory.elytra_swap.blocked.binding": "Curse of Binding prevents removal!",
   "mandatory.elytra_swap.blocked.broken": "Item is too damaged to equip!",
-  "mandatory.auto_totem.no_totem": "Auto Totem: No totem in inventory!"
+  "mandatory.auto_totem.no_totem": "Auto Totem: No totem in inventory!",
+  "mandatory.stack_refill.name": "Stack Refill",
+  "mandatory.stack_refill.description": "Automatically refills your held stack from inventory when it runs out.",
+  "mandatory.stack_refill.refill_blocks": "Refill Blocks",
+  "mandatory.stack_refill.refill_tools": "Refill Tools",
+  "mandatory.stack_refill.show_notification": "Show Notification",
+  "mandatory.stack_refill.refilled": "Refilled: %s",
+  "mandatory.auto_eat.name": "Auto Eat",
+  "mandatory.auto_eat.description": "Automatically eats food when your hunger drops below the threshold.",
+  "mandatory.auto_eat.hunger_threshold": "Eat Below",
+  "mandatory.auto_eat.prefer_best": "Prefer Best Food",
+  "mandatory.auto_eat.search_inventory": "Search Inventory",
+  "mandatory.auto_eat.eat_golden_apple": "Eat Golden Apples"
 }
