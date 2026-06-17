@@ -19,5 +19,20 @@
   "mandatory.auto_eat.hunger_threshold": "Eat Below",
   "mandatory.auto_eat.prefer_best": "Prefer Best Food",
   "mandatory.auto_eat.search_inventory": "Search Inventory",
-  "mandatory.auto_eat.eat_golden_apple": "Eat Golden Apples"
+  "mandatory.auto_eat.eat_golden_apple": "Eat Golden Apples",
+  "mandatory.tool_selector.name": "Tool Selector",
+  "mandatory.tool_selector.description": "Automatically switches to the best tool in your hotbar for the targeted block.",
+  "mandatory.tool_selector.auto_restore": "Restore Slot",
+  "mandatory.tool_selector.require_hold": "Only While Mining",
+  "mandatory.tool_selector.min_speed_gain": "Min Speed Gain",
+  "mandatory.smart_replace.name": "Smart Replace",
+  "mandatory.smart_replace.description": "Automatically replaces a broken tool with the next best from your inventory.",
+  "mandatory.smart_replace.search_inventory": "Search Inventory",
+  "mandatory.smart_replace.match_mode": "Match Mode",
+  "mandatory.smart_replace.prefer_best_durability": "Prefer Best Durability",
+  "mandatory.smart_replace.show_notification": "Show Notification",
+  "mandatory.smart_replace.replaced": "Replaced broken %s",
+  "mandatory.smart_replace.no_replacement": "No replacement found for %s",
+  "mandatory.smart_replace.match_mode.same_item": "Same Item",
+  "mandatory.smart_replace.match_mode.same_family": "Same Family"
 }

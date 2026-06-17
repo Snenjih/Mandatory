@@ -9,7 +9,9 @@ import de.snenjih.mandatory.modules.api.Module;
 import de.snenjih.mandatory.modules.impl.AutoEatModule;
 import de.snenjih.mandatory.modules.impl.AutoTotemModule;
 import de.snenjih.mandatory.modules.impl.ElytraSwapModule;
+import de.snenjih.mandatory.modules.impl.SmartReplaceModule;
 import de.snenjih.mandatory.modules.impl.StackRefillModule;
+import de.snenjih.mandatory.modules.impl.ToolSelectorModule;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -42,6 +44,8 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new AutoTotemModule());
         registry.register(new StackRefillModule());
         registry.register(new AutoEatModule());
+        registry.register(new ToolSelectorModule());
+        registry.register(new SmartReplaceModule());
 
         registerEvents(registry);
     }

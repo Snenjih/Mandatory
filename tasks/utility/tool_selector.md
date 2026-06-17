@@ -2,7 +2,7 @@
 
 **ID:** `tool_selector`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/ToolSelectorModule.java`
 
 ## Description

@@ -2,7 +2,7 @@
 
 **ID:** `smart_replace`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/SmartReplaceModule.java`
 
 ## Description
