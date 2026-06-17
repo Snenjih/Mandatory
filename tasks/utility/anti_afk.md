@@ -2,7 +2,7 @@
 
 **ID:** `anti_afk`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/AntiAfkModule.java`
 
 ## Description

@@ -14,7 +14,7 @@
 | [x] DONE | Auto Eat | [tasks/utility/auto_eat.md](utility/auto_eat.md) |
 | [x] DONE | Tool Selector | [tasks/utility/tool_selector.md](utility/tool_selector.md) |
 | [x] DONE | Smart Replace | [tasks/utility/smart_replace.md](utility/smart_replace.md) |
-| [ ] TODO | Anti AFK | [tasks/utility/anti_afk.md](utility/anti_afk.md) |
+| [x] DONE | Anti AFK | [tasks/utility/anti_afk.md](utility/anti_afk.md) |
 | [ ] TODO | Middle Click Pick | [tasks/utility/middle_click_pick.md](utility/middle_click_pick.md) |
 | [ ] TODO | Death Coordinates | [tasks/utility/death_coordinates.md](utility/death_coordinates.md) |
 | [ ] TODO | Food Tooltip | [tasks/utility/food_tooltip.md](utility/food_tooltip.md) |

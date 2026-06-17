@@ -34,5 +34,15 @@
   "mandatory.smart_replace.replaced": "Replaced broken %s",
   "mandatory.smart_replace.no_replacement": "No replacement found for %s",
   "mandatory.smart_replace.match_mode.same_item": "Same Item",
-  "mandatory.smart_replace.match_mode.same_family": "Same Family"
+  "mandatory.smart_replace.match_mode.same_family": "Same Family",
+  "mandatory.anti_afk.name": "Anti AFK",
+  "mandatory.anti_afk.description": "Performs small actions at regular intervals to prevent AFK kicks.",
+  "mandatory.anti_afk.interval": "Interval (s)",
+  "mandatory.anti_afk.action": "Action",
+  "mandatory.anti_afk.random_offset": "Random Offset",
+  "mandatory.anti_afk.show_indicator": "Show Indicator",
+  "mandatory.anti_afk.action.rotate": "Rotate",
+  "mandatory.anti_afk.action.jump": "Jump",
+  "mandatory.anti_afk.action.sneak": "Sneak",
+  "mandatory.anti_afk.action.swing": "Swing"
 }

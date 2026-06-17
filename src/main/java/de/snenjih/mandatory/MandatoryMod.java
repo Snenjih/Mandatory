@@ -6,6 +6,7 @@ import de.snenjih.mandatory.hud.NotificationManager;
 import de.snenjih.mandatory.input.KeybindManager;
 import de.snenjih.mandatory.menu.ModuleRegistry;
 import de.snenjih.mandatory.modules.api.Module;
+import de.snenjih.mandatory.modules.impl.AntiAfkModule;
 import de.snenjih.mandatory.modules.impl.AutoEatModule;
 import de.snenjih.mandatory.modules.impl.AutoTotemModule;
 import de.snenjih.mandatory.modules.impl.ElytraSwapModule;
@@ -46,6 +47,7 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new AutoEatModule());
         registry.register(new ToolSelectorModule());
         registry.register(new SmartReplaceModule());
+        registry.register(new AntiAfkModule());
 
         registerEvents(registry);
     }
