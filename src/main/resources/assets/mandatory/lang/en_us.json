@@ -6,5 +6,6 @@
   "mandatory.module.elytra_swap.description": "Right-click an elytra or chestplate to swap it with your equipped chest armor.",
   "mandatory.elytra_swap.blocked.flying": "Cannot swap while gliding!",
   "mandatory.elytra_swap.blocked.binding": "Curse of Binding prevents removal!",
-  "mandatory.elytra_swap.blocked.broken": "Item is too damaged to equip!"
+  "mandatory.elytra_swap.blocked.broken": "Item is too damaged to equip!",
+  "mandatory.auto_totem.no_totem": "Auto Totem: No totem in inventory!"
 }
