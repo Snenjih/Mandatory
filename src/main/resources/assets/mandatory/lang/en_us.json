@@ -1,0 +1,10 @@
+{
+  "mandatory.menu.title": "Mandatory",
+  "mandatory.menu.toggle.enable": "Enable",
+  "mandatory.menu.toggle.disable": "Disable",
+  "mandatory.module.elytra_swap.name": "Elytra Swap",
+  "mandatory.module.elytra_swap.description": "Right-click an elytra or chestplate to swap it with your equipped chest armor.",
+  "mandatory.elytra_swap.blocked.flying": "Cannot swap while gliding!",
+  "mandatory.elytra_swap.blocked.binding": "Curse of Binding prevents removal!",
+  "mandatory.elytra_swap.blocked.broken": "Item is too damaged to equip!"
+}

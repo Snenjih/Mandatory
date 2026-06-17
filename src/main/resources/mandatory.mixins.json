@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "de.snenjih.mandatory.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "GameMenuScreenMixin",
+    "ClientInteractionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

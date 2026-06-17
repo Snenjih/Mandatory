@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "Mandatory",
+  "description": "Client-side vanilla+ mod — modular features, zero new content.",
+  "authors": [
+    "Snenjih"
+  ],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "de.snenjih.mandatory.MandatoryMod"
+    ]
+  },
+  "accessWidener": "mandatory.accesswidener",
+  "mixins": [
+    "mandatory.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft}"
+  }
+}
