@@ -2,7 +2,7 @@
 
 **ID:** `food_tooltip`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/FoodTooltipModule.java`
 
 ## Description

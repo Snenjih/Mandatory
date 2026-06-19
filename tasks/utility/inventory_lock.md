@@ -2,7 +2,7 @@
 
 **ID:** `inventory_lock`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/InventoryLockModule.java`
 
 ## Description

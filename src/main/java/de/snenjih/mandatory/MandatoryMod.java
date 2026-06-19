@@ -9,8 +9,13 @@ import de.snenjih.mandatory.modules.api.Module;
 import de.snenjih.mandatory.modules.impl.AntiAfkModule;
 import de.snenjih.mandatory.modules.impl.AutoEatModule;
 import de.snenjih.mandatory.modules.impl.AutoTotemModule;
+import de.snenjih.mandatory.modules.impl.DeathCoordinatesModule;
 import de.snenjih.mandatory.modules.impl.ElytraSwapModule;
+import de.snenjih.mandatory.modules.impl.FoodTooltipModule;
+import de.snenjih.mandatory.modules.impl.InventoryLockModule;
+import de.snenjih.mandatory.modules.impl.MiddleClickPickModule;
 import de.snenjih.mandatory.modules.impl.SmartReplaceModule;
+import de.snenjih.mandatory.modules.impl.SprintToggleModule;
 import de.snenjih.mandatory.modules.impl.StackRefillModule;
 import de.snenjih.mandatory.modules.impl.ToolSelectorModule;
 import net.fabricmc.api.ClientModInitializer;
@@ -48,6 +53,11 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new ToolSelectorModule());
         registry.register(new SmartReplaceModule());
         registry.register(new AntiAfkModule());
+        registry.register(new MiddleClickPickModule());
+        registry.register(new DeathCoordinatesModule());
+        registry.register(new FoodTooltipModule());
+        registry.register(new InventoryLockModule());
+        registry.register(new SprintToggleModule());
 
         registerEvents(registry);
     }

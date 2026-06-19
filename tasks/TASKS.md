@@ -15,11 +15,11 @@
 | [x] DONE | Tool Selector | [tasks/utility/tool_selector.md](utility/tool_selector.md) |
 | [x] DONE | Smart Replace | [tasks/utility/smart_replace.md](utility/smart_replace.md) |
 | [x] DONE | Anti AFK | [tasks/utility/anti_afk.md](utility/anti_afk.md) |
-| [ ] TODO | Middle Click Pick | [tasks/utility/middle_click_pick.md](utility/middle_click_pick.md) |
-| [ ] TODO | Death Coordinates | [tasks/utility/death_coordinates.md](utility/death_coordinates.md) |
-| [ ] TODO | Food Tooltip | [tasks/utility/food_tooltip.md](utility/food_tooltip.md) |
-| [ ] TODO | Inventory Lock | [tasks/utility/inventory_lock.md](utility/inventory_lock.md) |
-| [ ] TODO | Sprint Toggle | [tasks/utility/sprint_toggle.md](utility/sprint_toggle.md) |
+| [x] DONE | Middle Click Pick | [tasks/utility/middle_click_pick.md](utility/middle_click_pick.md) |
+| [x] DONE | Death Coordinates | [tasks/utility/death_coordinates.md](utility/death_coordinates.md) |
+| [x] DONE | Food Tooltip | [tasks/utility/food_tooltip.md](utility/food_tooltip.md) |
+| [x] DONE | Inventory Lock | [tasks/utility/inventory_lock.md](utility/inventory_lock.md) |
+| [x] DONE | Sprint Toggle | [tasks/utility/sprint_toggle.md](utility/sprint_toggle.md) |
 | [ ] TODO | Sneak Toggle | [tasks/utility/sneak_toggle.md](utility/sneak_toggle.md) |
 
 ---

@@ -2,7 +2,7 @@
 
 **ID:** `death_coordinates`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/DeathCoordinatesModule.java`
 
 ## Description

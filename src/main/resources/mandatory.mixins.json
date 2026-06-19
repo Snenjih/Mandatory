@@ -5,7 +5,12 @@
   "client": [
     "GameMenuScreenMixin",
     "ClientInteractionMixin",
-    "accessor.PlayerInventoryAccessor"
+    "accessor.PlayerInventoryAccessor",
+    "FoodTooltipMixin",
+    "InventoryLockClickMixin",
+    "InventoryLockDropMixin",
+    "InventoryLockOverlayMixin",
+    "InventoryLockToggleMixin"
   ],
   "injectors": {
     "defaultRequire": 1

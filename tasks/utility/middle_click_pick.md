@@ -2,7 +2,7 @@
 
 **ID:** `middle_click_pick`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/MiddleClickPickModule.java`
 
 ## Description

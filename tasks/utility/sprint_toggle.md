@@ -2,7 +2,7 @@
 
 **ID:** `sprint_toggle`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/SprintToggleModule.java`
 
 ## Description
