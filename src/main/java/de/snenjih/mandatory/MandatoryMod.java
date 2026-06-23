@@ -4,7 +4,7 @@ import de.snenjih.mandatory.chat.ChatCommandDispatcher;
 import de.snenjih.mandatory.config.ModConfig;
 import de.snenjih.mandatory.hud.NotificationManager;
 import de.snenjih.mandatory.input.KeybindManager;
-import de.snenjih.mandatory.menu.CarouselScreen;
+import de.snenjih.mandatory.menu.MainMenuScreen;
 import de.snenjih.mandatory.menu.ModuleRegistry;
 import de.snenjih.mandatory.modules.api.HudRegistry;
 import de.snenjih.mandatory.modules.api.Module;
@@ -86,7 +86,7 @@ public class MandatoryMod implements ClientModInitializer {
             NotificationManager.tick();
             // Right-Shift opens the carousel screen from in-game
             if (openMenuKey.wasPressed() && client.currentScreen == null) {
-                client.setScreen(new CarouselScreen(null));
+                client.setScreen(new MainMenuScreen(null));
             }
             for (Module m : registry.getAll()) {
                 if (m.isEnabled()) {

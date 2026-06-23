@@ -1,6 +1,6 @@
 package de.snenjih.mandatory.mixin;
 
-import de.snenjih.mandatory.menu.CarouselScreen;
+import de.snenjih.mandatory.menu.MainMenuScreen;
 import de.snenjih.mandatory.menu.ScreenshotGalleryScreen;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.GameMenuScreen;
@@ -33,7 +33,7 @@ public abstract class GameMenuScreenMixin extends Screen {
         addDrawableChild(ButtonWidget.builder(
             Text.literal("Mandatory"),
             btn -> MinecraftClient.getInstance().setScreen(
-                new CarouselScreen((Screen) (Object) this)
+                new MainMenuScreen((Screen) (Object) this)
             )
         ).dimensions(width / 2 - 100, height / 4 - 20, 200, 20).build());
     }
