@@ -1,6 +1,7 @@
 package de.snenjih.mandatory.mixin;
 
 import de.snenjih.mandatory.menu.CarouselScreen;
+import de.snenjih.mandatory.menu.ScreenshotGalleryScreen;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.Screen;
@@ -19,9 +20,16 @@ public abstract class GameMenuScreenMixin extends Screen {
     }
 
     @Inject(method = "init", at = @At("TAIL"))
-    private void addMandatoryButton(CallbackInfo ci) {
-        // Inject a Mandatory button above the vanilla "Back to Game" button area.
-        // The vanilla first button sits at height/4 + 8; we place ours 28px above it.
+    private void addMandatoryButtons(CallbackInfo ci) {
+        // Screenshots button sits 44px above the vanilla button area.
+        addDrawableChild(ButtonWidget.builder(
+            Text.translatable("mandatory.screenshots.open"),
+            btn -> MinecraftClient.getInstance().setScreen(
+                new ScreenshotGalleryScreen((Screen) (Object) this)
+            )
+        ).dimensions(width / 2 - 100, height / 4 - 44, 200, 20).build());
+
+        // Mandatory carousel button sits 20px above the vanilla button area.
         addDrawableChild(ButtonWidget.builder(
             Text.literal("Mandatory"),
             btn -> MinecraftClient.getInstance().setScreen(

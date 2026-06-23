@@ -67,5 +67,9 @@
   "mandatory.sprint_toggle.name": "Sprint Toggle",
   "mandatory.sprint_toggle.description": "Automatically sprints without holding the sprint key.",
   "mandatory.sprint_toggle.sprint_in_water": "Sprint in Water",
-  "mandatory.sprint_toggle.sprint_in_air": "Sprint in Air"
+  "mandatory.sprint_toggle.sprint_in_air": "Sprint in Air",
+  "mandatory.screenshots.title": "Screenshots",
+  "mandatory.screenshots.open": "Screenshots",
+  "mandatory.screenshots.empty": "No screenshots found",
+  "mandatory.screenshots.close": "✕"
 }
