@@ -2,8 +2,15 @@
 
 **ID:** `direction_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
-**Class:** `modules/impl/DirectionHudModule.java`
+**Status:** [x] DONE  
+**Class:** `modules/impl/coordinates_hud/CoordinatesHudModule.java` (integriert als `showDirection` Setting)  
+**Package:** `de.snenjih.mandatory.modules.impl.coordinates_hud`
+
+## System Notes (Updated)
+
+- Direction HUD ist als `showDirection` Boolean-Setting in `CoordinatesHudModule` integriert.
+- Kein separates Modul nötig — Himmelsrichtungs- und Yaw-Anzeige erfolgt über das Coordinates HUD.
+- CoordinatesHudModule implementiert HudElement: `extends BaseModule implements HudElement`
 
 ## Description
 

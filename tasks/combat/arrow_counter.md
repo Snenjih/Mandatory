@@ -3,7 +3,15 @@
 **ID:** `arrow_counter`  
 **Category:** COMBAT  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/ArrowCounterModule.java`
+**Class:** `modules/impl/arrow_counter/ArrowCounterModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.arrow_counter`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/arrow_counter/ArrowCounterModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.arrow_counter`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

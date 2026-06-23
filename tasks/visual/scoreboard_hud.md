@@ -3,7 +3,15 @@
 **ID:** `scoreboard_hud`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/ScoreboardHudModule.java`
+**Class:** `modules/impl/scoreboard_hud/ScoreboardHudModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.scoreboard_hud`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/scoreboard_hud/ScoreboardHudModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.scoreboard_hud`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

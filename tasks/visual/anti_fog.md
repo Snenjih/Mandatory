@@ -3,7 +3,15 @@
 **ID:** `anti_fog`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/AntiFogModule.java`
+**Class:** `modules/impl/anti_fog/AntiFogModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.anti_fog`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/anti_fog/AntiFogModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.anti_fog`
+- Implementiert HudElement: Nein (Mixin-basiert — BackgroundRenderer oder FogShape)
+- Benötigt Mixin auf Fog-Rendering in `BackgroundRenderer`
 
 ## Description
 

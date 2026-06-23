@@ -1,9 +1,17 @@
 # Firework Boost
 
 **ID:** `firework_boost`  
-**Category:** UTILITY  
+**Category:** ELYTRA  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/FireworkBoostModule.java`
+**Class:** `modules/impl/firework_boost/FireworkBoostModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.firework_boost`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/firework_boost/FireworkBoostModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.firework_boost`
+- Implementiert HudElement: Nein
+- `KeybindSetting` für Boost-Keybind verwenden
 
 ## Description
 

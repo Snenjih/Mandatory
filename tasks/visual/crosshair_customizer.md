@@ -3,7 +3,15 @@
 **ID:** `crosshair_customizer`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/CrosshairCustomizerModule.java`
+**Class:** `modules/impl/crosshair_customizer/CrosshairCustomizerModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.crosshair_customizer`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/crosshair_customizer/CrosshairCustomizerModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.crosshair_customizer`
+- Implementiert HudElement: Ja — rendert eigenes Crosshair via `onRenderHud`
+- `ColorSetting` für Crosshair-Farbe verwenden
 
 ## Description
 

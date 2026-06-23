@@ -3,7 +3,16 @@
 **ID:** `attack_cooldown_indicator`  
 **Category:** COMBAT  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/AttackCooldownIndicatorModule.java`
+**Class:** `modules/impl/attack_cooldown_indicator/AttackCooldownIndicatorModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.attack_cooldown_indicator`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/attack_cooldown_indicator/AttackCooldownIndicatorModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.attack_cooldown_indicator`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
+- `ColorSetting` für Balkenfarben verwenden
 
 ## Description
 

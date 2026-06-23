@@ -3,7 +3,15 @@
 **ID:** `speed_display`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/SpeedDisplayModule.java`
+**Class:** `modules/impl/speed_display/SpeedDisplayModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.speed_display`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/speed_display/SpeedDisplayModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.speed_display`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

@@ -2,8 +2,18 @@
 
 **ID:** `coordinates_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
-**Class:** `modules/impl/CoordinatesHudModule.java`
+**Status:** [x] DONE  
+**Class:** `modules/impl/coordinates_hud/CoordinatesHudModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.coordinates_hud`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/coordinates_hud/CoordinatesHudModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.coordinates_hud`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
+- Neue Setting-Typen verfügbar: `KeybindSetting`, `ColorSetting`, `TextSetting`
+- Direction HUD ist als `showDirection` Setting integriert (kein separates Modul)
 
 ## Description
 

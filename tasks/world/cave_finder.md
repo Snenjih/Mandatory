@@ -1,9 +1,17 @@
 # Cave Finder
 
 **ID:** `cave_finder`  
-**Category:** VISUAL  
+**Category:** WORLD  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/CaveFinderModule.java`
+**Class:** `modules/impl/cave_finder/CaveFinderModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.cave_finder`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/cave_finder/CaveFinderModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.cave_finder`
+- Implementiert HudElement: Nein (Welt-Rendering via `onRenderWorld`)
+- Verwendet `WorldRenderContext` aus `net.fabricmc.fabric.api.client.rendering.v1.world`
 
 ## Description
 

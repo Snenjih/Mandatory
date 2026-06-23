@@ -3,7 +3,16 @@
 **ID:** `target_hp`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/TargetHpModule.java`
+**Class:** `modules/impl/target_hp/TargetHpModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.target_hp`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/target_hp/TargetHpModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.target_hp`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
+- `ColorSetting` für Farbwerte verwenden statt rohem `IntSetting`
 
 ## Description
 

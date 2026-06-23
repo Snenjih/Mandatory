@@ -3,7 +3,15 @@
 **ID:** `reach_display`  
 **Category:** COMBAT  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/ReachDisplayModule.java`
+**Class:** `modules/impl/reach_display/ReachDisplayModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.reach_display`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/reach_display/ReachDisplayModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.reach_display`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

@@ -3,7 +3,16 @@
 **ID:** `quick_messages`
 **Category:** CHAT
 **Status:** [ ] TODO
-**Class:** `modules/impl/QuickMessagesModule.java`
+**Class:** `modules/impl/quick_messages/QuickMessagesModule.java`
+**Package:** `de.snenjih.mandatory.modules.impl.quick_messages`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/quick_messages/QuickMessagesModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.quick_messages`
+- Implementiert HudElement: Nein
+- `TextSetting` für Nachrichtenvorlagen verwenden
+- `KeybindSetting` für Schnelltasten
 
 ## Description
 

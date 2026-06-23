@@ -3,7 +3,15 @@
 **ID:** `saturation_bar`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/SaturationBarModule.java`
+**Class:** `modules/impl/saturation_bar/SaturationBarModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.saturation_bar`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/saturation_bar/SaturationBarModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.saturation_bar`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

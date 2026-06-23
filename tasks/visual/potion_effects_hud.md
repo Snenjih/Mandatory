@@ -2,8 +2,16 @@
 
 **ID:** `potion_effects_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
-**Class:** `modules/impl/PotionEffectsHudModule.java`
+**Status:** [x] DONE  
+**Class:** `modules/impl/potion_effects_hud/PotionEffectsHudModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.potion_effects_hud`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/potion_effects_hud/PotionEffectsHudModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.potion_effects_hud`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

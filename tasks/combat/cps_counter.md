@@ -3,7 +3,15 @@
 **ID:** `cps_counter`  
 **Category:** COMBAT  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/CpsCounterModule.java`
+**Class:** `modules/impl/cps_counter/CpsCounterModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.cps_counter`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/cps_counter/CpsCounterModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.cps_counter`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

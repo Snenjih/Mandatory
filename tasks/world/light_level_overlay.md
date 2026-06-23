@@ -1,9 +1,17 @@
 # Light Level Overlay
 
 **ID:** `light_level_overlay`  
-**Category:** VISUAL  
+**Category:** WORLD  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/LightLevelOverlayModule.java`
+**Class:** `modules/impl/light_level_overlay/LightLevelOverlayModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.light_level_overlay`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/light_level_overlay/LightLevelOverlayModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.light_level_overlay`
+- Implementiert HudElement: Nein (Welt-Rendering via `onRenderWorld`)
+- Verwendet `WorldRenderContext` aus `net.fabricmc.fabric.api.client.rendering.v1.world`
 
 ## Description
 

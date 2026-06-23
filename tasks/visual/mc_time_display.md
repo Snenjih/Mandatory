@@ -3,7 +3,15 @@
 **ID:** `mc_time_display`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/McTimeDisplayModule.java`
+**Class:** `modules/impl/mc_time_display/McTimeDisplayModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.mc_time_display`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/mc_time_display/McTimeDisplayModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.mc_time_display`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

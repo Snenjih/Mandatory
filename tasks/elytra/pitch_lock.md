@@ -1,9 +1,17 @@
 # Pitch Lock
 
 **ID:** `pitch_lock`  
-**Category:** UTILITY  
+**Category:** ELYTRA  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/PitchLockModule.java`
+**Class:** `modules/impl/pitch_lock/PitchLockModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.pitch_lock`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/pitch_lock/PitchLockModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.pitch_lock`
+- Implementiert HudElement: Nein
+- `KeybindSetting` für den Lock-Toggle-Keybind verwenden statt manuellem `KeyBinding`
 
 ## Description
 

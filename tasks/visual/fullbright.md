@@ -3,7 +3,15 @@
 **ID:** `fullbright`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/FullbrightModule.java`
+**Class:** `modules/impl/fullbright/FullbrightModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.fullbright`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/fullbright/FullbrightModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.fullbright`
+- Implementiert HudElement: Nein (kein HUD-Overlay benötigt)
+- Neue Setting-Typen verfügbar: `KeybindSetting`, `ColorSetting`, `TextSetting`
 
 ## Description
 

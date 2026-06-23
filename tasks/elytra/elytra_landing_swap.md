@@ -1,9 +1,17 @@
 # Elytra Landing Swap
 
 **ID:** `elytra_landing_swap`  
-**Category:** UTILITY  
+**Category:** ELYTRA  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/ElytraLandingSwapModule.java`
+**Class:** `modules/impl/elytra_landing_swap/ElytraLandingSwapModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.elytra_landing_swap`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/elytra_landing_swap/ElytraLandingSwapModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.elytra_landing_swap`
+- Implementiert HudElement: Nein
+- Logik: `onClientTick` — erkennt Landung und führt Inventory-Swap durch
 
 ## Description
 

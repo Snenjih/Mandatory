@@ -3,7 +3,15 @@
 **ID:** `rain_disable`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/RainDisableModule.java`
+**Class:** `modules/impl/rain_disable/RainDisableModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.rain_disable`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/rain_disable/RainDisableModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.rain_disable`
+- Implementiert HudElement: Nein (Mixin-basiert — WorldRenderer oder GameRenderer)
+- Benötigt Mixin auf Regen-Rendering
 
 ## Description
 

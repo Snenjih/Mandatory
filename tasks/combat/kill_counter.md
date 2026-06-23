@@ -3,7 +3,15 @@
 **ID:** `kill_counter`  
 **Category:** COMBAT  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/KillCounterModule.java`
+**Class:** `modules/impl/kill_counter/KillCounterModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.kill_counter`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/kill_counter/KillCounterModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.kill_counter`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

@@ -2,8 +2,16 @@
 
 **ID:** `fps_ping_display`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
-**Class:** `modules/impl/FpsPingDisplayModule.java`
+**Status:** [x] DONE  
+**Class:** `modules/impl/fps_ping_display/FpsPingDisplayModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.fps_ping_display`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/fps_ping_display/FpsPingDisplayModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.fps_ping_display`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

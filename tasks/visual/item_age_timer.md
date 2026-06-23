@@ -3,7 +3,15 @@
 **ID:** `item_age_timer`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/ItemAgeTimerModule.java`
+**Class:** `modules/impl/item_age_timer/ItemAgeTimerModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.item_age_timer`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/item_age_timer/ItemAgeTimerModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.item_age_timer`
+- Implementiert HudElement: Nein (Mixin auf Item-Entity-Rendering)
+- Benötigt Mixin auf `ItemEntityRenderer` oder `onRenderWorld`
 
 ## Description
 

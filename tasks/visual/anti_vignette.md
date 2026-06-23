@@ -3,7 +3,15 @@
 **ID:** `anti_vignette`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/AntiVignetteModule.java`
+**Class:** `modules/impl/anti_vignette/AntiVignetteModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.anti_vignette`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/anti_vignette/AntiVignetteModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.anti_vignette`
+- Implementiert HudElement: Nein (Mixin auf `InGameHud.renderVignette` oder `renderOverlays`)
+- Benötigt Mixin auf Vignette-Rendering in `InGameHud`
 
 ## Description
 

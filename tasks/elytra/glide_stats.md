@@ -1,9 +1,17 @@
 # Glide Stats
 
 **ID:** `glide_stats`  
-**Category:** VISUAL  
+**Category:** ELYTRA  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/GlideStatsModule.java`
+**Class:** `modules/impl/glide_stats/GlideStatsModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.glide_stats`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/glide_stats/GlideStatsModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.glide_stats`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

@@ -3,7 +3,15 @@
 **ID:** `biome_display`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/BiomeDisplayModule.java`
+**Class:** `modules/impl/biome_display/BiomeDisplayModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.biome_display`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/biome_display/BiomeDisplayModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.biome_display`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

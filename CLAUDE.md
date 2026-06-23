@@ -79,7 +79,8 @@ Features subscribe to Minecraft events inside `onEnable()` and unsubscribe insid
 
 ### Adding a New Feature
 
-1. Create `modules/impl/MyFeatureModule.java` extending `BaseModule`.
+1. Create `modules/impl/my_feature/MyFeatureModule.java` extending `BaseModule`.
+   Package: `de.snenjih.mandatory.modules.impl.my_feature`
 2. Add one line in `MandatoryMod.onInitializeClient()`:
    ```java
    registry.register(new MyFeatureModule());
@@ -92,6 +93,44 @@ Features subscribe to Minecraft events inside `onEnable()` and unsubscribe insid
    Minecraft's GUI sprite atlas picks up anything under `textures/gui/sprites/` automatically.
 4. Add translation keys to `assets/mandatory/lang/en_us.json` if needed.
 5. If the feature needs to intercept game events, write a new Mixin in `mixin/` and register it in `mandatory.mixins.json`.
+
+### Adding a HUD Element Module
+
+A module that renders a movable HUD overlay also implements `HudElement`:
+
+```java
+public class MyHudModule extends BaseModule implements HudElement {
+    @Override public String getHudId()         { return "my_hud"; }
+    @Override public String getHudName()        { return "My HUD"; }
+    @Override public int    getDefaultWidth()   { return 120; }
+    @Override public int    getDefaultHeight()  { return 30; }
+
+    @Override
+    public void renderHud(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
+        // Render at given position/size (managed by HudRegistry)
+        ctx.fill(x, y, x + w, y + h, 0xCC0D1B2A); // dark bg
+        ctx.drawTextWithShadow(textRenderer, "My Text", x + 4, y + 4, 0xFFFFFFFF);
+    }
+}
+```
+
+In `MandatoryMod.onInitializeClient()`, after `registry.register(myHudModule)`:
+```java
+HudRegistry.register(myHudModule, defaultX, defaultY);
+```
+
+### Available Setting Types
+
+| Type | Usage | Notes |
+|---|---|---|
+| `BooleanSetting` | On/off toggle | `new BooleanSetting("id", "Label", defaultValue)` |
+| `IntSetting` | Integer value | `new IntSetting("id", "Label", default, min, max)` |
+| `FloatSetting` | Float value | `new FloatSetting("id", "Label", default, min, max)` |
+| `KeybindSetting` | GLFW key code (int) | `new KeybindSetting("id", "Label", GLFW.GLFW_KEY_UNKNOWN)` |
+| `ColorSetting` | ARGB color (int) | `new ColorSetting("id", "Label", 0xFFFFFFFF)` |
+| `TextSetting` | String with max length | `new TextSetting("id", "Label", "default", maxLength)` |
+
+Use `beginSection("Section Name")` before `addSetting(...)` to group settings visually.
 
 ### Registry & Config
 

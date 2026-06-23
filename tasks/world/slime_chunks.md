@@ -3,7 +3,15 @@
 **ID:** `slime_chunks`  
 **Category:** WORLD  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/SlimeChunksModule.java`
+**Class:** `modules/impl/slime_chunks/SlimeChunksModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.slime_chunks`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/slime_chunks/SlimeChunksModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.slime_chunks`
+- Implementiert HudElement: Nein (Welt-Rendering via `onRenderWorld`)
+- Verwendet `WorldRenderContext` aus `net.fabricmc.fabric.api.client.rendering.v1.world`
 
 ## Description
 

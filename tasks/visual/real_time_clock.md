@@ -3,7 +3,15 @@
 **ID:** `real_time_clock`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/RealTimeClockModule.java`
+**Class:** `modules/impl/real_time_clock/RealTimeClockModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.real_time_clock`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/real_time_clock/RealTimeClockModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.real_time_clock`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

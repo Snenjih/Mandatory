@@ -3,7 +3,15 @@
 **ID:** `hit_indicator`  
 **Category:** COMBAT  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/HitIndicatorModule.java`
+**Class:** `modules/impl/hit_indicator/HitIndicatorModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.hit_indicator`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/hit_indicator/HitIndicatorModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.hit_indicator`
+- Implementiert HudElement: Ja — rendert Treffer-Overlay auf dem HUD
+- `ColorSetting` für Indikatorfarbe verwenden
 
 ## Description
 

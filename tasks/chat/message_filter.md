@@ -3,7 +3,15 @@
 **ID:** `message_filter`
 **Category:** CHAT
 **Status:** [ ] TODO
-**Class:** `modules/impl/MessageFilterModule.java`
+**Class:** `modules/impl/message_filter/MessageFilterModule.java`
+**Package:** `de.snenjih.mandatory.modules.impl.message_filter`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/message_filter/MessageFilterModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.message_filter`
+- Implementiert HudElement: Nein
+- `TextSetting` für Filter-Pattern verwenden
 
 ## Description
 

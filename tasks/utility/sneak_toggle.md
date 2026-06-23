@@ -3,7 +3,16 @@
 **ID:** `sneak_toggle`  
 **Category:** UTILITY  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/SneakToggleModule.java`
+**Class:** `modules/impl/sneak_toggle/SneakToggleModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.sneak_toggle`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/sneak_toggle/SneakToggleModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.sneak_toggle`
+- Implementiert HudElement: Nein
+- Benötigt Mixin: `SneakToggleMixin` auf `KeyboardInput` oder `ClientPlayerEntity`
+- Analog zu SprintToggleModule (`modules/impl/sprint_toggle/SprintToggleModule.java`)
 
 ## Description
 

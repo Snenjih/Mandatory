@@ -3,7 +3,15 @@
 **ID:** `mention_highlight`
 **Category:** CHAT
 **Status:** [ ] TODO
-**Class:** `modules/impl/MentionHighlightModule.java`
+**Class:** `modules/impl/mention_highlight/MentionHighlightModule.java`
+**Package:** `de.snenjih.mandatory.modules.impl.mention_highlight`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/mention_highlight/MentionHighlightModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.mention_highlight`
+- Implementiert HudElement: Nein (Chat-basiert)
+- `ColorSetting` für `color`-Setting verwenden statt `IntSetting`
 
 ## Description
 

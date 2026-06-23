@@ -2,8 +2,16 @@
 
 **ID:** `armor_status_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
-**Class:** `modules/impl/ArmorStatusHudModule.java`
+**Status:** [x] DONE  
+**Class:** `modules/impl/armor_status_hud/ArmorStatusHudModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.armor_status_hud`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/armor_status_hud/ArmorStatusHudModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.armor_status_hud`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
 
 ## Description
 

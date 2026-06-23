@@ -3,7 +3,16 @@
 **ID:** `durability_hud`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/DurabilityHudModule.java`
+**Class:** `modules/impl/durability_hud/DurabilityHudModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.durability_hud`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/durability_hud/DurabilityHudModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.durability_hud`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
+- Neue Setting-Typen verfügbar: `ColorSetting` statt `IntSetting` für Farbwerte
 
 ## Description
 

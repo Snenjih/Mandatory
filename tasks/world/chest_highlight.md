@@ -1,9 +1,17 @@
 # Chest Highlight
 
 **ID:** `chest_highlight`  
-**Category:** VISUAL  
+**Category:** WORLD  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/ChestHighlightModule.java`
+**Class:** `modules/impl/chest_highlight/ChestHighlightModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.chest_highlight`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/chest_highlight/ChestHighlightModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.chest_highlight`
+- Implementiert HudElement: Nein (Welt-Rendering via `onRenderWorld`)
+- Verwendet `WorldRenderContext` aus `net.fabricmc.fabric.api.client.rendering.v1.world`
 
 ## Description
 

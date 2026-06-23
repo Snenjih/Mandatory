@@ -3,7 +3,15 @@
 **ID:** `auto_shield`  
 **Category:** COMBAT  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/AutoShieldModule.java`
+**Class:** `modules/impl/auto_shield/AutoShieldModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.auto_shield`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/auto_shield/AutoShieldModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.auto_shield`
+- Implementiert HudElement: Nein (reagiert auf Schadensereignisse)
+- Verwendet `onClientTick` und ggf. Mixin auf Schadens-Events
 
 ## Description
 

@@ -3,7 +3,16 @@
 **ID:** `zoom`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/ZoomModule.java`
+**Class:** `modules/impl/zoom/ZoomModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.zoom`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/zoom/ZoomModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.zoom`
+- Implementiert HudElement: Nein (kein HUD-Overlay; FOV-Override via Mixin)
+- Benötigt 2 Mixins: `ZoomFovMixin` (GameRenderer) und `ZoomScrollMixin` (Mouse)
+- `KeybindSetting` für Zoom-Taste verwenden
 
 ## Description
 

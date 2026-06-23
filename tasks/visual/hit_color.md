@@ -3,7 +3,15 @@
 **ID:** `hit_color`  
 **Category:** VISUAL  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/HitColorModule.java`
+**Class:** `modules/impl/hit_color/HitColorModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.hit_color`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/hit_color/HitColorModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.hit_color`
+- Implementiert HudElement: Nein (Mixin-basiert)
+- `ColorSetting` für Trefferfarbe verwenden
 
 ## Description
 

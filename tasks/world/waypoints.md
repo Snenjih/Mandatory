@@ -1,9 +1,18 @@
 # Waypoints
 
 **ID:** `waypoints`  
-**Category:** VISUAL  
+**Category:** WORLD  
 **Status:** [ ] TODO  
-**Class:** `modules/impl/WaypointsModule.java`
+**Class:** `modules/impl/waypoints/WaypointsModule.java`  
+**Package:** `de.snenjih.mandatory.modules.impl.waypoints`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/waypoints/WaypointsModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.waypoints`
+- Implementiert HudElement: Ja — `extends BaseModule implements HudElement`
+- In `MandatoryMod.onInitializeClient()`: `HudRegistry.register(module, defaultX, defaultY)`
+- `WaypointConfig`-Klasse im selben Unterordner (`modules/impl/waypoints/WaypointConfig.java`)
 
 ## Description
 

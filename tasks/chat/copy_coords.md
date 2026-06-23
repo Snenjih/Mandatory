@@ -1,9 +1,17 @@
 # Copy Coords
 
 **ID:** `copy_coords`
-**Category:** UTILITY
+**Category:** CHAT
 **Status:** [ ] TODO
-**Class:** `modules/impl/CopyCoordsModule.java`
+**Class:** `modules/impl/copy_coords/CopyCoordsModule.java`
+**Package:** `de.snenjih.mandatory.modules.impl.copy_coords`
+
+## System Notes (Updated)
+
+- Module Ordner: `modules/impl/copy_coords/CopyCoordsModule.java`
+- Package: `de.snenjih.mandatory.modules.impl.copy_coords`
+- Implementiert HudElement: Nein
+- `KeybindSetting` für Copy-Keybind verwenden
 
 ## Description
 

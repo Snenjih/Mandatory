@@ -28,15 +28,15 @@
 
 | Status | Module | Spec File |
 |---|---|---|
-| [ ] TODO | Coordinates HUD | [tasks/visual/coordinates_hud.md](visual/coordinates_hud.md) |
+| [x] DONE | Coordinates HUD | [tasks/visual/coordinates_hud.md](visual/coordinates_hud.md) |
+| [x] DONE | Direction HUD | [tasks/visual/direction_hud.md](visual/direction_hud.md) |
+| [x] DONE | FPS + Ping Display | [tasks/visual/fps_ping_display.md](visual/fps_ping_display.md) |
+| [x] DONE | Armor Status HUD | [tasks/visual/armor_status_hud.md](visual/armor_status_hud.md) |
+| [x] DONE | Potion Effects HUD | [tasks/visual/potion_effects_hud.md](visual/potion_effects_hud.md) |
 | [ ] TODO | Fullbright | [tasks/visual/fullbright.md](visual/fullbright.md) |
-| [ ] TODO | Armor Status HUD | [tasks/visual/armor_status_hud.md](visual/armor_status_hud.md) |
 | [ ] TODO | Durability HUD | [tasks/visual/durability_hud.md](visual/durability_hud.md) |
-| [ ] TODO | Potion Effects HUD | [tasks/visual/potion_effects_hud.md](visual/potion_effects_hud.md) |
 | [ ] TODO | Target HP | [tasks/visual/target_hp.md](visual/target_hp.md) |
-| [ ] TODO | FPS + Ping Display | [tasks/visual/fps_ping_display.md](visual/fps_ping_display.md) |
 | [ ] TODO | Biome Display | [tasks/visual/biome_display.md](visual/biome_display.md) |
-| [ ] TODO | Direction HUD | [tasks/visual/direction_hud.md](visual/direction_hud.md) |
 | [ ] TODO | Speed Display | [tasks/visual/speed_display.md](visual/speed_display.md) |
 | [ ] TODO | Real-Time Clock | [tasks/visual/real_time_clock.md](visual/real_time_clock.md) |
 | [ ] TODO | Saturation Bar | [tasks/visual/saturation_bar.md](visual/saturation_bar.md) |
@@ -49,6 +49,10 @@
 | [ ] TODO | MC Time Display | [tasks/visual/mc_time_display.md](visual/mc_time_display.md) |
 | [ ] TODO | Anti Fog | [tasks/visual/anti_fog.md](visual/anti_fog.md) |
 | [ ] TODO | Anti Vignette | [tasks/visual/anti_vignette.md](visual/anti_vignette.md) |
+| [ ] TODO | Item Info HUD | [tasks/visual/item_info_hud.md](visual/item_info_hud.md) |
+| [ ] TODO | Boss Bar Customizer | [tasks/visual/boss_bar_customizer.md](visual/boss_bar_customizer.md) |
+| [ ] TODO | Damage Indicator | [tasks/visual/damage_indicator.md](visual/damage_indicator.md) |
+| [ ] TODO | Held Item Info | [tasks/visual/held_item_info.md](visual/held_item_info.md) |
 
 ---
 
@@ -104,4 +108,4 @@
 
 | Status | Module | Notes |
 |---|---|---|
-| [x] DONE | Elytra Swap | `modules/impl/ElytraSwapModule.java` |
+| [x] DONE | Elytra Swap | `modules/impl/elytra_swap/ElytraSwapModule.java` |
