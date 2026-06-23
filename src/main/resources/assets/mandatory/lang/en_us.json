@@ -7,6 +7,7 @@
   "mandatory.elytra_swap.blocked.flying": "Cannot swap while gliding!",
   "mandatory.elytra_swap.blocked.binding": "Curse of Binding prevents removal!",
   "mandatory.elytra_swap.blocked.broken": "Item is too damaged to equip!",
+  "mandatory.elytra_swap.no_swap_target": "No chest-equippable item found in inventory!",
   "mandatory.auto_totem.no_totem": "Auto Totem: No totem in inventory!",
   "mandatory.stack_refill.name": "Stack Refill",
   "mandatory.stack_refill.description": "Automatically refills your held stack from inventory when it runs out.",
@@ -115,5 +116,10 @@
   "mandatory.module.keystrokes_hud.name": "Keystrokes",
   "mandatory.module.keystrokes_hud.description": "Shows WASD and mouse button keystrokes on the HUD.",
   "mandatory.keystrokes_hud.show_mouse_buttons": "Show Mouse Buttons",
-  "mandatory.keystrokes_hud.show_spacebar": "Show Spacebar"
+  "mandatory.keystrokes_hud.show_spacebar": "Show Spacebar",
+
+  "mandatory.module.nametag_badge.name": "Nametag Badge",
+  "mandatory.module.nametag_badge.description": "Shows a ✦ symbol before your name in nametags and the tablist.",
+  "mandatory.nametag_badge.show_in_tablist": "Show in Tablist",
+  "mandatory.nametag_badge.badge_color": "Badge Color"
 }

@@ -2,14 +2,18 @@ package de.snenjih.mandatory.modules.impl.elytra_swap;
 
 import de.snenjih.mandatory.modules.api.BaseModule;
 import de.snenjih.mandatory.modules.api.ModuleCategory;
+import de.snenjih.mandatory.modules.api.settings.KeybindSetting;
+import de.snenjih.mandatory.modules.api.settings.ModuleSetting;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.client.util.InputUtil;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.EquippableComponent;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -20,6 +24,9 @@ public class ElytraSwapModule extends BaseModule {
 
     private static final int CHEST_SLOT = 6;
 
+    private final ModuleSetting<Integer> keybindSetting;
+    private boolean prevKeyHeld = false;
+
     public ElytraSwapModule() {
         super(
             "elytra_swap",
@@ -28,6 +35,21 @@ public class ElytraSwapModule extends BaseModule {
             ModuleCategory.UTILITY,
             Identifier.of("mandatory", "modules/elytra_swap")
         );
+        keybindSetting = addSetting(new KeybindSetting("keybind", "Swap Keybind", -1));
+    }
+
+    @Override
+    public void onClientTick(MinecraftClient client) {
+        int keyCode = keybindSetting.get();
+        if (keyCode == -1 || client.currentScreen != null || client.player == null) {
+            prevKeyHeld = false;
+            return;
+        }
+        boolean held = InputUtil.isKeyPressed(client.getWindow(), keyCode);
+        if (held && !prevKeyHeld) {
+            performKeySwap(client, client.player);
+        }
+        prevKeyHeld = held;
     }
 
     @Override
@@ -66,6 +88,70 @@ public class ElytraSwapModule extends BaseModule {
         return ActionResult.SUCCESS;
     }
 
+    private void performKeySwap(MinecraftClient mc, ClientPlayerEntity player) {
+        if (player.isCreative()) {
+            player.sendMessage(Text.literal("Elytra Swap: Not supported in Creative mode."), true);
+            return;
+        }
+        if (player.isGliding()) {
+            player.sendMessage(Text.translatable("mandatory.elytra_swap.blocked.flying"), true);
+            return;
+        }
+
+        ItemStack chestStack = player.getEquippedStack(EquipmentSlot.CHEST);
+        if (!chestStack.isEmpty() && hasBindingCurse(chestStack)) {
+            player.sendMessage(Text.translatable("mandatory.elytra_swap.blocked.binding"), true);
+            return;
+        }
+
+        int targetSlot = findSwapTarget(player);
+        if (targetSlot == -1) {
+            player.sendMessage(Text.translatable("mandatory.elytra_swap.no_swap_target"), true);
+            return;
+        }
+
+        ItemStack targetStack = getInventoryStack(player, targetSlot);
+        if (targetStack.isDamageable() && targetStack.getDamage() >= targetStack.getMaxDamage()) {
+            player.sendMessage(Text.translatable("mandatory.elytra_swap.blocked.broken"), true);
+            return;
+        }
+
+        performSwapFromSlot(mc, player, targetSlot, chestStack.isEmpty());
+    }
+
+    private int findSwapTarget(ClientPlayerEntity player) {
+        ItemStack chest = player.getEquippedStack(EquipmentSlot.CHEST);
+        boolean chestHasElytra = !chest.isEmpty() && chest.isOf(Items.ELYTRA);
+        // Prefer the "other" type: if chest has elytra, look for chestplate; otherwise look for elytra
+        boolean preferElytra = !chestHasElytra;
+
+        int fallback = -1;
+        // Hotbar: PlayerInventory indices 0-8 → ScreenHandler slots 36-44
+        for (int i = 0; i < 9; i++) {
+            ItemStack s = player.getInventory().getStack(i);
+            if (!isChestEquippable(s)) continue;
+            boolean isElytra = s.isOf(Items.ELYTRA);
+            if (isElytra == preferElytra) return 36 + i;
+            if (fallback == -1) fallback = 36 + i;
+        }
+        // Main inventory: PlayerInventory indices 9-35 → ScreenHandler slots 9-35
+        for (int i = 9; i < 36; i++) {
+            ItemStack s = player.getInventory().getStack(i);
+            if (!isChestEquippable(s)) continue;
+            boolean isElytra = s.isOf(Items.ELYTRA);
+            if (isElytra == preferElytra) return i;
+            if (fallback == -1) fallback = i;
+        }
+        return fallback;
+    }
+
+    private ItemStack getInventoryStack(ClientPlayerEntity player, int screenHandlerSlot) {
+        if (screenHandlerSlot >= 36 && screenHandlerSlot <= 44) {
+            return player.getInventory().getStack(screenHandlerSlot - 36);
+        }
+        return player.getInventory().getStack(screenHandlerSlot);
+    }
+
     private void performSwap(MinecraftClient mc, ClientPlayerEntity player, boolean chestWasEmpty) {
         int syncId    = player.playerScreenHandler.syncId;
         int hotbarIdx = 36 + player.getInventory().getSelectedSlot();
@@ -74,6 +160,16 @@ public class ElytraSwapModule extends BaseModule {
         mc.interactionManager.clickSlot(syncId, CHEST_SLOT, 0, SlotActionType.PICKUP, player);
         if (!chestWasEmpty) {
             mc.interactionManager.clickSlot(syncId, hotbarIdx, 0, SlotActionType.PICKUP, player);
+        }
+    }
+
+    private void performSwapFromSlot(MinecraftClient mc, ClientPlayerEntity player,
+                                      int invSlot, boolean chestWasEmpty) {
+        int syncId = player.playerScreenHandler.syncId;
+        mc.interactionManager.clickSlot(syncId, invSlot,    0, SlotActionType.PICKUP, player);
+        mc.interactionManager.clickSlot(syncId, CHEST_SLOT, 0, SlotActionType.PICKUP, player);
+        if (!chestWasEmpty) {
+            mc.interactionManager.clickSlot(syncId, invSlot, 0, SlotActionType.PICKUP, player);
         }
     }
 

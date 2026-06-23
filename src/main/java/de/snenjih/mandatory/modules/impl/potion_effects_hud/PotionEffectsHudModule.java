@@ -1,7 +1,6 @@
 package de.snenjih.mandatory.modules.impl.potion_effects_hud;
 
-import de.snenjih.mandatory.modules.api.BaseModule;
-import de.snenjih.mandatory.modules.api.HudElement;
+import de.snenjih.mandatory.modules.api.BaseHudModule;
 import de.snenjih.mandatory.modules.api.ModuleCategory;
 import de.snenjih.mandatory.modules.api.settings.BooleanSetting;
 import de.snenjih.mandatory.modules.api.settings.ModuleSetting;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class PotionEffectsHudModule extends BaseModule implements HudElement {
+public class PotionEffectsHudModule extends BaseHudModule {
 
     private final ModuleSetting<Boolean> showDuration;
     private final ModuleSetting<Boolean> compactMode;
@@ -40,7 +39,7 @@ public class PotionEffectsHudModule extends BaseModule implements HudElement {
     @Override public int getDefaultHeight() { return 20; }
 
     @Override
-    public void renderHud(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
+    protected void renderHudContent(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
         MinecraftClient mc = MinecraftClient.getInstance();
         if (mc.player == null) return;
 
@@ -50,7 +49,6 @@ public class PotionEffectsHudModule extends BaseModule implements HudElement {
         List<StatusEffectInstance> effects = new ArrayList<>(player.getStatusEffects());
         if (effects.isEmpty()) return;
 
-        // Sort: beneficial first, then harmful; within each group, sort by remaining duration desc
         effects.sort(Comparator
                 .<StatusEffectInstance, Boolean>comparing(e -> !e.getEffectType().value().isBeneficial())
                 .thenComparing(Comparator.comparingInt(StatusEffectInstance::getDuration).reversed()));
@@ -58,8 +56,7 @@ public class PotionEffectsHudModule extends BaseModule implements HudElement {
         int lineH = compactMode.get() ? 10 : 18;
         int totalH = Math.max(h, effects.size() * lineH + 4);
 
-        ctx.fill(x, y, x + w, y + totalH, 0xCC0D1B2A);
-        ctx.drawStrokedRectangle(x, y, w, totalH, 0xFF1E3A5F);
+        drawBackground(ctx, x, y, w, totalH);
 
         for (int i = 0; i < effects.size(); i++) {
             StatusEffectInstance eff = effects.get(i);
@@ -72,14 +69,12 @@ public class PotionEffectsHudModule extends BaseModule implements HudElement {
             int durationSecs = eff.getDuration() / 20;
 
             if (compactMode.get()) {
-                // Compact: first char of name + duration
                 String initial = name.isEmpty() ? "?" : String.valueOf(Character.toUpperCase(name.charAt(0)));
                 String label = showDuration.get()
                         ? initial + ":" + durationSecs + "s"
                         : initial;
                 ctx.drawTextWithShadow(tr, label, x + 4 + i * 28, y + 3, nameColor);
             } else {
-                String durationStr = showDuration.get() ? " " + durationSecs + "s" : "";
                 ctx.drawTextWithShadow(tr, name, x + 4, lineY, nameColor);
                 if (showDuration.get()) {
                     String ds = durationSecs + "s";

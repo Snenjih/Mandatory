@@ -1,7 +1,6 @@
 package de.snenjih.mandatory.modules.impl.armor_status_hud;
 
-import de.snenjih.mandatory.modules.api.BaseModule;
-import de.snenjih.mandatory.modules.api.HudElement;
+import de.snenjih.mandatory.modules.api.BaseHudModule;
 import de.snenjih.mandatory.modules.api.ModuleCategory;
 import de.snenjih.mandatory.modules.api.settings.BooleanSetting;
 import de.snenjih.mandatory.modules.api.settings.IntSetting;
@@ -13,12 +12,11 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
-public class ArmorStatusHudModule extends BaseModule implements HudElement {
+public class ArmorStatusHudModule extends BaseHudModule {
 
     private final ModuleSetting<Boolean> showOffhand;
     private final ModuleSetting<Integer> warningThreshold;
 
-    // Display order: head first, then chest, legs, feet
     private static final EquipmentSlot[] ARMOR_SLOTS = {
         EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET
     };
@@ -32,8 +30,8 @@ public class ArmorStatusHudModule extends BaseModule implements HudElement {
             ModuleCategory.VISUAL,
             Identifier.of("mandatory", "modules/armor_status_hud")
         );
-        showOffhand      = addSetting(new BooleanSetting("show_offhand",       "Show Offhand",  true));
-        warningThreshold = addSetting(new IntSetting("warning_threshold", "Warning %", 20, 1, 50));
+        showOffhand      = addSetting(new BooleanSetting("show_offhand",      "Show Offhand", true));
+        warningThreshold = addSetting(new IntSetting("warning_threshold", "Warning %",   20, 1, 50));
     }
 
     // ── HudElement ────────────────────────────────────────────────────────────
@@ -44,7 +42,7 @@ public class ArmorStatusHudModule extends BaseModule implements HudElement {
     @Override public int getDefaultHeight() { return 70; }
 
     @Override
-    public void renderHud(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
+    protected void renderHudContent(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
         MinecraftClient mc = MinecraftClient.getInstance();
         if (mc.player == null) return;
 
@@ -54,8 +52,7 @@ public class ArmorStatusHudModule extends BaseModule implements HudElement {
         int rows = 4 + (showOffhand.get() ? 1 : 0);
         int totalH = rows * 14 + 6;
 
-        ctx.fill(x, y, x + w, y + totalH, 0xCC0D1B2A);
-        ctx.drawStrokedRectangle(x, y, w, totalH, 0xFF1E3A5F);
+        drawBackground(ctx, x, y, w, totalH);
 
         int ty = y + 4;
         for (int i = 0; i < 4; i++) {
@@ -79,35 +76,31 @@ public class ArmorStatusHudModule extends BaseModule implements HudElement {
             return;
         }
 
-        // Compute durability percent
         int maxDmg = stack.getMaxDamage();
         int color;
         int pct;
         if (maxDmg <= 0) {
-            // Unbreakable item — show full
             pct = 100;
             color = 0xFF55FF55;
         } else {
             int dmg = stack.getDamage();
             pct = (int) (((float)(maxDmg - dmg) / maxDmg) * 100f);
-            if (pct > 50)              color = 0xFF55FF55; // green
-            else if (pct > warningPct) color = 0xFFFFFF55; // yellow
-            else                       color = 0xFFFF5555; // red
+            if (pct > 50)              color = 0xFF55FF55;
+            else if (pct > warningPct) color = 0xFFFFFF55;
+            else                       color = 0xFFFF5555;
         }
 
-        // Label + percent text
         ctx.drawTextWithShadow(tr, label + ": " + pct + "%", x + 4, ty + 2, color);
 
-        // Durability bar (60px wide, 3px tall)
         int barX = x + w - 64;
         int barY = ty + 3;
         int barW = 60;
         int barH = 3;
         int filledW = (int)(barW * pct / 100f);
 
-        ctx.fill(barX, barY, barX + barW, barY + barH, 0xFF333333); // background
+        ctx.fill(barX, barY, barX + barW, barY + barH, 0xFF333333);
         if (filledW > 0) {
-            ctx.fill(barX, barY, barX + filledW, barY + barH, color); // fill
+            ctx.fill(barX, barY, barX + filledW, barY + barH, color);
         }
     }
 }

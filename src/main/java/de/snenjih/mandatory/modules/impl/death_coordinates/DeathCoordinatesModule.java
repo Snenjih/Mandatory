@@ -3,8 +3,7 @@ package de.snenjih.mandatory.modules.impl.death_coordinates;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import de.snenjih.mandatory.modules.api.BaseModule;
-import de.snenjih.mandatory.modules.api.HudElement;
+import de.snenjih.mandatory.modules.api.BaseHudModule;
 import de.snenjih.mandatory.modules.api.ModuleCategory;
 import de.snenjih.mandatory.modules.api.settings.BooleanSetting;
 import de.snenjih.mandatory.modules.api.settings.IntSetting;
@@ -25,7 +24,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeathCoordinatesModule extends BaseModule implements HudElement {
+public class DeathCoordinatesModule extends BaseHudModule {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
@@ -55,19 +54,18 @@ public class DeathCoordinatesModule extends BaseModule implements HudElement {
     @Override public int getDefaultHeight() { return 24; }
 
     @Override
-    public void renderHud(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
+    protected void renderHudContent(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
         if (!showHud.get() || deaths.isEmpty()) return;
         DeathEntry last = deaths.get(0);
         String text = "Last death: " + last.x + ", " + last.y + ", " + last.z
                 + " [" + shortDim(last.dimension) + "]";
 
-        ctx.fill(x, y, x + w, y + h, 0xCC0D1B2A);
-        ctx.drawStrokedRectangle(x, y, w, h, 0xFF1E3A5F);
+        drawBackground(ctx, x, y, w, h);
         ctx.drawTextWithShadow(
                 MinecraftClient.getInstance().textRenderer,
                 Text.literal(text),
                 x + 4, y + (h - 8) / 2,
-                0xFF5555FF);
+                textColor.get());
     }
 
     // ── Tick logic ────────────────────────────────────────────────────────────
