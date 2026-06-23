@@ -1,4 +1,4 @@
-package de.snenjih.mandatory.modules.impl;
+package de.snenjih.mandatory.modules.impl.auto_totem;
 
 import de.snenjih.mandatory.modules.api.BaseModule;
 import de.snenjih.mandatory.modules.api.ModuleCategory;

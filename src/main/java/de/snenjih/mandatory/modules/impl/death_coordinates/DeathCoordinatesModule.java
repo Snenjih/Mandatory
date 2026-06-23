@@ -1,4 +1,4 @@
-package de.snenjih.mandatory.modules.impl;
+package de.snenjih.mandatory.modules.impl.death_coordinates;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

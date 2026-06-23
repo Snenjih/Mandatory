@@ -1,6 +1,6 @@
 package de.snenjih.mandatory.mixin;
 
-import de.snenjih.mandatory.modules.impl.InventoryLockModule;
+import de.snenjih.mandatory.modules.impl.inventory_lock.InventoryLockModule;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

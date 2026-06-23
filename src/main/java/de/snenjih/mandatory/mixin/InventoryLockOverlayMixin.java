@@ -1,6 +1,6 @@
 package de.snenjih.mandatory.mixin;
 
-import de.snenjih.mandatory.modules.impl.InventoryLockModule;
+import de.snenjih.mandatory.modules.impl.inventory_lock.InventoryLockModule;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.screen.slot.Slot;

@@ -1,6 +1,6 @@
 package de.snenjih.mandatory.mixin;
 
-import de.snenjih.mandatory.modules.impl.FoodTooltipModule;
+import de.snenjih.mandatory.modules.impl.food_tooltip.FoodTooltipModule;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ConsumableComponent;

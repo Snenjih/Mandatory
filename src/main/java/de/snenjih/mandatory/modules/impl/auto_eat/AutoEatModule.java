@@ -1,4 +1,4 @@
-package de.snenjih.mandatory.modules.impl;
+package de.snenjih.mandatory.modules.impl.auto_eat;
 
 import de.snenjih.mandatory.mixin.accessor.PlayerInventoryAccessor;
 import de.snenjih.mandatory.modules.api.BaseModule;

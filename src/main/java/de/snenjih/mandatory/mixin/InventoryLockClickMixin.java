@@ -1,6 +1,6 @@
 package de.snenjih.mandatory.mixin;
 
-import de.snenjih.mandatory.modules.impl.InventoryLockModule;
+import de.snenjih.mandatory.modules.impl.inventory_lock.InventoryLockModule;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.slot.SlotActionType;
