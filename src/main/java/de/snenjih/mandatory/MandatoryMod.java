@@ -25,6 +25,7 @@ import de.snenjih.mandatory.modules.impl.potion_effects_hud.PotionEffectsHudModu
 import de.snenjih.mandatory.modules.impl.smart_replace.SmartReplaceModule;
 import de.snenjih.mandatory.modules.impl.sprint_toggle.SprintToggleModule;
 import de.snenjih.mandatory.modules.impl.stack_refill.StackRefillModule;
+import de.snenjih.mandatory.modules.impl.nametag_badge.NametageModule;
 import de.snenjih.mandatory.modules.impl.tool_selector.ToolSelectorModule;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -76,6 +77,7 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new FoodTooltipModule());
         registry.register(new InventoryLockModule());
         registry.register(new SprintToggleModule());
+        registry.register(new NametageModule());
 
         // New HUD modules
         CoordinatesHudModule coordinatesHud = new CoordinatesHudModule();
