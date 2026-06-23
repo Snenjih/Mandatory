@@ -89,5 +89,31 @@
   "mandatory.settings.back": "←",
   "mandatory.settings.reset": "↺",
   "mandatory.settings.no_settings": "No settings available.",
-  "mandatory.hud_edit.instruction": "HUD Edit Mode — Drag to move, corner to resize, ESC when done"
+  "mandatory.hud_edit.instruction": "HUD Edit Mode — Drag to move, corner to resize, ESC when done",
+
+  "mandatory.module.coordinates_hud.name": "Coordinates HUD",
+  "mandatory.module.coordinates_hud.description": "Displays your X/Y/Z coordinates on the HUD.",
+  "mandatory.coordinates_hud.show_direction": "Show Direction",
+  "mandatory.coordinates_hud.show_biome": "Show Biome",
+  "mandatory.coordinates_hud.compact_mode": "Compact Mode",
+
+  "mandatory.module.fps_ping_hud.name": "FPS / Ping",
+  "mandatory.module.fps_ping_hud.description": "Displays FPS and ping on the HUD.",
+  "mandatory.fps_ping_hud.show_ping": "Show Ping",
+  "mandatory.fps_ping_hud.color_code": "Color Code",
+
+  "mandatory.module.armor_status_hud.name": "Armor Status",
+  "mandatory.module.armor_status_hud.description": "Shows armor durability on the HUD.",
+  "mandatory.armor_status_hud.show_offhand": "Show Offhand",
+  "mandatory.armor_status_hud.warning_threshold": "Warning %",
+
+  "mandatory.module.potion_effects_hud.name": "Potion Effects",
+  "mandatory.module.potion_effects_hud.description": "Displays active potion effects on the HUD.",
+  "mandatory.potion_effects_hud.show_duration": "Show Duration",
+  "mandatory.potion_effects_hud.compact_mode": "Compact Mode",
+
+  "mandatory.module.keystrokes_hud.name": "Keystrokes",
+  "mandatory.module.keystrokes_hud.description": "Shows WASD and mouse button keystrokes on the HUD.",
+  "mandatory.keystrokes_hud.show_mouse_buttons": "Show Mouse Buttons",
+  "mandatory.keystrokes_hud.show_spacebar": "Show Spacebar"
 }

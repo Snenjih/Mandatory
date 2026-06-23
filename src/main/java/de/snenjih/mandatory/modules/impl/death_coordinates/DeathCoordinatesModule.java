@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import de.snenjih.mandatory.modules.api.BaseModule;
+import de.snenjih.mandatory.modules.api.HudElement;
 import de.snenjih.mandatory.modules.api.ModuleCategory;
 import de.snenjih.mandatory.modules.api.settings.BooleanSetting;
 import de.snenjih.mandatory.modules.api.settings.IntSetting;
@@ -24,14 +25,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeathCoordinatesModule extends BaseModule {
+public class DeathCoordinatesModule extends BaseModule implements HudElement {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     private final ModuleSetting<Integer> maxEntries;
     private final ModuleSetting<Boolean> showHud;
-    private final ModuleSetting<Integer> hudX;
-    private final ModuleSetting<Integer> hudY;
 
     private boolean wasDeadLastTick = false;
     private final List<DeathEntry> deaths = new ArrayList<>();
@@ -46,9 +45,32 @@ public class DeathCoordinatesModule extends BaseModule {
         );
         maxEntries = addSetting(new IntSetting("max_entries", "Max Entries", 5, 1, 20));
         showHud    = addSetting(new BooleanSetting("show_hud", "Show HUD", true));
-        hudX       = addSetting(new IntSetting("hud_x", "HUD X", 4, 0, 1920));
-        hudY       = addSetting(new IntSetting("hud_y", "HUD Y", 4, 0, 1080));
     }
+
+    // ── HudElement ────────────────────────────────────────────────────────────
+
+    @Override public String getHudId()      { return "death_coordinates"; }
+    @Override public String getHudName()    { return "Death Coordinates"; }
+    @Override public int getDefaultWidth()  { return 180; }
+    @Override public int getDefaultHeight() { return 24; }
+
+    @Override
+    public void renderHud(DrawContext ctx, float tickDelta, int x, int y, int w, int h) {
+        if (!showHud.get() || deaths.isEmpty()) return;
+        DeathEntry last = deaths.get(0);
+        String text = "Last death: " + last.x + ", " + last.y + ", " + last.z
+                + " [" + shortDim(last.dimension) + "]";
+
+        ctx.fill(x, y, x + w, y + h, 0xCC0D1B2A);
+        ctx.drawStrokedRectangle(x, y, w, h, 0xFF1E3A5F);
+        ctx.drawTextWithShadow(
+                MinecraftClient.getInstance().textRenderer,
+                Text.literal(text),
+                x + 4, y + (h - 8) / 2,
+                0xFF5555FF);
+    }
+
+    // ── Tick logic ────────────────────────────────────────────────────────────
 
     @Override
     public void onJoinWorld(ClientWorld world) {
@@ -72,19 +94,6 @@ public class DeathCoordinatesModule extends BaseModule {
             sendDeathMessage(client, pos, dimension);
         }
         wasDeadLastTick = isDead;
-    }
-
-    @Override
-    public void onRenderHud(DrawContext ctx, float tickDelta) {
-        if (!showHud.get() || deaths.isEmpty()) return;
-        DeathEntry last = deaths.get(0);
-        String text = "Last death: " + last.x + ", " + last.y + ", " + last.z
-                + " [" + shortDim(last.dimension) + "]";
-        ctx.drawTextWithShadow(
-                MinecraftClient.getInstance().textRenderer,
-                Text.literal(text),
-                hudX.get(), hudY.get(),
-                0xFF5555);
     }
 
     private void sendDeathMessage(MinecraftClient client, BlockPos pos, String dimension) {

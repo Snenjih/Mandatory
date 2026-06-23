@@ -6,16 +6,22 @@ import de.snenjih.mandatory.hud.NotificationManager;
 import de.snenjih.mandatory.input.KeybindManager;
 import de.snenjih.mandatory.menu.MainMenuScreen;
 import de.snenjih.mandatory.menu.ModuleRegistry;
+import de.snenjih.mandatory.modules.api.HudElement;
 import de.snenjih.mandatory.modules.api.HudRegistry;
 import de.snenjih.mandatory.modules.api.Module;
 import de.snenjih.mandatory.modules.impl.anti_afk.AntiAfkModule;
+import de.snenjih.mandatory.modules.impl.armor_status_hud.ArmorStatusHudModule;
 import de.snenjih.mandatory.modules.impl.auto_eat.AutoEatModule;
 import de.snenjih.mandatory.modules.impl.auto_totem.AutoTotemModule;
+import de.snenjih.mandatory.modules.impl.coordinates_hud.CoordinatesHudModule;
 import de.snenjih.mandatory.modules.impl.death_coordinates.DeathCoordinatesModule;
 import de.snenjih.mandatory.modules.impl.elytra_swap.ElytraSwapModule;
 import de.snenjih.mandatory.modules.impl.food_tooltip.FoodTooltipModule;
+import de.snenjih.mandatory.modules.impl.fps_ping_hud.FpsPingHudModule;
 import de.snenjih.mandatory.modules.impl.inventory_lock.InventoryLockModule;
+import de.snenjih.mandatory.modules.impl.keystrokes_hud.KeystrokesHudModule;
 import de.snenjih.mandatory.modules.impl.middle_click_pick.MiddleClickPickModule;
+import de.snenjih.mandatory.modules.impl.potion_effects_hud.PotionEffectsHudModule;
 import de.snenjih.mandatory.modules.impl.smart_replace.SmartReplaceModule;
 import de.snenjih.mandatory.modules.impl.sprint_toggle.SprintToggleModule;
 import de.snenjih.mandatory.modules.impl.stack_refill.StackRefillModule;
@@ -61,10 +67,36 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new SmartReplaceModule());
         registry.register(new AntiAfkModule());
         registry.register(new MiddleClickPickModule());
-        registry.register(new DeathCoordinatesModule());
+
+        // Death Coordinates — HUD element
+        DeathCoordinatesModule dcm = new DeathCoordinatesModule();
+        registry.register(dcm);
+        HudRegistry.register(dcm, 4, 4);
+
         registry.register(new FoodTooltipModule());
         registry.register(new InventoryLockModule());
         registry.register(new SprintToggleModule());
+
+        // New HUD modules
+        CoordinatesHudModule coordinatesHud = new CoordinatesHudModule();
+        registry.register(coordinatesHud);
+        HudRegistry.register(coordinatesHud, 4, 34);
+
+        FpsPingHudModule fpsPingHud = new FpsPingHudModule();
+        registry.register(fpsPingHud);
+        HudRegistry.register(fpsPingHud, 4, 50);
+
+        ArmorStatusHudModule armorHud = new ArmorStatusHudModule();
+        registry.register(armorHud);
+        HudRegistry.register(armorHud, 4, 74);
+
+        PotionEffectsHudModule potionHud = new PotionEffectsHudModule();
+        registry.register(potionHud);
+        HudRegistry.register(potionHud, 4, 150);
+
+        KeystrokesHudModule keystrokesHud = new KeystrokesHudModule();
+        registry.register(keystrokesHud);
+        HudRegistry.register(keystrokesHud, 300, 150);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(
@@ -105,6 +137,19 @@ public class MandatoryMod implements ClientModInitializer {
                         if (m.isEnabled()) {
                             try { m.onRenderHud(ctx, delta); }
                             catch (Exception e) { LOGGER.error("[Mandatory] {} crashed in onRenderHud", m.getId(), e); }
+                        }
+                    }
+                    // Render all registered HUD elements
+                    for (HudRegistry.HudEntry entry : HudRegistry.getAll()) {
+                        HudElement elem = entry.element();
+                        // Only render if it's a Module and that Module is enabled
+                        if (elem instanceof Module m && !m.isEnabled()) continue;
+                        ModConfig.HudElementState state = ModConfig.getInstance().getHudState(elem.getHudId());
+                        if (state == null || !state.visible()) continue;
+                        try {
+                            elem.renderHud(ctx, delta, state.x(), state.y(), state.w(), state.h());
+                        } catch (Exception e) {
+                            LOGGER.error("[Mandatory] {} crashed in HUD render", elem.getHudId(), e);
                         }
                     }
                     MinecraftClient mc = MinecraftClient.getInstance();
