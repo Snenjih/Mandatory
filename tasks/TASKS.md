@@ -53,6 +53,18 @@
 | [ ] TODO | Boss Bar Customizer | [tasks/visual/boss_bar_customizer.md](visual/boss_bar_customizer.md) |
 | [ ] TODO | Damage Indicator | [tasks/visual/damage_indicator.md](visual/damage_indicator.md) |
 | [ ] TODO | Held Item Info | [tasks/visual/held_item_info.md](visual/held_item_info.md) |
+| [ ] TODO | TPS Display | [tasks/visual/tps_display.md](visual/tps_display.md) |
+| [ ] TODO | Memory Usage HUD | [tasks/visual/memory_usage_hud.md](visual/memory_usage_hud.md) |
+| [ ] TODO | Coordinates HUD — Chunk Extension | [tasks/visual/coordinates_chunk_extension.md](visual/coordinates_chunk_extension.md) |
+| [ ] TODO | Chunk Render Stats HUD | [tasks/visual/chunk_render_hud.md](visual/chunk_render_hud.md) |
+| [ ] TODO | Day Counter HUD | [tasks/visual/day_counter.md](visual/day_counter.md) |
+| [ ] TODO | XP & Level HUD | [tasks/visual/xp_level_hud.md](visual/xp_level_hud.md) |
+| [ ] TODO | Item Counter HUD | [tasks/visual/item_counter.md](visual/item_counter.md) |
+| [ ] TODO | Stack Counter HUD | [tasks/visual/stack_counter.md](visual/stack_counter.md) |
+| [ ] TODO | Altitude HUD | [tasks/visual/altitude_hud.md](visual/altitude_hud.md) |
+| [ ] TODO | Redstone Signal HUD | [tasks/visual/redstone_signal_hud.md](visual/redstone_signal_hud.md) |
+| [ ] TODO | Speedometer HUD | [tasks/visual/speedometer.md](visual/speedometer.md) |
+| [ ] TODO | Server Address HUD | [tasks/visual/server_address_hud.md](visual/server_address_hud.md) |
 
 ---
 
@@ -67,6 +79,8 @@
 | [ ] TODO | Auto Shield | [tasks/combat/auto_shield.md](combat/auto_shield.md) |
 | [ ] TODO | Reach Display | [tasks/combat/reach_display.md](combat/reach_display.md) |
 | [ ] TODO | Arrow Counter | [tasks/combat/arrow_counter.md](combat/arrow_counter.md) |
+| [ ] TODO | Damage Dealt HUD | [tasks/combat/damage_dealt_hud.md](combat/damage_dealt_hud.md) |
+| [ ] TODO | Combo Counter HUD | [tasks/combat/combo_counter.md](combat/combo_counter.md) |
 
 ---
 
