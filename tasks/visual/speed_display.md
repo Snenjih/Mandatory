@@ -2,7 +2,7 @@
 
 **ID:** `speed_display`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/speed_display/SpeedDisplayModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.speed_display`
 
