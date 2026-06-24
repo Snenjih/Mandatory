@@ -2,7 +2,7 @@
 
 **ID:** `rain_disable`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/rain_disable/RainDisableModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.rain_disable`
 
