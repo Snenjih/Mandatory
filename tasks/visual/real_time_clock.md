@@ -2,7 +2,7 @@
 
 **ID:** `real_time_clock`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/real_time_clock/RealTimeClockModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.real_time_clock`
 
