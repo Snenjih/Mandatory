@@ -2,7 +2,7 @@
 
 **ID:** `hit_color`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/hit_color/HitColorModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.hit_color`
 
