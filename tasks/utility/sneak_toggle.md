@@ -2,7 +2,7 @@
 
 **ID:** `sneak_toggle`  
 **Category:** UTILITY  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/sneak_toggle/SneakToggleModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.sneak_toggle`
 

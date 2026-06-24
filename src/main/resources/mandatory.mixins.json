@@ -12,7 +12,8 @@
     "InventoryLockOverlayMixin",
     "InventoryLockToggleMixin",
     "EntityRendererMixin",
-    "PlayerListHudMixin"
+    "PlayerListHudMixin",
+    "SneakToggleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
