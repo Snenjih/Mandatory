@@ -2,7 +2,7 @@
 
 **ID:** `crosshair_customizer`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/crosshair_customizer/CrosshairCustomizerModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.crosshair_customizer`
 
