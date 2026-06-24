@@ -2,7 +2,7 @@
 
 **ID:** `durability_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/durability_hud/DurabilityHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.durability_hud`
 
