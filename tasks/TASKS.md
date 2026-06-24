@@ -20,7 +20,7 @@
 | [x] DONE | Food Tooltip | [tasks/utility/food_tooltip.md](utility/food_tooltip.md) |
 | [x] DONE | Inventory Lock | [tasks/utility/inventory_lock.md](utility/inventory_lock.md) |
 | [x] DONE | Sprint Toggle | [tasks/utility/sprint_toggle.md](utility/sprint_toggle.md) |
-| [ ] TODO | Sneak Toggle | [tasks/utility/sneak_toggle.md](utility/sneak_toggle.md) |
+| [x] DONE | Sneak Toggle | [tasks/utility/sneak_toggle.md](utility/sneak_toggle.md) |
 
 ---
 
@@ -33,10 +33,10 @@
 | [x] DONE | FPS + Ping Display | [tasks/visual/fps_ping_display.md](visual/fps_ping_display.md) |
 | [x] DONE | Armor Status HUD | [tasks/visual/armor_status_hud.md](visual/armor_status_hud.md) |
 | [x] DONE | Potion Effects HUD | [tasks/visual/potion_effects_hud.md](visual/potion_effects_hud.md) |
-| [ ] TODO | Fullbright | [tasks/visual/fullbright.md](visual/fullbright.md) |
-| [ ] TODO | Durability HUD | [tasks/visual/durability_hud.md](visual/durability_hud.md) |
-| [ ] TODO | Target HP | [tasks/visual/target_hp.md](visual/target_hp.md) |
-| [ ] TODO | Biome Display | [tasks/visual/biome_display.md](visual/biome_display.md) |
+| [x] DONE | Fullbright | [tasks/visual/fullbright.md](visual/fullbright.md) |
+| [x] DONE | Durability HUD | [tasks/visual/durability_hud.md](visual/durability_hud.md) |
+| [x] DONE | Target HP | [tasks/visual/target_hp.md](visual/target_hp.md) |
+| [x] DONE | Biome Display | [tasks/visual/biome_display.md](visual/biome_display.md) |
 | [ ] TODO | Speed Display | [tasks/visual/speed_display.md](visual/speed_display.md) |
 | [ ] TODO | Real-Time Clock | [tasks/visual/real_time_clock.md](visual/real_time_clock.md) |
 | [ ] TODO | Saturation Bar | [tasks/visual/saturation_bar.md](visual/saturation_bar.md) |

@@ -23,9 +23,14 @@ import de.snenjih.mandatory.modules.impl.keystrokes_hud.KeystrokesHudModule;
 import de.snenjih.mandatory.modules.impl.middle_click_pick.MiddleClickPickModule;
 import de.snenjih.mandatory.modules.impl.potion_effects_hud.PotionEffectsHudModule;
 import de.snenjih.mandatory.modules.impl.smart_replace.SmartReplaceModule;
+import de.snenjih.mandatory.modules.impl.biome_display.BiomeDisplayModule;
+import de.snenjih.mandatory.modules.impl.durability_hud.DurabilityHudModule;
+import de.snenjih.mandatory.modules.impl.fullbright.FullbrightModule;
+import de.snenjih.mandatory.modules.impl.sneak_toggle.SneakToggleModule;
 import de.snenjih.mandatory.modules.impl.sprint_toggle.SprintToggleModule;
 import de.snenjih.mandatory.modules.impl.stack_refill.StackRefillModule;
 import de.snenjih.mandatory.modules.impl.nametag_badge.NametageModule;
+import de.snenjih.mandatory.modules.impl.target_hp.TargetHpModule;
 import de.snenjih.mandatory.modules.impl.tool_selector.ToolSelectorModule;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -77,6 +82,8 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new FoodTooltipModule());
         registry.register(new InventoryLockModule());
         registry.register(new SprintToggleModule());
+        registry.register(new SneakToggleModule());
+        registry.register(new FullbrightModule());
         registry.register(new NametageModule());
 
         // New HUD modules
@@ -99,6 +106,18 @@ public class MandatoryMod implements ClientModInitializer {
         KeystrokesHudModule keystrokesHud = new KeystrokesHudModule();
         registry.register(keystrokesHud);
         HudRegistry.register(keystrokesHud, 300, 150);
+
+        DurabilityHudModule durabilityHud = new DurabilityHudModule();
+        registry.register(durabilityHud);
+        HudRegistry.register(durabilityHud, 4, 200);
+
+        TargetHpModule targetHp = new TargetHpModule();
+        registry.register(targetHp);
+        HudRegistry.register(targetHp, 4, 240);
+
+        BiomeDisplayModule biomeDisplay = new BiomeDisplayModule();
+        registry.register(biomeDisplay);
+        HudRegistry.register(biomeDisplay, 4, 16);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

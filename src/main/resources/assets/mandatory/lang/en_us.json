@@ -121,5 +121,40 @@
   "mandatory.module.nametag_badge.name": "Nametag Badge",
   "mandatory.module.nametag_badge.description": "Shows a ✦ symbol before your name in nametags and the tablist.",
   "mandatory.nametag_badge.show_in_tablist": "Show in Tablist",
-  "mandatory.nametag_badge.badge_color": "Badge Color"
+  "mandatory.nametag_badge.badge_color": "Badge Color",
+
+  "mandatory.sneak_toggle.name": "Sneak Toggle",
+  "mandatory.sneak_toggle.description": "Toggle sneaking permanently without holding the Shift key.",
+  "mandatory.sneak_toggle.disable_on_sneak_press": "Disable on Sneak Press",
+  "mandatory.sneak_toggle.disable_on_sprint": "Disable on Sprint",
+
+  "mandatory.fullbright.name": "Fullbright",
+  "mandatory.fullbright.description": "Overrides gamma for maximum visibility in dark areas.",
+  "mandatory.fullbright.gamma_value": "Gamma Value",
+
+  "mandatory.durability_hud.name": "Durability HUD",
+  "mandatory.durability_hud.description": "Shows the held item's durability as a large bar and number.",
+  "mandatory.durability_hud.show_bar": "Show Bar",
+  "mandatory.durability_hud.show_numbers": "Show Numbers",
+  "mandatory.durability_hud.show_percent": "Show Percent",
+  "mandatory.durability_hud.hide_when_full": "Hide When Full",
+  "mandatory.durability_hud.color_full": "Color Full",
+  "mandatory.durability_hud.color_warn": "Color Warn",
+  "mandatory.durability_hud.color_crit": "Color Critical",
+  "mandatory.durability_hud.warn_threshold": "Warn Threshold",
+  "mandatory.durability_hud.crit_threshold": "Crit Threshold",
+
+  "mandatory.target_hp.name": "Target HP",
+  "mandatory.target_hp.description": "Displays the health of the entity you are currently targeting.",
+  "mandatory.target_hp.show_bar": "Show Bar",
+  "mandatory.target_hp.show_numbers": "Show Numbers",
+  "mandatory.target_hp.show_name": "Show Name",
+  "mandatory.target_hp.color_high": "Color High",
+  "mandatory.target_hp.color_mid": "Color Mid",
+  "mandatory.target_hp.color_low": "Color Low",
+
+  "mandatory.biome_display.name": "Biome Display",
+  "mandatory.biome_display.description": "Shows the name of your current biome on screen.",
+  "mandatory.biome_display.show_label": "Show Label",
+  "mandatory.biome_display.update_interval": "Update Interval (ticks)"
 }

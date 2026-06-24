@@ -2,7 +2,7 @@
 
 **ID:** `biome_display`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/biome_display/BiomeDisplayModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.biome_display`
 
