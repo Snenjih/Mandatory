@@ -2,7 +2,7 @@
 
 **ID:** `item_age_timer`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/item_age_timer/ItemAgeTimerModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.item_age_timer`
 
