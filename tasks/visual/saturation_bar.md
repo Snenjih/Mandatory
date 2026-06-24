@@ -2,7 +2,7 @@
 
 **ID:** `saturation_bar`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/saturation_bar/SaturationBarModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.saturation_bar`
 
