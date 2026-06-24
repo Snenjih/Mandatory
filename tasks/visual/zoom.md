@@ -2,7 +2,7 @@
 
 **ID:** `zoom`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/zoom/ZoomModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.zoom`
 
