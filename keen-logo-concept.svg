@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#161B22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#38BDF8"/>
+      <stop offset="100%" style="stop-color:#818CF8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background with rounded corners -->
+  <rect width="400" height="400" fill="url(#bg)" rx="40"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="200" y1="0" x2="200" y2="400" stroke="#1F2937" stroke-width="1" opacity="0.5"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="#1F2937" stroke-width="1" opacity="0.5"/>
+
+  <!-- Outer diamond (large, thin stroke) -->
+  <polygon points="200,60 340,200 200,340 60,200"
+           fill="none"
+           stroke="url(#accent)"
+           stroke-width="2"
+           opacity="0.35"/>
+
+  <!-- Middle diamond -->
+  <polygon points="200,100 300,200 200,300 100,200"
+           fill="none"
+           stroke="url(#accent)"
+           stroke-width="2.5"
+           opacity="0.6"
+           filter="url(#glow)"/>
+
+  <!-- Inner diamond (filled, glowing) -->
+  <polygon points="200,145 255,200 200,255 145,200"
+           fill="url(#accent)"
+           opacity="0.12"/>
+  <polygon points="200,145 255,200 200,255 145,200"
+           fill="none"
+           stroke="url(#accent)"
+           stroke-width="2"
+           opacity="0.9"
+           filter="url(#glow)"/>
+
+  <!-- Sharp top spike (the "keen" edge) -->
+  <line x1="200" y1="60" x2="200" y2="100"
+        stroke="url(#accent)"
+        stroke-width="2"
+        opacity="0.9"
+        filter="url(#glow)"/>
+
+  <!-- Letter K — centered, bold, white -->
+  <text x="200" y="222"
+        font-family="'SF Pro Display', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+        font-size="88"
+        font-weight="800"
+        fill="white"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        letter-spacing="-2">K</text>
+
+  <!-- Wordmark below -->
+  <text x="200" y="330"
+        font-family="'SF Pro Display', 'Inter', 'Helvetica Neue', Arial, sans-serif"
+        font-size="22"
+        font-weight="600"
+        fill="white"
+        text-anchor="middle"
+        letter-spacing="10"
+        opacity="0.5">KEEN</text>
+</svg>
