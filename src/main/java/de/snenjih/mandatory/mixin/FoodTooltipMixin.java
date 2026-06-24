@@ -6,6 +6,7 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
@@ -23,7 +24,7 @@ import java.util.List;
 public class FoodTooltipMixin {
 
     @Inject(method = "getTooltip", at = @At("RETURN"))
-    private void injectFoodTooltip(Item.TooltipContext context, TooltipType type,
+    private void injectFoodTooltip(Item.TooltipContext context, PlayerEntity player, TooltipType type,
                                    CallbackInfoReturnable<List<Text>> cir) {
         FoodTooltipModule module = FoodTooltipModule.INSTANCE;
         if (module == null || !module.isEnabled()) return;
