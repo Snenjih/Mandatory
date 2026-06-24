@@ -13,7 +13,14 @@
     "InventoryLockToggleMixin",
     "EntityRendererMixin",
     "PlayerListHudMixin",
-    "SneakToggleMixin"
+    "SneakToggleMixin",
+    "ZoomFovMixin",
+    "ZoomScrollMixin",
+    "CrosshairMixin",
+    "HitColorMixin",
+    "RainDisableMixin",
+    "RainGradientMixin",
+    "ScoreboardHudVanillaMixin"
   ],
   "injectors": {
     "defaultRequire": 1

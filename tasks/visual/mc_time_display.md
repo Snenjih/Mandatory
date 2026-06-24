@@ -2,7 +2,7 @@
 
 **ID:** `mc_time_display`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/mc_time_display/McTimeDisplayModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.mc_time_display`
 

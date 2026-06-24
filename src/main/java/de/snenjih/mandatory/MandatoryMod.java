@@ -24,8 +24,18 @@ import de.snenjih.mandatory.modules.impl.middle_click_pick.MiddleClickPickModule
 import de.snenjih.mandatory.modules.impl.potion_effects_hud.PotionEffectsHudModule;
 import de.snenjih.mandatory.modules.impl.smart_replace.SmartReplaceModule;
 import de.snenjih.mandatory.modules.impl.biome_display.BiomeDisplayModule;
+import de.snenjih.mandatory.modules.impl.crosshair_customizer.CrosshairCustomizerModule;
 import de.snenjih.mandatory.modules.impl.durability_hud.DurabilityHudModule;
 import de.snenjih.mandatory.modules.impl.fullbright.FullbrightModule;
+import de.snenjih.mandatory.modules.impl.hit_color.HitColorModule;
+import de.snenjih.mandatory.modules.impl.item_age_timer.ItemAgeTimerModule;
+import de.snenjih.mandatory.modules.impl.mc_time_display.McTimeDisplayModule;
+import de.snenjih.mandatory.modules.impl.rain_disable.RainDisableModule;
+import de.snenjih.mandatory.modules.impl.real_time_clock.RealTimeClockModule;
+import de.snenjih.mandatory.modules.impl.saturation_bar.SaturationBarModule;
+import de.snenjih.mandatory.modules.impl.scoreboard_hud.ScoreboardHudModule;
+import de.snenjih.mandatory.modules.impl.speed_display.SpeedDisplayModule;
+import de.snenjih.mandatory.modules.impl.zoom.ZoomModule;
 import de.snenjih.mandatory.modules.impl.sneak_toggle.SneakToggleModule;
 import de.snenjih.mandatory.modules.impl.sprint_toggle.SprintToggleModule;
 import de.snenjih.mandatory.modules.impl.stack_refill.StackRefillModule;
@@ -118,6 +128,32 @@ public class MandatoryMod implements ClientModInitializer {
         BiomeDisplayModule biomeDisplay = new BiomeDisplayModule();
         registry.register(biomeDisplay);
         HudRegistry.register(biomeDisplay, 4, 16);
+
+        SpeedDisplayModule speedDisplay = new SpeedDisplayModule();
+        registry.register(speedDisplay);
+        HudRegistry.register(speedDisplay, 4, 270);
+
+        RealTimeClockModule realTimeClock = new RealTimeClockModule();
+        registry.register(realTimeClock);
+        HudRegistry.register(realTimeClock, 4, 300);
+
+        SaturationBarModule saturationBar = new SaturationBarModule();
+        registry.register(saturationBar);
+        HudRegistry.register(saturationBar, 4, 330);
+
+        registry.register(new ZoomModule());
+        registry.register(new CrosshairCustomizerModule());
+        registry.register(new HitColorModule());
+        registry.register(new ItemAgeTimerModule());
+        registry.register(new RainDisableModule());
+
+        ScoreboardHudModule scoreboardHud = new ScoreboardHudModule();
+        registry.register(scoreboardHud);
+        HudRegistry.register(scoreboardHud, 4, 360);
+
+        McTimeDisplayModule mcTimeDisplay = new McTimeDisplayModule();
+        registry.register(mcTimeDisplay);
+        HudRegistry.register(mcTimeDisplay, 4, 530);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

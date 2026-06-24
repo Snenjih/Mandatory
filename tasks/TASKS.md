@@ -37,16 +37,16 @@
 | [x] DONE | Durability HUD | [tasks/visual/durability_hud.md](visual/durability_hud.md) |
 | [x] DONE | Target HP | [tasks/visual/target_hp.md](visual/target_hp.md) |
 | [x] DONE | Biome Display | [tasks/visual/biome_display.md](visual/biome_display.md) |
-| [ ] TODO | Speed Display | [tasks/visual/speed_display.md](visual/speed_display.md) |
-| [ ] TODO | Real-Time Clock | [tasks/visual/real_time_clock.md](visual/real_time_clock.md) |
-| [ ] TODO | Saturation Bar | [tasks/visual/saturation_bar.md](visual/saturation_bar.md) |
-| [ ] TODO | Zoom | [tasks/visual/zoom.md](visual/zoom.md) |
-| [ ] TODO | Crosshair Customizer | [tasks/visual/crosshair_customizer.md](visual/crosshair_customizer.md) |
-| [ ] TODO | Hit Color | [tasks/visual/hit_color.md](visual/hit_color.md) |
-| [ ] TODO | Item Age Timer | [tasks/visual/item_age_timer.md](visual/item_age_timer.md) |
-| [ ] TODO | Rain Disable | [tasks/visual/rain_disable.md](visual/rain_disable.md) |
-| [ ] TODO | Scoreboard HUD | [tasks/visual/scoreboard_hud.md](visual/scoreboard_hud.md) |
-| [ ] TODO | MC Time Display | [tasks/visual/mc_time_display.md](visual/mc_time_display.md) |
+| [x] DONE | Speed Display | [tasks/visual/speed_display.md](visual/speed_display.md) |
+| [x] DONE | Real-Time Clock | [tasks/visual/real_time_clock.md](visual/real_time_clock.md) |
+| [x] DONE | Saturation Bar | [tasks/visual/saturation_bar.md](visual/saturation_bar.md) |
+| [x] DONE | Zoom | [tasks/visual/zoom.md](visual/zoom.md) |
+| [x] DONE | Crosshair Customizer | [tasks/visual/crosshair_customizer.md](visual/crosshair_customizer.md) |
+| [x] DONE | Hit Color | [tasks/visual/hit_color.md](visual/hit_color.md) |
+| [x] DONE | Item Age Timer | [tasks/visual/item_age_timer.md](visual/item_age_timer.md) |
+| [x] DONE | Rain Disable | [tasks/visual/rain_disable.md](visual/rain_disable.md) |
+| [x] DONE | Scoreboard HUD | [tasks/visual/scoreboard_hud.md](visual/scoreboard_hud.md) |
+| [x] DONE | MC Time Display | [tasks/visual/mc_time_display.md](visual/mc_time_display.md) |
 | [ ] TODO | Anti Fog | [tasks/visual/anti_fog.md](visual/anti_fog.md) |
 | [ ] TODO | Anti Vignette | [tasks/visual/anti_vignette.md](visual/anti_vignette.md) |
 | [ ] TODO | Item Info HUD | [tasks/visual/item_info_hud.md](visual/item_info_hud.md) |
