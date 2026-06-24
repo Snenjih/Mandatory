@@ -2,7 +2,7 @@
 
 **ID:** `scoreboard_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/scoreboard_hud/ScoreboardHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.scoreboard_hud`
 
