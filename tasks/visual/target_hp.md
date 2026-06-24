@@ -2,7 +2,7 @@
 
 **ID:** `target_hp`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/target_hp/TargetHpModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.target_hp`
 
