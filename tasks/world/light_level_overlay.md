@@ -2,7 +2,7 @@
 
 **ID:** `light_level_overlay`  
 **Category:** WORLD  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/light_level_overlay/LightLevelOverlayModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.light_level_overlay`
 
