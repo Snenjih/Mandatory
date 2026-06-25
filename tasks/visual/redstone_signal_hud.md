@@ -2,7 +2,7 @@
 
 **ID:** `redstone_signal_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/redstone_signal_hud/RedstoneSignalHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.redstone_signal_hud`
 

@@ -57,6 +57,7 @@ import de.snenjih.mandatory.modules.impl.xp_level_hud.XpLevelHudModule;
 import de.snenjih.mandatory.modules.impl.item_counter.ItemCounterModule;
 import de.snenjih.mandatory.modules.impl.stack_counter.StackCounterModule;
 import de.snenjih.mandatory.modules.impl.altitude_hud.AltitudeHudModule;
+import de.snenjih.mandatory.modules.impl.redstone_signal_hud.RedstoneSignalHudModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -225,6 +226,10 @@ public class MandatoryMod implements ClientModInitializer {
         AltitudeHudModule altitudeHud = new AltitudeHudModule();
         registry.register(altitudeHud);
         HudRegistry.register(altitudeHud, 4, 920);
+
+        RedstoneSignalHudModule redstoneSignalHud = new RedstoneSignalHudModule();
+        registry.register(redstoneSignalHud);
+        HudRegistry.register(redstoneSignalHud, 4, 960);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

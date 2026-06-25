@@ -402,5 +402,19 @@
   "mandatory.altitude_hud.only_when_flying": "Only When Flying",
   "mandatory.altitude_hud.color_safe": "Color Safe",
   "mandatory.altitude_hud.color_warn": "Color Warn",
-  "mandatory.altitude_hud.color_danger": "Color Danger"
+  "mandatory.altitude_hud.color_danger": "Color Danger",
+
+  "mandatory.module.redstone_signal_hud.name": "Redstone Signal",
+  "mandatory.module.redstone_signal_hud.description": "Shows the redstone signal strength of the targeted block.",
+  "mandatory.redstone_signal_hud.bg_color": "Background Color",
+  "mandatory.redstone_signal_hud.text_color": "Text Color",
+  "mandatory.redstone_signal_hud.text_scale": "Text Scale",
+  "mandatory.redstone_signal_hud.only_when_targeting": "Only When Targeting",
+  "mandatory.redstone_signal_hud.show_bar": "Show Bar",
+  "mandatory.redstone_signal_hud.show_block_name": "Show Block Name",
+  "mandatory.redstone_signal_hud.show_all_sides": "Show All Sides",
+  "mandatory.redstone_signal_hud.always_show_value": "Always Show",
+  "mandatory.redstone_signal_hud.color_zero": "Color Zero",
+  "mandatory.redstone_signal_hud.color_low": "Color Low (1-7)",
+  "mandatory.redstone_signal_hud.color_high": "Color High (8-15)"
 }

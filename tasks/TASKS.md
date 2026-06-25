@@ -62,7 +62,7 @@
 | [x] DONE | Item Counter HUD | [tasks/visual/item_counter.md](visual/item_counter.md) |
 | [x] DONE | Stack Counter HUD | [tasks/visual/stack_counter.md](visual/stack_counter.md) |
 | [x] DONE | Altitude HUD | [tasks/visual/altitude_hud.md](visual/altitude_hud.md) |
-| [ ] TODO | Redstone Signal HUD | [tasks/visual/redstone_signal_hud.md](visual/redstone_signal_hud.md) |
+| [x] DONE | Redstone Signal HUD | [tasks/visual/redstone_signal_hud.md](visual/redstone_signal_hud.md) |
 | [ ] TODO | Speedometer HUD | [tasks/visual/speedometer.md](visual/speedometer.md) |
 | [ ] TODO | Server Address HUD | [tasks/visual/server_address_hud.md](visual/server_address_hud.md) |
 
