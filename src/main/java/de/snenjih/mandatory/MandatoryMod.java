@@ -53,9 +53,13 @@ import de.snenjih.mandatory.modules.impl.tps_display.TpsDisplayModule;
 import de.snenjih.mandatory.modules.impl.memory_usage_hud.MemoryUsageHudModule;
 import de.snenjih.mandatory.modules.impl.chunk_render_hud.ChunkRenderHudModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
+import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
+import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
 import de.snenjih.mandatory.cosmetics.storage.CosmeticRegistry;
 import de.snenjih.mandatory.cosmetics.storage.CosmeticStorage;
 import de.snenjih.mandatory.cosmetics.sync.CosmeticSyncService;
+import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;
+import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -213,6 +217,16 @@ public class MandatoryMod implements ClientModInitializer {
         CosmeticNetworkHandler.register();
         CosmeticSyncService.getInstance().syncAsync();
 
+        LivingEntityFeatureRendererRegistrationCallback.EVENT.register(
+            (entityType, renderer, registrationHelper, context) -> {
+                if (renderer instanceof PlayerEntityRenderer playerRenderer) {
+                    //noinspection unchecked,rawtypes
+                    ((LivingEntityFeatureRendererRegistrationCallback.RegistrationHelper) registrationHelper)
+                        .register(new CosmeticFeatureRenderer(playerRenderer));
+                }
+            }
+        );
+
         registerEvents(registry, openMenuKey);
     }
 
@@ -271,6 +285,8 @@ public class MandatoryMod implements ClientModInitializer {
                     catch (Exception e) { LOGGER.error("[Mandatory] {} crashed in onRenderWorld", m.getId(), e); }
                 }
             }
+            try { ParticleEmitter.onRenderWorld(ctx); }
+            catch (Exception e) { LOGGER.error("[Mandatory] Cosmetic ParticleEmitter crashed", e); }
         });
 
         // ---- World join / leave ----------------------------------------
