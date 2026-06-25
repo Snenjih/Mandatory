@@ -52,6 +52,11 @@ import de.snenjih.mandatory.modules.impl.held_item_info.HeldItemInfoModule;
 import de.snenjih.mandatory.modules.impl.tps_display.TpsDisplayModule;
 import de.snenjih.mandatory.modules.impl.memory_usage_hud.MemoryUsageHudModule;
 import de.snenjih.mandatory.modules.impl.chunk_render_hud.ChunkRenderHudModule;
+import de.snenjih.mandatory.modules.impl.day_counter.DayCounterModule;
+import de.snenjih.mandatory.modules.impl.xp_level_hud.XpLevelHudModule;
+import de.snenjih.mandatory.modules.impl.item_counter.ItemCounterModule;
+import de.snenjih.mandatory.modules.impl.stack_counter.StackCounterModule;
+import de.snenjih.mandatory.modules.impl.altitude_hud.AltitudeHudModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -200,6 +205,26 @@ public class MandatoryMod implements ClientModInitializer {
         ChunkRenderHudModule chunkRenderHud = new ChunkRenderHudModule();
         registry.register(chunkRenderHud);
         HudRegistry.register(chunkRenderHud, 4, 720);
+
+        DayCounterModule dayCounter = new DayCounterModule();
+        registry.register(dayCounter);
+        HudRegistry.register(dayCounter, 4, 760);
+
+        XpLevelHudModule xpLevel = new XpLevelHudModule();
+        registry.register(xpLevel);
+        HudRegistry.register(xpLevel, 4, 800);
+
+        ItemCounterModule itemCounter = new ItemCounterModule();
+        registry.register(itemCounter);
+        HudRegistry.register(itemCounter, 4, 840);
+
+        StackCounterModule stackCounter = new StackCounterModule();
+        registry.register(stackCounter);
+        HudRegistry.register(stackCounter, 4, 880);
+
+        AltitudeHudModule altitudeHud = new AltitudeHudModule();
+        registry.register(altitudeHud);
+        HudRegistry.register(altitudeHud, 4, 920);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

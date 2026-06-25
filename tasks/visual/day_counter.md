@@ -2,7 +2,7 @@
 
 **ID:** `day_counter`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/day_counter/DayCounterModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.day_counter`
 

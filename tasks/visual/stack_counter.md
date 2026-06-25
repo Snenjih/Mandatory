@@ -2,7 +2,7 @@
 
 **ID:** `stack_counter`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/stack_counter/StackCounterModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.stack_counter`
 

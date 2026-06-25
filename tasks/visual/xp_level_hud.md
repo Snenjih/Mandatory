@@ -2,7 +2,7 @@
 
 **ID:** `xp_level_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/xp_level_hud/XpLevelHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.xp_level_hud`
 

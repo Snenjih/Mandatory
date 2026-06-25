@@ -57,11 +57,11 @@
 | [x] DONE | Memory Usage HUD | [tasks/visual/memory_usage_hud.md](visual/memory_usage_hud.md) |
 | [x] DONE | Coordinates HUD — Chunk Extension | [tasks/visual/coordinates_chunk_extension.md](visual/coordinates_chunk_extension.md) |
 | [x] DONE | Chunk Render Stats HUD | [tasks/visual/chunk_render_hud.md](visual/chunk_render_hud.md) |
-| [ ] TODO | Day Counter HUD | [tasks/visual/day_counter.md](visual/day_counter.md) |
-| [ ] TODO | XP & Level HUD | [tasks/visual/xp_level_hud.md](visual/xp_level_hud.md) |
-| [ ] TODO | Item Counter HUD | [tasks/visual/item_counter.md](visual/item_counter.md) |
-| [ ] TODO | Stack Counter HUD | [tasks/visual/stack_counter.md](visual/stack_counter.md) |
-| [ ] TODO | Altitude HUD | [tasks/visual/altitude_hud.md](visual/altitude_hud.md) |
+| [x] DONE | Day Counter HUD | [tasks/visual/day_counter.md](visual/day_counter.md) |
+| [x] DONE | XP & Level HUD | [tasks/visual/xp_level_hud.md](visual/xp_level_hud.md) |
+| [x] DONE | Item Counter HUD | [tasks/visual/item_counter.md](visual/item_counter.md) |
+| [x] DONE | Stack Counter HUD | [tasks/visual/stack_counter.md](visual/stack_counter.md) |
+| [x] DONE | Altitude HUD | [tasks/visual/altitude_hud.md](visual/altitude_hud.md) |
 | [ ] TODO | Redstone Signal HUD | [tasks/visual/redstone_signal_hud.md](visual/redstone_signal_hud.md) |
 | [ ] TODO | Speedometer HUD | [tasks/visual/speedometer.md](visual/speedometer.md) |
 | [ ] TODO | Server Address HUD | [tasks/visual/server_address_hud.md](visual/server_address_hud.md) |

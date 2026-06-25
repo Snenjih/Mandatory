@@ -2,7 +2,7 @@
 
 **ID:** `item_counter`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/item_counter/ItemCounterModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.item_counter`
 
