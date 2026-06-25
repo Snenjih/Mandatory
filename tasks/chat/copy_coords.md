@@ -2,7 +2,7 @@
 
 **ID:** `copy_coords`
 **Category:** CHAT
-**Status:** [ ] TODO
+**Status:** [x] DONE
 **Class:** `modules/impl/copy_coords/CopyCoordsModule.java`
 **Package:** `de.snenjih.mandatory.modules.impl.copy_coords`
 
