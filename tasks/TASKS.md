@@ -89,7 +89,7 @@
 | Status | Module | Spec File |
 |---|---|---|
 | [x] DONE | Pitch Lock | [tasks/elytra/pitch_lock.md](elytra/pitch_lock.md) |
-| [ ] TODO | Glide Stats HUD | [tasks/elytra/glide_stats.md](elytra/glide_stats.md) |
+| [x] DONE | Glide Stats HUD | [tasks/elytra/glide_stats.md](elytra/glide_stats.md) |
 | [ ] TODO | Firework Boost | [tasks/elytra/firework_boost.md](elytra/firework_boost.md) |
 | [ ] TODO | Elytra Landing Swap | [tasks/elytra/elytra_landing_swap.md](elytra/elytra_landing_swap.md) |
 

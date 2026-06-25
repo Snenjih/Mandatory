@@ -2,7 +2,7 @@
 
 **ID:** `glide_stats`  
 **Category:** ELYTRA  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/glide_stats/GlideStatsModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.glide_stats`
 
