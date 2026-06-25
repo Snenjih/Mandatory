@@ -2,7 +2,7 @@
 
 **ID:** `combo_counter`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/combo_counter/ComboCounterModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.combo_counter`
 
