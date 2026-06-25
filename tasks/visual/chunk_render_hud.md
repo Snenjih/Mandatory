@@ -2,7 +2,7 @@
 
 **ID:** `chunk_render_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/chunk_render_hud/ChunkRenderHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.chunk_render_hud`
 

@@ -48,6 +48,10 @@ import de.snenjih.mandatory.modules.impl.anti_vignette.AntiVignetteModule;
 import de.snenjih.mandatory.modules.impl.item_info_hud.ItemInfoHudModule;
 import de.snenjih.mandatory.modules.impl.boss_bar_customizer.BossBarCustomizerModule;
 import de.snenjih.mandatory.modules.impl.damage_indicator.DamageIndicatorModule;
+import de.snenjih.mandatory.modules.impl.held_item_info.HeldItemInfoModule;
+import de.snenjih.mandatory.modules.impl.tps_display.TpsDisplayModule;
+import de.snenjih.mandatory.modules.impl.memory_usage_hud.MemoryUsageHudModule;
+import de.snenjih.mandatory.modules.impl.chunk_render_hud.ChunkRenderHudModule;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -172,6 +176,22 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new BossBarCustomizerModule());
 
         registry.register(new DamageIndicatorModule());
+
+        HeldItemInfoModule heldItemInfo = new HeldItemInfoModule();
+        registry.register(heldItemInfo);
+        HudRegistry.register(heldItemInfo, 4, 600);
+
+        TpsDisplayModule tpsDisplay = new TpsDisplayModule();
+        registry.register(tpsDisplay);
+        HudRegistry.register(tpsDisplay, 4, 640);
+
+        MemoryUsageHudModule memoryUsage = new MemoryUsageHudModule();
+        registry.register(memoryUsage);
+        HudRegistry.register(memoryUsage, 4, 680);
+
+        ChunkRenderHudModule chunkRenderHud = new ChunkRenderHudModule();
+        registry.register(chunkRenderHud);
+        HudRegistry.register(chunkRenderHud, 4, 720);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(
