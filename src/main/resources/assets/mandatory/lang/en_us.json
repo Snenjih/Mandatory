@@ -504,5 +504,14 @@
   "mandatory.reach_display.text_scale": "Text Scale",
   "mandatory.reach_display.show_attack": "Show Attack Reach",
   "mandatory.reach_display.show_interact": "Show Interact Reach",
-  "mandatory.reach_display.decimal_places": "Decimal Places"
+  "mandatory.reach_display.decimal_places": "Decimal Places",
+
+  "mandatory.module.arrow_counter.name": "Arrow Counter",
+  "mandatory.module.arrow_counter.description": "Shows arrow count on the HUD when holding a bow or crossbow.",
+  "mandatory.arrow_counter.bg_color": "Background Color",
+  "mandatory.arrow_counter.text_color": "Text Color",
+  "mandatory.arrow_counter.text_scale": "Text Scale",
+  "mandatory.arrow_counter.show_spectral": "Count Spectral Arrows",
+  "mandatory.arrow_counter.show_tipped": "Count Tipped Arrows",
+  "mandatory.arrow_counter.always_show": "Always Show"
 }

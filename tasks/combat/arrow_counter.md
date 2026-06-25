@@ -2,7 +2,7 @@
 
 **ID:** `arrow_counter`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/arrow_counter/ArrowCounterModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.arrow_counter`
 

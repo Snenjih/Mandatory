@@ -66,6 +66,7 @@ import de.snenjih.mandatory.modules.impl.kill_counter.KillCounterModule;
 import de.snenjih.mandatory.modules.impl.cps_counter.CpsCounterModule;
 import de.snenjih.mandatory.modules.impl.auto_shield.AutoShieldModule;
 import de.snenjih.mandatory.modules.impl.reach_display.ReachDisplayModule;
+import de.snenjih.mandatory.modules.impl.arrow_counter.ArrowCounterModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -268,6 +269,10 @@ public class MandatoryMod implements ClientModInitializer {
         ReachDisplayModule reachDisplay = new ReachDisplayModule();
         registry.register(reachDisplay);
         HudRegistry.register(reachDisplay, 4, 1140);
+
+        ArrowCounterModule arrowCounter = new ArrowCounterModule();
+        registry.register(arrowCounter);
+        HudRegistry.register(arrowCounter, 4, 1160);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(
