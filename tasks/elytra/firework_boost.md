@@ -2,7 +2,7 @@
 
 **ID:** `firework_boost`  
 **Category:** ELYTRA  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/firework_boost/FireworkBoostModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.firework_boost`
 
