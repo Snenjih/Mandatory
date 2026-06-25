@@ -52,6 +52,10 @@ import de.snenjih.mandatory.modules.impl.held_item_info.HeldItemInfoModule;
 import de.snenjih.mandatory.modules.impl.tps_display.TpsDisplayModule;
 import de.snenjih.mandatory.modules.impl.memory_usage_hud.MemoryUsageHudModule;
 import de.snenjih.mandatory.modules.impl.chunk_render_hud.ChunkRenderHudModule;
+import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
+import de.snenjih.mandatory.cosmetics.storage.CosmeticRegistry;
+import de.snenjih.mandatory.cosmetics.storage.CosmeticStorage;
+import de.snenjih.mandatory.cosmetics.sync.CosmeticSyncService;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -203,6 +207,12 @@ public class MandatoryMod implements ClientModInitializer {
             )
         );
 
+        // ---- Cosmetics System ------------------------------------------------
+        CosmeticStorage.init();
+        CosmeticRegistry.init();
+        CosmeticNetworkHandler.register();
+        CosmeticSyncService.getInstance().syncAsync();
+
         registerEvents(registry, openMenuKey);
     }
 
@@ -270,6 +280,8 @@ public class MandatoryMod implements ClientModInitializer {
                 try { m.onJoinWorld(client.world); }
                 catch (Exception e) { LOGGER.error("[Mandatory] {} crashed in onJoinWorld", m.getId(), e); }
             }
+            // Send cosmetics state when joining a world
+            CosmeticNetworkHandler.sendSelf();
         });
 
         ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
@@ -277,6 +289,8 @@ public class MandatoryMod implements ClientModInitializer {
                 try { m.onLeaveWorld(); }
                 catch (Exception e) { LOGGER.error("[Mandatory] {} crashed in onLeaveWorld", m.getId(), e); }
             }
+            // Clear other players' cosmetics on disconnect
+            CosmeticRegistry.clearOtherPlayers();
         });
 
         // ---- Outgoing chat (also handles client commands) ---------------
