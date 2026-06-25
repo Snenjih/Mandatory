@@ -75,7 +75,7 @@
 | [x] DONE | Attack Cooldown Indicator | [tasks/combat/attack_cooldown_indicator.md](combat/attack_cooldown_indicator.md) |
 | [x] DONE | Hit Indicator | [tasks/combat/hit_indicator.md](combat/hit_indicator.md) |
 | [x] DONE | Kill Counter | [tasks/combat/kill_counter.md](combat/kill_counter.md) |
-| [ ] TODO | CPS Counter | [tasks/combat/cps_counter.md](combat/cps_counter.md) |
+| [x] DONE | CPS Counter | [tasks/combat/cps_counter.md](combat/cps_counter.md) |
 | [ ] TODO | Auto Shield | [tasks/combat/auto_shield.md](combat/auto_shield.md) |
 | [ ] TODO | Reach Display | [tasks/combat/reach_display.md](combat/reach_display.md) |
 | [ ] TODO | Arrow Counter | [tasks/combat/arrow_counter.md](combat/arrow_counter.md) |

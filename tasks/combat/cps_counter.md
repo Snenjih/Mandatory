@@ -2,7 +2,7 @@
 
 **ID:** `cps_counter`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/cps_counter/CpsCounterModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.cps_counter`
 

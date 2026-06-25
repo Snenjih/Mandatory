@@ -480,5 +480,13 @@
   "mandatory.kill_counter.text_color": "Text Color",
   "mandatory.kill_counter.text_scale": "Text Scale",
   "mandatory.kill_counter.show_session_time": "Show Session Time",
-  "mandatory.kill_counter.reset_on_death": "Reset on Death"
+  "mandatory.kill_counter.reset_on_death": "Reset on Death",
+
+  "mandatory.module.cps_counter.name": "CPS Counter",
+  "mandatory.module.cps_counter.description": "Shows your clicks per second using a 1-second sliding window.",
+  "mandatory.cps_counter.bg_color": "Background Color",
+  "mandatory.cps_counter.text_color": "Text Color",
+  "mandatory.cps_counter.text_scale": "Text Scale",
+  "mandatory.cps_counter.track_left": "Track Left Click",
+  "mandatory.cps_counter.track_right": "Track Right Click"
 }

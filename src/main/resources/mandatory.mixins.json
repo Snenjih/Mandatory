@@ -28,7 +28,8 @@
     "AntiFogBlindnessMixin",
     "AntiVignetteMixin",
     "BossBarCustomizerMixin",
-    "DamageIndicatorMixin"
+    "DamageIndicatorMixin",
+    "MouseButtonMixin"
   ],
   "injectors": {
     "defaultRequire": 1

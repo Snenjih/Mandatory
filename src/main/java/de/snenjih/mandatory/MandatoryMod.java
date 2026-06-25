@@ -63,6 +63,7 @@ import de.snenjih.mandatory.modules.impl.server_address_hud.ServerAddressHudModu
 import de.snenjih.mandatory.modules.impl.attack_cooldown_indicator.AttackCooldownIndicatorModule;
 import de.snenjih.mandatory.modules.impl.hit_indicator.HitIndicatorModule;
 import de.snenjih.mandatory.modules.impl.kill_counter.KillCounterModule;
+import de.snenjih.mandatory.modules.impl.cps_counter.CpsCounterModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -255,6 +256,10 @@ public class MandatoryMod implements ClientModInitializer {
         KillCounterModule killCounter = new KillCounterModule();
         registry.register(killCounter);
         HudRegistry.register(killCounter, 4, 1100);
+
+        CpsCounterModule cpsCounter = new CpsCounterModule();
+        registry.register(cpsCounter);
+        HudRegistry.register(cpsCounter, 4, 1120);
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(
