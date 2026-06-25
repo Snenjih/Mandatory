@@ -2,7 +2,7 @@
 
 **ID:** `pitch_lock`  
 **Category:** ELYTRA  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/pitch_lock/PitchLockModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.pitch_lock`
 
