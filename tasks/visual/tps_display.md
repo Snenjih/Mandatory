@@ -2,7 +2,7 @@
 
 **ID:** `tps_display`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/tps_display/TpsDisplayModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.tps_display`
 
