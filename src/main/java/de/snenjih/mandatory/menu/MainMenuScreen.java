@@ -22,6 +22,7 @@ public class MainMenuScreen extends Screen {
     // Button bounds (computed each render)
     private int btnModMenuX, btnModMenuY, btnModMenuW, btnModMenuH;
     private int btnScrX, btnScrY, btnScrW, btnScrH;
+    private int btnCosX, btnCosY, btnCosW, btnCosH;
 
     public MainMenuScreen(Screen parent) {
         super(Text.translatable("mandatory.main.title"));
@@ -73,6 +74,15 @@ public class MainMenuScreen extends Screen {
         renderButton(ctx, btnScrX, btnScrY, btnScrW, btnScrH,
                 Text.translatable("mandatory.main.screenshots").getString(), hoverScr, false);
 
+        // COSMETICS button (240×24)
+        btnCosW = 240; btnCosH = 24;
+        btnCosX = width / 2 - btnCosW / 2;
+        btnCosY = btnScrY + btnScrH + 8;
+        boolean hoverCos = mouseX >= btnCosX && mouseX <= btnCosX + btnCosW
+                        && mouseY >= btnCosY && mouseY <= btnCosY + btnCosH;
+        renderButton(ctx, btnCosX, btnCosY, btnCosW, btnCosH,
+                Text.translatable("mandatory.main.cosmetics").getString(), hoverCos, false);
+
         // Version text (bottom-right)
         String version = "v" + getModVersion();
         ctx.drawTextWithShadow(textRenderer, version,
@@ -104,6 +114,12 @@ public class MainMenuScreen extends Screen {
          && my >= btnScrY && my <= btnScrY + btnScrH) {
             assert client != null;
             client.setScreen(new ScreenshotGalleryScreen(this));
+            return true;
+        }
+        if (mx >= btnCosX && mx <= btnCosX + btnCosW
+         && my >= btnCosY && my <= btnCosY + btnCosH) {
+            assert client != null;
+            client.setScreen(new CosmeticsScreen(this));
             return true;
         }
         return super.mouseClicked(click, releaseOnly);
