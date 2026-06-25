@@ -270,7 +270,7 @@ public class ScreenshotGalleryScreen extends Screen {
 
     @Override
     public void render(DrawContext ctx, int mouseX, int mouseY, float delta) {
-        renderBackground(ctx, mouseX, mouseY, delta);
+        ctx.fill(0, 0, width, height, 0xFF0A0A0A);
         ctx.drawCenteredTextWithShadow(textRenderer,
             Text.translatable("mandatory.screenshots.title"),
             width / 2, 10, 0xFFFFFFFF);

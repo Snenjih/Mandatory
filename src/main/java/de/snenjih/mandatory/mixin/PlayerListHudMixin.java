@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class PlayerListHudMixin {
 
     @Redirect(
-        method = "render",
+        method = "getPlayerName",
         at = @At(value = "INVOKE",
                  target = "Lnet/minecraft/client/network/PlayerListEntry;getDisplayName()Lnet/minecraft/text/Text;")
     )

@@ -41,6 +41,7 @@ import de.snenjih.mandatory.modules.impl.sprint_toggle.SprintToggleModule;
 import de.snenjih.mandatory.modules.impl.stack_refill.StackRefillModule;
 import de.snenjih.mandatory.modules.impl.nametag_badge.NametageModule;
 import de.snenjih.mandatory.modules.impl.target_hp.TargetHpModule;
+import de.snenjih.mandatory.modules.impl.mod_settings.ModSettingsModule;
 import de.snenjih.mandatory.modules.impl.tool_selector.ToolSelectorModule;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -75,6 +76,7 @@ public class MandatoryMod implements ClientModInitializer {
         config.load();
 
         ModuleRegistry registry = ModuleRegistry.create(config);
+        registry.register(new ModSettingsModule());
         registry.register(new ElytraSwapModule());
         registry.register(new AutoTotemModule());
         registry.register(new StackRefillModule());
@@ -161,7 +163,7 @@ public class MandatoryMod implements ClientModInitializer {
                 "key.mandatory.open_menu",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_RIGHT_SHIFT,
-                KeyBinding.Category.create(Identifier.of("mandatory", "mandatory"))
+                KeybindManager.CATEGORY
             )
         );
 

@@ -3,6 +3,7 @@ package de.snenjih.mandatory.menu;
 import de.snenjih.mandatory.modules.api.BaseModule;
 import de.snenjih.mandatory.modules.api.Module;
 import de.snenjih.mandatory.modules.api.ModuleCategory;
+import de.snenjih.mandatory.modules.impl.mod_settings.ModSettingsModule;
 import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
@@ -18,27 +19,31 @@ import java.util.stream.Collectors;
 
 public class ModMenuScreen extends Screen {
 
-    // Design colors
-    private static final int COL_BG_PANEL      = 0xCC0D1B2A;
-    private static final int COL_BG_CARD       = 0xCC121E30;
-    private static final int COL_BORDER        = 0xFF1E3A5F;
-    private static final int COL_BORDER_ACTIVE  = 0xFF4A7CF8;
+    // Static design colors (non-theme)
     private static final int COL_TEXT_WHITE    = 0xFFFFFFFF;
     private static final int COL_TEXT_GRAY     = 0xFF8899AA;
     private static final int COL_TEXT_DIM      = 0xFF556677;
-    private static final int COL_ENABLED       = 0xFF44DD88;
-    private static final int COL_DISABLED      = 0xFFDD4444;
+    private static final int COL_BORDER        = 0xFF1E3A5F;
     private static final int COL_BTN_DEFAULT   = 0xFF1A2A40;
     private static final int COL_BTN_HOVER     = 0xFF243350;
-    private static final int COL_ACCENT        = 0xFF4A7CF8;
+
+    // Disabled card colors
+    private static final int COL_CARD_DIS_BG   = 0xAA0C1018;
+    private static final int COL_CARD_DIS_BDR  = 0xFF333444;
+    private static final int COL_TEXT_DIS_NAME = 0xFF778899;
+    private static final int COL_TEXT_DIS_DESC = 0xFF445566;
 
     // Layout
-    private static final int CARD_H    = 48;
-    private static final int CARD_GAP  = 4;
+    private static final int CARD_H    = 60;
+    private static final int CARD_GAP  = 10;
     private static final int COLS      = 2;
-    private static final int TAB_H     = 20;
-    private static final int FOOTER_H  = 24;
-    private static final int PADDING   = 8;
+    private static final int TAB_H     = 22;
+    private static final int FOOTER_H  = 30;
+    private static final int PADDING   = 12;
+
+    // Settings button inside each card
+    private static final int GEAR_BTN_W = 38;
+    private static final int GEAR_BTN_H = 22;
 
     private final Screen parent;
 
@@ -79,6 +84,36 @@ public class ModMenuScreen extends Screen {
     }
 
     // -------------------------------------------------------------------------
+    // Theme helpers — read live from ModSettingsModule
+    // -------------------------------------------------------------------------
+
+    private int panelBg() {
+        if (ModSettingsModule.INSTANCE == null) return 0xAA0D1B2A;
+        int alpha = (int)(ModSettingsModule.INSTANCE.getTransparency() * 255) & 0xFF;
+        int rgb   = ModSettingsModule.INSTANCE.getMenuBgColor() & 0x00FFFFFF;
+        return (alpha << 24) | rgb;
+    }
+
+    private int cardBg() {
+        if (ModSettingsModule.INSTANCE == null) return 0xAA121E30;
+        int alpha = (int)(ModSettingsModule.INSTANCE.getTransparency() * 220) & 0xFF;
+        int rgb   = ModSettingsModule.INSTANCE.getMenuBgColor() & 0x00FFFFFF;
+        // slightly lighter than panel
+        int r = Math.min(255, ((rgb >> 16) & 0xFF) + 14);
+        int g = Math.min(255, ((rgb >>  8) & 0xFF) + 14);
+        int b = Math.min(255,  (rgb        & 0xFF) + 14);
+        return (alpha << 24) | (r << 16) | (g << 8) | b;
+    }
+
+    private int accent() {
+        return ModSettingsModule.INSTANCE != null
+            ? ModSettingsModule.INSTANCE.getPrimaryColor()
+            : 0xFF4A7CF8;
+    }
+
+    private int accentBorder() { return accent(); }
+
+    // -------------------------------------------------------------------------
     // Filtering
     // -------------------------------------------------------------------------
 
@@ -102,13 +137,13 @@ public class ModMenuScreen extends Screen {
         // Full-screen dim
         ctx.fill(0, 0, width, height, 0x88000000);
 
-        // Panel (80% x 85% centred)
-        panelW = (int)(width  * 0.80f);
-        panelH = (int)(height * 0.85f);
+        // Panel — 68% x 78% centred (zoomed-out look)
+        panelW = (int)(width  * 0.68f);
+        panelH = (int)(height * 0.78f);
         panelX = (width  - panelW) / 2;
         panelY = (height - panelH) / 2;
 
-        ctx.fill(panelX, panelY, panelX + panelW, panelY + panelH, COL_BG_PANEL);
+        ctx.fill(panelX, panelY, panelX + panelW, panelY + panelH, panelBg());
         ctx.drawStrokedRectangle(panelX, panelY, panelW, panelH, COL_BORDER);
 
         // Tab-bar
@@ -133,11 +168,9 @@ public class ModMenuScreen extends Screen {
     }
 
     private void renderTabBar(DrawContext ctx, int mouseX, int mouseY) {
-        // Category tabs
         ModuleCategory[] cats = ModuleCategory.values();
         int numTabs = cats.length + 1; // +1 for All
 
-        // Reserve right side for search field
         searchW = 120;
         searchH = TAB_H - 4;
         searchX = panelX + panelW - searchW - 4;
@@ -155,13 +188,13 @@ public class ModMenuScreen extends Screen {
             boolean hovered = mouseX >= tabX && mouseX <= tabX + tabW
                            && mouseY >= tabY && mouseY <= tabY + TAB_H;
 
-            int bg = active  ? COL_ACCENT
+            int bg = active  ? accent()
                    : hovered ? COL_BTN_HOVER
                    :           COL_BTN_DEFAULT;
 
             ctx.fill(tabX, tabY, tabX + tabW, tabY + TAB_H, bg);
             ctx.drawStrokedRectangle(tabX, tabY, tabW, TAB_H,
-                    active ? COL_BORDER_ACTIVE : COL_BORDER);
+                    active ? accentBorder() : COL_BORDER);
 
             String label = (cat == null) ? "All"
                     : cat.name().charAt(0) + cat.name().substring(1).toLowerCase();
@@ -173,13 +206,13 @@ public class ModMenuScreen extends Screen {
         // Search field
         ctx.fill(searchX, searchY, searchX + searchW, searchY + searchH, COL_BTN_DEFAULT);
         ctx.drawStrokedRectangle(searchX, searchY, searchW, searchH,
-                searchActive ? COL_BORDER_ACTIVE : COL_BORDER);
+                searchActive ? accentBorder() : COL_BORDER);
 
         String display = searchQuery.isEmpty() && !searchActive
                 ? "Search..."
                 : (searchQuery + (searchActive && System.currentTimeMillis() % 1000 < 500 ? "|" : ""));
         int textColor = searchQuery.isEmpty() && !searchActive ? COL_TEXT_DIM : COL_TEXT_WHITE;
-        ctx.drawTextWithShadow(textRenderer, display, searchX + 3, searchY + (searchH - 8) / 2, textColor);
+        ctx.drawTextWithShadow(textRenderer, display, searchX + 4, searchY + (searchH - 8) / 2, textColor);
     }
 
     private void renderModuleGrid(DrawContext ctx, int mouseX, int mouseY) {
@@ -189,12 +222,12 @@ public class ModMenuScreen extends Screen {
             return;
         }
 
-        int colW = (panelW - PADDING * 2 - CARD_GAP) / COLS;
+        int colW   = (panelW - PADDING * 2 - CARD_GAP) / COLS;
         int startY = contentTop + PADDING - (int) scrollOffset;
 
         for (int i = 0; i < visibleModules.size(); i++) {
-            int col  = i % COLS;
-            int row  = i / COLS;
+            int col   = i % COLS;
+            int row   = i / COLS;
             int cardX = panelX + PADDING + col * (colW + CARD_GAP);
             int cardY = startY + row * (CARD_H + CARD_GAP);
 
@@ -208,61 +241,78 @@ public class ModMenuScreen extends Screen {
         boolean hovered  = mx >= x && mx <= x + w && my >= y && my <= y + CARD_H;
         boolean enabled  = module.isEnabled();
 
-        // Card bg
-        int bg = hovered ? 0xCC1A2840 : COL_BG_CARD;
-        ctx.fill(x, y, x + w, y + CARD_H, bg);
-        ctx.drawStrokedRectangle(x, y, w, CARD_H, enabled ? COL_ENABLED : COL_BORDER);
+        int gearBtnX = x + w - GEAR_BTN_W - 6;
+        int gearBtnY = y + (CARD_H - GEAR_BTN_H) / 2;
+        boolean hoverGear = mx >= gearBtnX && mx <= gearBtnX + GEAR_BTN_W
+                         && my >= gearBtnY && my <= gearBtnY + GEAR_BTN_H;
 
-        // Icon (24x24)
+        // Card bg and border
+        if (enabled) {
+            int bg = hovered ? 0xBB1A2C40 : cardBg();
+            ctx.fill(x, y, x + w, y + CARD_H, bg);
+            ctx.drawStrokedRectangle(x, y, w, CARD_H, accentBorder());
+        } else {
+            ctx.fill(x, y, x + w, y + CARD_H, COL_CARD_DIS_BG);
+            ctx.drawStrokedRectangle(x, y, w, CARD_H, COL_CARD_DIS_BDR);
+        }
+
+        // Icon (28x28), vertically centered with extra left padding
         try {
             ctx.drawGuiTexture(RenderPipelines.GUI_TEXTURED, module.getIconTexture(),
-                    x + 4, y + (CARD_H - 24) / 2, 24, 24);
+                    x + 6, y + (CARD_H - 28) / 2, 28, 28);
         } catch (Exception ignored) {}
 
         // Name
+        int nameColor = enabled ? COL_TEXT_WHITE : COL_TEXT_DIS_NAME;
         ctx.drawTextWithShadow(textRenderer, module.getName(),
-                x + 32, y + 10, COL_TEXT_WHITE);
+                x + 40, y + 14, nameColor);
 
         // Description (truncated)
         String desc = module.getDescription();
-        if (desc.length() > 42) desc = desc.substring(0, 42) + "…";
-        ctx.drawTextWithShadow(textRenderer, desc, x + 32, y + 22, COL_TEXT_GRAY);
+        if (desc.length() > 44) desc = desc.substring(0, 44) + "…";
+        int descColor = enabled ? COL_TEXT_GRAY : COL_TEXT_DIS_DESC;
+        ctx.drawTextWithShadow(textRenderer, desc, x + 40, y + 26, descColor);
 
-        // Toggle dot
-        int dotX = x + w - 28;
-        int dotY = y + CARD_H / 2 - 4;
-        ctx.fill(dotX, dotY, dotX + 8, dotY + 8, enabled ? COL_ENABLED : COL_DISABLED);
-        ctx.drawStrokedRectangle(dotX, dotY, 8, 8, enabled ? 0xFF66FFAA : 0xFFFF7777);
+        // Enabled indicator dot (6x6) left of settings button
+        int dotX = gearBtnX - 12;
+        int dotY = y + CARD_H / 2 - 3;
+        int dotColor = enabled ? 0xFF44DD88 : 0xFF666677;
+        int dotBdr   = enabled ? 0xFF66FFAA : 0xFF444455;
+        ctx.fill(dotX, dotY, dotX + 6, dotY + 6, dotColor);
+        ctx.drawStrokedRectangle(dotX, dotY, 6, 6, dotBdr);
 
-        // Settings gear
-        int gearX = x + w - 16;
-        boolean hoverGear = mx >= gearX && mx <= gearX + 12 && my >= y && my <= y + CARD_H;
-        ctx.drawTextWithShadow(textRenderer, "⚙",
-                gearX, y + CARD_H / 2 - 4, hoverGear ? COL_ACCENT : COL_TEXT_DIM);
+        // Settings button box
+        int gearBg  = hoverGear ? COL_BTN_HOVER : COL_BTN_DEFAULT;
+        int gearBdr = hoverGear ? accentBorder() : COL_BORDER;
+        ctx.fill(gearBtnX, gearBtnY, gearBtnX + GEAR_BTN_W, gearBtnY + GEAR_BTN_H, gearBg);
+        ctx.drawStrokedRectangle(gearBtnX, gearBtnY, GEAR_BTN_W, GEAR_BTN_H, gearBdr);
+        ctx.drawCenteredTextWithShadow(textRenderer, "⚙",
+                gearBtnX + GEAR_BTN_W / 2, gearBtnY + (GEAR_BTN_H - 8) / 2,
+                hoverGear ? accent() : COL_TEXT_GRAY);
     }
 
     private void renderFooter(DrawContext ctx, int mouseX, int mouseY) {
-        ctx.fill(panelX, footerTop, panelX + panelW, panelY + panelH, 0xCC0D1B2A);
+        ctx.fill(panelX, footerTop, panelX + panelW, panelY + panelH, panelBg());
         ctx.drawStrokedRectangle(panelX, footerTop, panelW, FOOTER_H, COL_BORDER);
 
         // Edit HUDs button
-        hudBtnW = 100;
-        hudBtnH = 16;
-        hudBtnX = panelX + 8;
+        hudBtnW = 110;
+        hudBtnH = 18;
+        hudBtnX = panelX + PADDING;
         hudBtnY = footerTop + (FOOTER_H - hudBtnH) / 2;
         boolean hoverHud = mouseX >= hudBtnX && mouseX <= hudBtnX + hudBtnW
                         && mouseY >= hudBtnY && mouseY <= hudBtnY + hudBtnH;
         ctx.fill(hudBtnX, hudBtnY, hudBtnX + hudBtnW, hudBtnY + hudBtnH,
                 hoverHud ? COL_BTN_HOVER : COL_BTN_DEFAULT);
         ctx.drawStrokedRectangle(hudBtnX, hudBtnY, hudBtnW, hudBtnH,
-                hoverHud ? COL_BORDER_ACTIVE : COL_BORDER);
+                hoverHud ? accentBorder() : COL_BORDER);
         ctx.drawCenteredTextWithShadow(textRenderer, "✦ Edit HUDs",
                 hudBtnX + hudBtnW / 2, hudBtnY + (hudBtnH - 8) / 2, COL_TEXT_WHITE);
 
         // Module count
         String count = visibleModules.size() + " modules";
         ctx.drawTextWithShadow(textRenderer, count,
-                panelX + panelW - textRenderer.getWidth(count) - 8,
+                panelX + panelW - textRenderer.getWidth(count) - PADDING,
                 footerTop + (FOOTER_H - 8) / 2, COL_TEXT_GRAY);
     }
 
@@ -282,7 +332,6 @@ public class ModMenuScreen extends Screen {
                 searchActive = true;
                 return true;
             }
-            // Category tabs
             ModuleCategory[] cats = ModuleCategory.values();
             int numTabs = cats.length + 1;
             int availW  = searchX - panelX - 4;
@@ -299,13 +348,13 @@ public class ModMenuScreen extends Screen {
             }
         }
 
-        // Deactivate search on click outside search field
+        // Deactivate search on click outside
         if (searchActive && !(mx >= searchX && mx <= searchX + searchW
                            && my >= searchY && my <= searchY + searchH)) {
             searchActive = false;
         }
 
-        // Footer - HUD Edit button
+        // Footer — HUD Edit button
         if (mx >= hudBtnX && mx <= hudBtnX + hudBtnW
          && my >= hudBtnY && my <= hudBtnY + hudBtnH) {
             assert client != null;
@@ -327,8 +376,12 @@ public class ModMenuScreen extends Screen {
                 if (mx >= cardX && mx <= cardX + colW
                  && my >= cardY && my <= cardY + CARD_H) {
                     Module m = visibleModules.get(i);
-                    // Gear (last 20px) → settings screen
-                    if (mx >= cardX + colW - 20 && m instanceof BaseModule bm) {
+                    // Gear button zone → settings screen
+                    int gearBtnX = cardX + colW - GEAR_BTN_W - 6;
+                    int gearBtnY = cardY + (CARD_H - GEAR_BTN_H) / 2;
+                    if (mx >= gearBtnX && mx <= gearBtnX + GEAR_BTN_W
+                     && my >= gearBtnY && my <= gearBtnY + GEAR_BTN_H
+                     && m instanceof BaseModule bm) {
                         assert client != null;
                         client.setScreen(new ModuleSettingsScreen(this, bm));
                     } else {
@@ -393,9 +446,8 @@ public class ModMenuScreen extends Screen {
     }
 
     private void clampScroll() {
-        int rows    = (int) Math.ceil((float) visibleModules.size() / COLS);
-        int colW    = (panelW - PADDING * 2 - CARD_GAP) / COLS;
-        float maxS  = Math.max(0f, rows * (CARD_H + CARD_GAP) - (contentBottom - contentTop - PADDING));
+        int rows   = (int) Math.ceil((float) visibleModules.size() / COLS);
+        float maxS = Math.max(0f, rows * (CARD_H + CARD_GAP) - (contentBottom - contentTop - PADDING));
         scrollOffset = Math.clamp(scrollOffset, 0f, maxS);
     }
 }

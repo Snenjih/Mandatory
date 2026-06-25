@@ -226,5 +226,11 @@
   "mandatory.mc_time_display.description": "Shows Minecraft world time and day phase on the HUD.",
   "mandatory.mc_time_display.show_day_number": "Show Day Number",
   "mandatory.mc_time_display.show_phase": "Show Phase",
-  "mandatory.mc_time_display.time_format": "Time Format"
+  "mandatory.mc_time_display.time_format": "Time Format",
+
+  "mandatory.module.mod_settings.name": "Mod Settings",
+  "mandatory.module.mod_settings.description": "Global appearance settings: transparency, primary color, and background.",
+  "mandatory.mod_settings.transparency": "Menu Transparency",
+  "mandatory.mod_settings.primary_color": "Primary Color",
+  "mandatory.mod_settings.menu_bg_color": "Menu Background"
 }

@@ -11,7 +11,7 @@ import java.util.Map;
 
 public final class KeybindManager {
 
-    private static final KeyBinding.Category CATEGORY =
+    public static final KeyBinding.Category CATEGORY =
             KeyBinding.Category.create(Identifier.of("mandatory", "mandatory"));
 
     private static final Map<KeyBinding, Module> BINDINGS = new LinkedHashMap<>();

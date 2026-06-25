@@ -5,6 +5,7 @@ import de.snenjih.mandatory.modules.api.ModuleCategory;
 import de.snenjih.mandatory.modules.api.settings.BooleanSetting;
 import de.snenjih.mandatory.modules.api.settings.FloatSetting;
 import de.snenjih.mandatory.modules.api.settings.ModuleSetting;
+import de.snenjih.mandatory.input.KeybindManager;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
@@ -48,7 +49,7 @@ public class ZoomModule extends BaseModule {
             "key.mandatory.zoom",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_C,
-            KeyBinding.Category.create(Identifier.of("mandatory", "mandatory"))
+            KeybindManager.CATEGORY
         ));
     }
 
