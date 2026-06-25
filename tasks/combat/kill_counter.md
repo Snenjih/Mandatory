@@ -2,7 +2,7 @@
 
 **ID:** `kill_counter`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/kill_counter/KillCounterModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.kill_counter`
 

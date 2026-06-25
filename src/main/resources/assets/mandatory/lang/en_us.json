@@ -472,5 +472,13 @@
   "mandatory.hit_indicator.flash_color": "Flash Color",
   "mandatory.hit_indicator.flash_duration": "Flash Duration",
   "mandatory.hit_indicator.show_text": "Show Hit Text",
-  "mandatory.hit_indicator.show_damage": "Show Damage"
+  "mandatory.hit_indicator.show_damage": "Show Damage",
+
+  "mandatory.module.kill_counter.name": "Kill Counter",
+  "mandatory.module.kill_counter.description": "Counts your kills this session and displays them on the HUD.",
+  "mandatory.kill_counter.bg_color": "Background Color",
+  "mandatory.kill_counter.text_color": "Text Color",
+  "mandatory.kill_counter.text_scale": "Text Scale",
+  "mandatory.kill_counter.show_session_time": "Show Session Time",
+  "mandatory.kill_counter.reset_on_death": "Reset on Death"
 }
