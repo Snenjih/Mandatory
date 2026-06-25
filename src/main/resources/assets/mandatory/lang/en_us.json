@@ -567,5 +567,11 @@
   "mandatory.firework_boost.min_speed": "Min Speed (b/s)",
   "mandatory.firework_boost.cooldown_ticks": "Boost Cooldown (ticks)",
   "mandatory.firework_boost.prefer_hotbar": "Prefer Hotbar",
-  "mandatory.firework_boost.no_rockets": "No fireworks in inventory!"
+  "mandatory.firework_boost.no_rockets": "No fireworks in inventory!",
+
+  "mandatory.elytra_landing_swap.name": "Landing Swap",
+  "mandatory.elytra_landing_swap.description": "Automatically swaps elytra for chestplate before landing.",
+  "mandatory.elytra_landing_swap.trigger_speed": "Trigger Speed (b/s)",
+  "mandatory.elytra_landing_swap.lookahead_distance": "Look-ahead Distance (m)",
+  "mandatory.elytra_landing_swap.swap_back": "Auto Swap Back"
 }

@@ -2,7 +2,7 @@
 
 **ID:** `elytra_landing_swap`  
 **Category:** ELYTRA  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/elytra_landing_swap/ElytraLandingSwapModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.elytra_landing_swap`
 
