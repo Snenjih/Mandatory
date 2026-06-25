@@ -2,7 +2,7 @@
 
 **ID:** `reach_display`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/reach_display/ReachDisplayModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.reach_display`
 

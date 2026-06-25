@@ -495,5 +495,14 @@
   "mandatory.auto_shield.react_to_arrows": "React to Arrows",
   "mandatory.auto_shield.react_to_melee": "React to Melee",
   "mandatory.auto_shield.hold_duration": "Hold Duration",
-  "mandatory.auto_shield.arrow_detection_radius": "Arrow Radius"
+  "mandatory.auto_shield.arrow_detection_radius": "Arrow Radius",
+
+  "mandatory.module.reach_display.name": "Reach Display",
+  "mandatory.module.reach_display.description": "Shows your current attack and interaction reach on the HUD.",
+  "mandatory.reach_display.bg_color": "Background Color",
+  "mandatory.reach_display.text_color": "Text Color",
+  "mandatory.reach_display.text_scale": "Text Scale",
+  "mandatory.reach_display.show_attack": "Show Attack Reach",
+  "mandatory.reach_display.show_interact": "Show Interact Reach",
+  "mandatory.reach_display.decimal_places": "Decimal Places"
 }

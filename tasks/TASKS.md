@@ -77,7 +77,7 @@
 | [x] DONE | Kill Counter | [tasks/combat/kill_counter.md](combat/kill_counter.md) |
 | [x] DONE | CPS Counter | [tasks/combat/cps_counter.md](combat/cps_counter.md) |
 | [x] DONE | Auto Shield | [tasks/combat/auto_shield.md](combat/auto_shield.md) |
-| [ ] TODO | Reach Display | [tasks/combat/reach_display.md](combat/reach_display.md) |
+| [x] DONE | Reach Display | [tasks/combat/reach_display.md](combat/reach_display.md) |
 | [ ] TODO | Arrow Counter | [tasks/combat/arrow_counter.md](combat/arrow_counter.md) |
 | [ ] TODO | Damage Dealt HUD | [tasks/combat/damage_dealt_hud.md](combat/damage_dealt_hud.md) |
 | [ ] TODO | Combo Counter HUD | [tasks/combat/combo_counter.md](combat/combo_counter.md) |
