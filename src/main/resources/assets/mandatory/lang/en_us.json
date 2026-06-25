@@ -448,5 +448,18 @@
   "mandatory.server_address_hud.show_on_singleplayer": "Show in Singleplayer",
   "mandatory.server_address_hud.truncate_length": "Max Length",
   "mandatory.server_address_hud.show_ping": "Show Ping",
-  "mandatory.server_address_hud.prefix": "Prefix"
+  "mandatory.server_address_hud.prefix": "Prefix",
+
+  "mandatory.module.attack_cooldown_indicator.name": "Attack Cooldown",
+  "mandatory.module.attack_cooldown_indicator.description": "Shows your weapon attack cooldown as a customizable HUD bar.",
+  "mandatory.attack_cooldown_indicator.bg_color": "Background Color",
+  "mandatory.attack_cooldown_indicator.text_color": "Text Color",
+  "mandatory.attack_cooldown_indicator.text_scale": "Text Scale",
+  "mandatory.attack_cooldown_indicator.bar_width": "Bar Width",
+  "mandatory.attack_cooldown_indicator.bar_height": "Bar Height",
+  "mandatory.attack_cooldown_indicator.show_text": "Show Percentage",
+  "mandatory.attack_cooldown_indicator.show_border": "Show Border",
+  "mandatory.attack_cooldown_indicator.only_in_combat": "Only in Combat",
+  "mandatory.attack_cooldown_indicator.color_ready": "Ready Color",
+  "mandatory.attack_cooldown_indicator.color_charging": "Charging Color"
 }

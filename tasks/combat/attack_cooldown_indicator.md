@@ -2,7 +2,7 @@
 
 **ID:** `attack_cooldown_indicator`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/attack_cooldown_indicator/AttackCooldownIndicatorModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.attack_cooldown_indicator`
 
