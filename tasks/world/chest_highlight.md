@@ -2,7 +2,7 @@
 
 **ID:** `chest_highlight`  
 **Category:** WORLD  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/chest_highlight/ChestHighlightModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.chest_highlight`
 
