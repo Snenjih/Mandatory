@@ -101,7 +101,7 @@
 |---|---|---|
 | [x] DONE | Mention Highlight | [tasks/chat/mention_highlight.md](chat/mention_highlight.md) |
 | [x] DONE | Message Filter | [tasks/chat/message_filter.md](chat/message_filter.md) |
-| [ ] TODO | Quick Messages | [tasks/chat/quick_messages.md](chat/quick_messages.md) |
+| [x] DONE | Quick Messages | [tasks/chat/quick_messages.md](chat/quick_messages.md) |
 | [ ] TODO | Copy Coords | [tasks/chat/copy_coords.md](chat/copy_coords.md) |
 
 ---

@@ -2,7 +2,7 @@
 
 **ID:** `quick_messages`
 **Category:** CHAT
-**Status:** [ ] TODO
+**Status:** [x] DONE
 **Class:** `modules/impl/quick_messages/QuickMessagesModule.java`
 **Package:** `de.snenjih.mandatory.modules.impl.quick_messages`
 
