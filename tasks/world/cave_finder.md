@@ -2,7 +2,7 @@
 
 **ID:** `cave_finder`  
 **Category:** WORLD  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/cave_finder/CaveFinderModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.cave_finder`
 
