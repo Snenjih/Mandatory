@@ -1,6 +1,7 @@
 package de.snenjih.mandatory.menu;
 
 import de.snenjih.mandatory.config.ModConfig;
+import de.snenjih.mandatory.modules.api.BaseModule;
 import de.snenjih.mandatory.modules.api.HudElement;
 import de.snenjih.mandatory.modules.api.HudRegistry;
 import net.minecraft.client.gui.Click;
@@ -47,12 +48,12 @@ public class HudEditScreen extends Screen {
         // Very light overlay only (no renderBackground — show live game)
         ctx.fill(0, 0, width, height, 0x22000000);
 
-        // Draw all registered HUD elements + edit overlays
+        // Draw only active HUD elements + edit overlays
         for (HudRegistry.HudEntry entry : HudRegistry.getAll()) {
             HudElement element = entry.element();
+            if (element instanceof BaseModule bm && !bm.isEnabled()) continue;
             ModConfig.HudElementState state = getOrInitState(entry);
 
-            // Always render in edit mode so users can see/place even disabled elements
             try {
                 element.renderHud(ctx, delta, state.x(), state.y(), state.w(), state.h());
             } catch (Exception ignored) {}
@@ -99,6 +100,7 @@ public class HudEditScreen extends Screen {
         for (int i = entries.size() - 1; i >= 0; i--) {
             HudRegistry.HudEntry entry = entries.get(i);
             HudElement element = entry.element();
+            if (element instanceof BaseModule bm && !bm.isEnabled()) continue;
             ModConfig.HudElementState state = getOrInitState(entry);
 
             int rhX = state.x() + state.w() - RESIZE_HANDLE;
