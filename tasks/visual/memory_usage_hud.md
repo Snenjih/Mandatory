@@ -2,7 +2,7 @@
 
 **ID:** `memory_usage_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/memory_usage_hud/MemoryUsageHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.memory_usage_hud`
 
