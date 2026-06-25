@@ -434,5 +434,19 @@
   "mandatory.speedometer.color_slow": "Color Slow (<2 BPS)",
   "mandatory.speedometer.color_walk": "Color Walk (2-5 BPS)",
   "mandatory.speedometer.color_sprint": "Color Sprint (5-8 BPS)",
-  "mandatory.speedometer.color_fast": "Color Fast (>8 BPS)"
+  "mandatory.speedometer.color_fast": "Color Fast (>8 BPS)",
+
+  "mandatory.module.server_address_hud.name": "Server Address",
+  "mandatory.module.server_address_hud.description": "Displays the current server address or name on the HUD.",
+  "mandatory.server_address_hud.bg_color": "Background Color",
+  "mandatory.server_address_hud.text_color": "Text Color",
+  "mandatory.server_address_hud.text_scale": "Text Scale",
+  "mandatory.server_address_hud.show_ip": "Show IP",
+  "mandatory.server_address_hud.custom_alias": "Custom Alias",
+  "mandatory.server_address_hud.hide_port": "Hide Port",
+  "mandatory.server_address_hud.only_on_multiplayer": "Only Multiplayer",
+  "mandatory.server_address_hud.show_on_singleplayer": "Show in Singleplayer",
+  "mandatory.server_address_hud.truncate_length": "Max Length",
+  "mandatory.server_address_hud.show_ping": "Show Ping",
+  "mandatory.server_address_hud.prefix": "Prefix"
 }

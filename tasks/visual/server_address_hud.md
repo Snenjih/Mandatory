@@ -2,7 +2,7 @@
 
 **ID:** `server_address_hud`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/server_address_hud/ServerAddressHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.server_address_hud`
 
