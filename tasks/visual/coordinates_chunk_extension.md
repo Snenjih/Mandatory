@@ -2,7 +2,7 @@
 
 **ID:** `coordinates_hud` (kein neues Modul — Erweiterung des bestehenden)  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/coordinates_hud/CoordinatesHudModule.java` (bestehend erweitern)  
 **Package:** `de.snenjih.mandatory.modules.impl.coordinates_hud`
 

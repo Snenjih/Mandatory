@@ -55,7 +55,7 @@
 | [x] DONE | Held Item Info | [tasks/visual/held_item_info.md](visual/held_item_info.md) |
 | [x] DONE | TPS Display | [tasks/visual/tps_display.md](visual/tps_display.md) |
 | [x] DONE | Memory Usage HUD | [tasks/visual/memory_usage_hud.md](visual/memory_usage_hud.md) |
-| [ ] TODO | Coordinates HUD — Chunk Extension | [tasks/visual/coordinates_chunk_extension.md](visual/coordinates_chunk_extension.md) |
+| [x] DONE | Coordinates HUD — Chunk Extension | [tasks/visual/coordinates_chunk_extension.md](visual/coordinates_chunk_extension.md) |
 | [ ] TODO | Chunk Render Stats HUD | [tasks/visual/chunk_render_hud.md](visual/chunk_render_hud.md) |
 | [ ] TODO | Day Counter HUD | [tasks/visual/day_counter.md](visual/day_counter.md) |
 | [ ] TODO | XP & Level HUD | [tasks/visual/xp_level_hud.md](visual/xp_level_hud.md) |
