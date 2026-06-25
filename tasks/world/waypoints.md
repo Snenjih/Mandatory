@@ -2,7 +2,7 @@
 
 **ID:** `waypoints`  
 **Category:** WORLD  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/waypoints/WaypointsModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.waypoints`
 

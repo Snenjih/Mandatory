@@ -5,5 +5,6 @@ public enum ModuleCategory {
     VISUAL,
     COMBAT,
     ELYTRA,
-    CHAT
+    CHAT,
+    WORLD
 }

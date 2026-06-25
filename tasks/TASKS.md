@@ -110,11 +110,11 @@
 
 | Status | Module | Spec File |
 |---|---|---|
-| [ ] TODO | Waypoints | [tasks/world/waypoints.md](world/waypoints.md) |
-| [ ] TODO | Light Level Overlay | [tasks/world/light_level_overlay.md](world/light_level_overlay.md) |
-| [ ] TODO | Chest Highlight | [tasks/world/chest_highlight.md](world/chest_highlight.md) |
-| [ ] TODO | Cave Finder | [tasks/world/cave_finder.md](world/cave_finder.md) |
-| [ ] TODO | Slime Chunks | [tasks/world/slime_chunks.md](world/slime_chunks.md) |
+| [x] DONE | Waypoints | [tasks/world/waypoints.md](world/waypoints.md) |
+| [x] DONE | Light Level Overlay | [tasks/world/light_level_overlay.md](world/light_level_overlay.md) |
+| [x] DONE | Chest Highlight | [tasks/world/chest_highlight.md](world/chest_highlight.md) |
+| [x] DONE | Cave Finder | [tasks/world/cave_finder.md](world/cave_finder.md) |
+| [x] DONE | Slime Chunks | [tasks/world/slime_chunks.md](world/slime_chunks.md) |
 
 ---
 
