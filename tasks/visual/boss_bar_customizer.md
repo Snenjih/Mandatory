@@ -1,6 +1,6 @@
 # Boss Bar Customizer
 
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Module ID:** `boss_bar_customizer`  
 **Class:** `BossBarCustomizerModule`  
 **Category:** VISUAL  

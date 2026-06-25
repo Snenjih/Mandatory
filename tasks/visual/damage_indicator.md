@@ -1,6 +1,6 @@
 # Damage Indicator
 
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Module ID:** `damage_indicator`  
 **Class:** `DamageIndicatorModule`  
 **Category:** VISUAL  

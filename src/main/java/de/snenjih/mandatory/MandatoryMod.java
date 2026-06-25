@@ -43,6 +43,11 @@ import de.snenjih.mandatory.modules.impl.nametag_badge.NametageModule;
 import de.snenjih.mandatory.modules.impl.target_hp.TargetHpModule;
 import de.snenjih.mandatory.modules.impl.mod_settings.ModSettingsModule;
 import de.snenjih.mandatory.modules.impl.tool_selector.ToolSelectorModule;
+import de.snenjih.mandatory.modules.impl.anti_fog.AntiFogModule;
+import de.snenjih.mandatory.modules.impl.anti_vignette.AntiVignetteModule;
+import de.snenjih.mandatory.modules.impl.item_info_hud.ItemInfoHudModule;
+import de.snenjih.mandatory.modules.impl.boss_bar_customizer.BossBarCustomizerModule;
+import de.snenjih.mandatory.modules.impl.damage_indicator.DamageIndicatorModule;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -156,6 +161,17 @@ public class MandatoryMod implements ClientModInitializer {
         McTimeDisplayModule mcTimeDisplay = new McTimeDisplayModule();
         registry.register(mcTimeDisplay);
         HudRegistry.register(mcTimeDisplay, 4, 530);
+
+        registry.register(new AntiFogModule());
+        registry.register(new AntiVignetteModule());
+
+        ItemInfoHudModule itemInfoHud = new ItemInfoHudModule();
+        registry.register(itemInfoHud);
+        HudRegistry.register(itemInfoHud, 4, 570);
+
+        registry.register(new BossBarCustomizerModule());
+
+        registry.register(new DamageIndicatorModule());
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

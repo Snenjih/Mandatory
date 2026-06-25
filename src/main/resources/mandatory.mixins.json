@@ -21,7 +21,14 @@
     "HitColorMixin",
     "RainDisableMixin",
     "RainGradientMixin",
-    "ScoreboardHudVanillaMixin"
+    "ScoreboardHudVanillaMixin",
+    "AntiFogAtmosphericMixin",
+    "AntiFogLavaMixin",
+    "AntiFogWaterMixin",
+    "AntiFogBlindnessMixin",
+    "AntiVignetteMixin",
+    "BossBarCustomizerMixin",
+    "DamageIndicatorMixin"
   ],
   "injectors": {
     "defaultRequire": 1

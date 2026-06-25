@@ -2,7 +2,7 @@
 
 **ID:** `anti_vignette`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/anti_vignette/AntiVignetteModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.anti_vignette`
 

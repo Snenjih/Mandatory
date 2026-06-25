@@ -1,6 +1,6 @@
 # Item Info HUD
 
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Module ID:** `item_info_hud`  
 **Class:** `ItemInfoHudModule`  
 **Category:** VISUAL  

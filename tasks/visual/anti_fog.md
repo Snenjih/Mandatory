@@ -2,7 +2,7 @@
 
 **ID:** `anti_fog`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/anti_fog/AntiFogModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.anti_fog`
 

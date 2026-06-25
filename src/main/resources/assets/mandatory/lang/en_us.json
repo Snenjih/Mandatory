@@ -232,5 +232,46 @@
   "mandatory.module.mod_settings.description": "Global appearance settings: transparency, primary color, and background.",
   "mandatory.mod_settings.transparency": "Menu Transparency",
   "mandatory.mod_settings.primary_color": "Primary Color",
-  "mandatory.mod_settings.menu_bg_color": "Menu Background"
+  "mandatory.mod_settings.menu_bg_color": "Menu Background",
+
+  "mandatory.anti_fog.name": "Anti Fog",
+  "mandatory.anti_fog.description": "Reduces or removes world fog to increase render visibility.",
+  "mandatory.anti_fog.fog_start": "Fog Start",
+  "mandatory.anti_fog.fog_end": "Fog End",
+  "mandatory.anti_fog.disable_lava_fog": "Disable Lava Fog",
+  "mandatory.anti_fog.disable_water_fog": "Disable Water Fog",
+  "mandatory.anti_fog.disable_blindness_fog": "Disable Blindness Fog",
+
+  "mandatory.anti_vignette.name": "Anti Vignette",
+  "mandatory.anti_vignette.description": "Disables the screen edge vignette and optional overlays.",
+  "mandatory.anti_vignette.disable_underwater": "Disable Underwater Overlay",
+  "mandatory.anti_vignette.disable_pumpkin": "Disable Pumpkin Overlay",
+
+  "mandatory.module.item_info_hud.name": "Item Info HUD",
+  "mandatory.module.item_info_hud.description": "Shows held item name, durability, and enchantments as a HUD overlay.",
+  "mandatory.item_info_hud.show_name": "Show Name",
+  "mandatory.item_info_hud.show_durability": "Show Durability",
+  "mandatory.item_info_hud.show_enchantments": "Show Enchantments",
+  "mandatory.item_info_hud.always_show": "Always Show",
+  "mandatory.item_info_hud.display_seconds": "Display Duration (s)",
+  "mandatory.item_info_hud.bar_color_full": "Bar Color Full",
+  "mandatory.item_info_hud.bar_color_low": "Bar Color Low",
+
+  "mandatory.module.boss_bar_customizer.name": "Boss Bar Customizer",
+  "mandatory.module.boss_bar_customizer.description": "Move, scale, or hide the vanilla boss health bar.",
+  "mandatory.boss_bar_customizer.hide_bar": "Hide Boss Bar",
+  "mandatory.boss_bar_customizer.x_offset": "X Offset",
+  "mandatory.boss_bar_customizer.y_offset": "Y Offset",
+  "mandatory.boss_bar_customizer.scale": "Scale",
+  "mandatory.boss_bar_customizer.hide_text": "Hide Text",
+
+  "mandatory.module.damage_indicator.name": "Damage Indicator",
+  "mandatory.module.damage_indicator.description": "Shows floating damage numbers above entities when they take damage.",
+  "mandatory.damage_indicator.show_damage": "Show Damage",
+  "mandatory.damage_indicator.show_healing": "Show Healing",
+  "mandatory.damage_indicator.damage_color": "Damage Color",
+  "mandatory.damage_indicator.healing_color": "Healing Color",
+  "mandatory.damage_indicator.float_speed": "Float Speed",
+  "mandatory.damage_indicator.duration_ticks": "Duration (ticks)",
+  "mandatory.damage_indicator.show_player_damage": "Show Own Damage"
 }

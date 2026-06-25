@@ -47,11 +47,11 @@
 | [x] DONE | Rain Disable | [tasks/visual/rain_disable.md](visual/rain_disable.md) |
 | [x] DONE | Scoreboard HUD | [tasks/visual/scoreboard_hud.md](visual/scoreboard_hud.md) |
 | [x] DONE | MC Time Display | [tasks/visual/mc_time_display.md](visual/mc_time_display.md) |
-| [ ] TODO | Anti Fog | [tasks/visual/anti_fog.md](visual/anti_fog.md) |
-| [ ] TODO | Anti Vignette | [tasks/visual/anti_vignette.md](visual/anti_vignette.md) |
-| [ ] TODO | Item Info HUD | [tasks/visual/item_info_hud.md](visual/item_info_hud.md) |
-| [ ] TODO | Boss Bar Customizer | [tasks/visual/boss_bar_customizer.md](visual/boss_bar_customizer.md) |
-| [ ] TODO | Damage Indicator | [tasks/visual/damage_indicator.md](visual/damage_indicator.md) |
+| [x] DONE | Anti Fog | [tasks/visual/anti_fog.md](visual/anti_fog.md) |
+| [x] DONE | Anti Vignette | [tasks/visual/anti_vignette.md](visual/anti_vignette.md) |
+| [x] DONE | Item Info HUD | [tasks/visual/item_info_hud.md](visual/item_info_hud.md) |
+| [x] DONE | Boss Bar Customizer | [tasks/visual/boss_bar_customizer.md](visual/boss_bar_customizer.md) |
+| [x] DONE | Damage Indicator | [tasks/visual/damage_indicator.md](visual/damage_indicator.md) |
 | [ ] TODO | Held Item Info | [tasks/visual/held_item_info.md](visual/held_item_info.md) |
 | [ ] TODO | TPS Display | [tasks/visual/tps_display.md](visual/tps_display.md) |
 | [ ] TODO | Memory Usage HUD | [tasks/visual/memory_usage_hud.md](visual/memory_usage_hud.md) |
