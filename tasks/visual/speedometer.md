@@ -2,7 +2,7 @@
 
 **ID:** `speedometer`  
 **Category:** VISUAL  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/speedometer/SpeedometerModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.speedometer`
 
