@@ -52,7 +52,7 @@
 | [x] DONE | Item Info HUD | [tasks/visual/item_info_hud.md](visual/item_info_hud.md) |
 | [x] DONE | Boss Bar Customizer | [tasks/visual/boss_bar_customizer.md](visual/boss_bar_customizer.md) |
 | [x] DONE | Damage Indicator | [tasks/visual/damage_indicator.md](visual/damage_indicator.md) |
-| [ ] TODO | Held Item Info | [tasks/visual/held_item_info.md](visual/held_item_info.md) |
+| [x] DONE | Held Item Info | [tasks/visual/held_item_info.md](visual/held_item_info.md) |
 | [ ] TODO | TPS Display | [tasks/visual/tps_display.md](visual/tps_display.md) |
 | [ ] TODO | Memory Usage HUD | [tasks/visual/memory_usage_hud.md](visual/memory_usage_hud.md) |
 | [ ] TODO | Coordinates HUD — Chunk Extension | [tasks/visual/coordinates_chunk_extension.md](visual/coordinates_chunk_extension.md) |

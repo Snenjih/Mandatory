@@ -1,6 +1,6 @@
 # Held Item Info
 
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Module ID:** `held_item_info`  
 **Class:** `HeldItemInfoModule`  
 **Category:** VISUAL  
