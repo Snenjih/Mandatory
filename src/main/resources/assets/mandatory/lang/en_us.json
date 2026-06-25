@@ -488,5 +488,12 @@
   "mandatory.cps_counter.text_color": "Text Color",
   "mandatory.cps_counter.text_scale": "Text Scale",
   "mandatory.cps_counter.track_left": "Track Left Click",
-  "mandatory.cps_counter.track_right": "Track Right Click"
+  "mandatory.cps_counter.track_right": "Track Right Click",
+
+  "mandatory.module.auto_shield.name": "Auto Shield",
+  "mandatory.module.auto_shield.description": "Automatically raises your shield when attacked or an arrow approaches.",
+  "mandatory.auto_shield.react_to_arrows": "React to Arrows",
+  "mandatory.auto_shield.react_to_melee": "React to Melee",
+  "mandatory.auto_shield.hold_duration": "Hold Duration",
+  "mandatory.auto_shield.arrow_detection_radius": "Arrow Radius"
 }

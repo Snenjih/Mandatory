@@ -2,7 +2,7 @@
 
 **ID:** `auto_shield`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/auto_shield/AutoShieldModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.auto_shield`
 
