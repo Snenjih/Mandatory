@@ -77,6 +77,11 @@ import de.snenjih.mandatory.modules.impl.mention_highlight.MentionHighlightModul
 import de.snenjih.mandatory.modules.impl.message_filter.MessageFilterModule;
 import de.snenjih.mandatory.modules.impl.quick_messages.QuickMessagesModule;
 import de.snenjih.mandatory.modules.impl.copy_coords.CopyCoordsModule;
+import de.snenjih.mandatory.modules.impl.waypoints.WaypointsModule;
+import de.snenjih.mandatory.modules.impl.light_level_overlay.LightLevelOverlayModule;
+import de.snenjih.mandatory.modules.impl.chest_highlight.ChestHighlightModule;
+import de.snenjih.mandatory.modules.impl.cave_finder.CaveFinderModule;
+import de.snenjih.mandatory.modules.impl.slime_chunks.SlimeChunksModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -305,6 +310,16 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new MessageFilterModule());
         registry.register(new QuickMessagesModule());
         registry.register(new CopyCoordsModule());
+
+        // World modules
+        WaypointsModule waypoints = new WaypointsModule();
+        registry.register(waypoints);
+        HudRegistry.register(waypoints, 8, 60);
+
+        registry.register(new LightLevelOverlayModule());
+        registry.register(new ChestHighlightModule());
+        registry.register(new CaveFinderModule());
+        registry.register(new SlimeChunksModule());
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

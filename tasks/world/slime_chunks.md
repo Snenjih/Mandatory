@@ -2,7 +2,7 @@
 
 **ID:** `slime_chunks`  
 **Category:** WORLD  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/slime_chunks/SlimeChunksModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.slime_chunks`
 
