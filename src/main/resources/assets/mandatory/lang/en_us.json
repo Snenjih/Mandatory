@@ -318,5 +318,17 @@
   "mandatory.chunk_render_hud.show_block_entities": "Show Block Entities",
   "mandatory.chunk_render_hud.compact_mode": "Compact Mode",
   "mandatory.chunk_render_hud.color_warn_entities": "Entity Warn Count",
-  "mandatory.chunk_render_hud.color_entity_warn": "Entity Warn Color"
+  "mandatory.chunk_render_hud.color_entity_warn": "Entity Warn Color",
+
+  "mandatory.cosmetics.title": "Cosmetics",
+  "mandatory.cosmetics.tab.cape": "Capes",
+  "mandatory.cosmetics.tab.hat": "Hats",
+  "mandatory.cosmetics.tab.wings": "Wings",
+  "mandatory.cosmetics.tab.particles": "Particles",
+  "mandatory.cosmetics.tab.armor_skin": "Armor Skins",
+  "mandatory.cosmetics.none": "None",
+  "mandatory.cosmetics.syncing": "Syncing cosmetics...",
+  "mandatory.cosmetics.sync_error": "Server unavailable — using cache",
+  "mandatory.cosmetics.equipped": "Equipped",
+  "mandatory.main.cosmetics": "COSMETICS"
 }
