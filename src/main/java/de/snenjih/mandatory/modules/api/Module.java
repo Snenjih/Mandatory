@@ -60,8 +60,11 @@ public interface Module {
         return ActionResult.PASS;
     }
 
-    /** Incoming chat/game message. Only called when the module is enabled. */
-    default void onReceiveChat(Text message) {}
+    /**
+     * Incoming chat/game message. Return PASS to allow the message, FAIL to suppress it.
+     * Only called when the module is enabled.
+     */
+    default ActionResult onReceiveChat(Text message) { return ActionResult.PASS; }
 
     // -------------------------------------------------------------------------
     // World events

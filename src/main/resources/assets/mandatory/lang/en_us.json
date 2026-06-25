@@ -579,5 +579,25 @@
   "mandatory.module.mention_highlight.description": "Highlights your name in chat and plays a sound ping.",
   "mandatory.mention_highlight.setting.color": "Highlight Colour",
   "mandatory.mention_highlight.setting.play_sound": "Play Sound on Mention",
-  "mandatory.mention_highlight.setting.partial_match": "Partial Match"
+  "mandatory.mention_highlight.setting.partial_match": "Partial Match",
+
+  "mandatory.module.message_filter.name": "Message Filter",
+  "mandatory.module.message_filter.description": "Hides chat messages matching your filter list.",
+  "mandatory.message_filter.setting.use_regex": "Use Regex",
+  "mandatory.message_filter.setting.show_counter": "Show Filter Count",
+
+  "mandatory.module.quick_messages.name": "Quick Messages",
+  "mandatory.module.quick_messages.description": "Send pre-defined chat messages via keybind or command.",
+  "mandatory.quick_messages.setting.keybinds_active": "Enable Keybinds",
+  "key.mandatory.quick_msg_1": "Quick Message 1",
+  "key.mandatory.quick_msg_2": "Quick Message 2",
+  "key.mandatory.quick_msg_3": "Quick Message 3",
+  "key.mandatory.quick_msg_4": "Quick Message 4",
+  "key.mandatory.quick_msg_5": "Quick Message 5",
+
+  "mandatory.module.copy_coords.name": "Copy Coords",
+  "mandatory.module.copy_coords.description": "Copy your position to the clipboard with .coords.",
+  "mandatory.copy_coords.setting.post_to_chat": "Post to Chat",
+  "mandatory.copy_coords.setting.show_nether": "Show Nether Coords",
+  "mandatory.copy_coords.setting.format": "Format"
 }

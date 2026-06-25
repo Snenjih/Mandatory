@@ -2,7 +2,7 @@
 
 **ID:** `message_filter`
 **Category:** CHAT
-**Status:** [ ] TODO
+**Status:** [x] DONE
 **Class:** `modules/impl/message_filter/MessageFilterModule.java`
 **Package:** `de.snenjih.mandatory.modules.impl.message_filter`
 

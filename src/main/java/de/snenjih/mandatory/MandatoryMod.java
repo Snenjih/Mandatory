@@ -74,6 +74,9 @@ import de.snenjih.mandatory.modules.impl.glide_stats.GlideStatsModule;
 import de.snenjih.mandatory.modules.impl.firework_boost.FireworkBoostModule;
 import de.snenjih.mandatory.modules.impl.elytra_landing_swap.ElytraLandingSwapModule;
 import de.snenjih.mandatory.modules.impl.mention_highlight.MentionHighlightModule;
+import de.snenjih.mandatory.modules.impl.message_filter.MessageFilterModule;
+import de.snenjih.mandatory.modules.impl.quick_messages.QuickMessagesModule;
+import de.snenjih.mandatory.modules.impl.copy_coords.CopyCoordsModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -87,6 +90,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.fabricmc.fabric.api.client.message.v1.ClientSendMessageEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
@@ -298,6 +302,9 @@ public class MandatoryMod implements ClientModInitializer {
         registry.register(new FireworkBoostModule());
         registry.register(new ElytraLandingSwapModule());
         registry.register(new MentionHighlightModule());
+        registry.register(new MessageFilterModule());
+        registry.register(new QuickMessagesModule());
+        registry.register(new CopyCoordsModule());
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(
@@ -405,6 +412,31 @@ public class MandatoryMod implements ClientModInitializer {
             }
             // Clear other players' cosmetics on disconnect
             CosmeticRegistry.clearOtherPlayers();
+        });
+
+        // ---- Incoming chat (player chat messages) -----------------------
+        ClientReceiveMessageEvents.ALLOW_CHAT.register((message, signedMessage, sender, params, receptionTimestamp) -> {
+            for (Module m : registry.getAll()) {
+                if (!m.isEnabled()) continue;
+                try {
+                    ActionResult r = m.onReceiveChat(message);
+                    if (r != ActionResult.PASS) return false;
+                } catch (Exception e) { LOGGER.error("[Mandatory] {} crashed in onReceiveChat", m.getId(), e); }
+            }
+            return true;
+        });
+
+        // ---- Incoming game/system messages ------------------------------
+        ClientReceiveMessageEvents.ALLOW_GAME.register((message, overlay) -> {
+            if (overlay) return true;
+            for (Module m : registry.getAll()) {
+                if (!m.isEnabled()) continue;
+                try {
+                    ActionResult r = m.onReceiveChat(message);
+                    if (r != ActionResult.PASS) return false;
+                } catch (Exception e) { LOGGER.error("[Mandatory] {} crashed in onReceiveChat", m.getId(), e); }
+            }
+            return true;
         });
 
         // ---- Outgoing chat (also handles client commands) ---------------
