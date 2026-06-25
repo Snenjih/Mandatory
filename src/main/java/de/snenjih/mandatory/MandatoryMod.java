@@ -67,6 +67,11 @@ import de.snenjih.mandatory.modules.impl.cps_counter.CpsCounterModule;
 import de.snenjih.mandatory.modules.impl.auto_shield.AutoShieldModule;
 import de.snenjih.mandatory.modules.impl.reach_display.ReachDisplayModule;
 import de.snenjih.mandatory.modules.impl.arrow_counter.ArrowCounterModule;
+import de.snenjih.mandatory.modules.impl.damage_dealt_hud.DamageDealtHudModule;
+import de.snenjih.mandatory.modules.impl.combo_counter.ComboCounterModule;
+import de.snenjih.mandatory.modules.impl.pitch_lock.PitchLockModule;
+import de.snenjih.mandatory.modules.impl.glide_stats.GlideStatsModule;
+import de.snenjih.mandatory.modules.impl.firework_boost.FireworkBoostModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -273,6 +278,22 @@ public class MandatoryMod implements ClientModInitializer {
         ArrowCounterModule arrowCounter = new ArrowCounterModule();
         registry.register(arrowCounter);
         HudRegistry.register(arrowCounter, 4, 1160);
+
+        DamageDealtHudModule damageDealtHud = new DamageDealtHudModule();
+        registry.register(damageDealtHud);
+        HudRegistry.register(damageDealtHud, 4, 1180);
+
+        ComboCounterModule comboCounter = new ComboCounterModule();
+        registry.register(comboCounter);
+        HudRegistry.register(comboCounter, 4, 1210);
+
+        registry.register(new PitchLockModule());
+
+        GlideStatsModule glideStats = new GlideStatsModule();
+        registry.register(glideStats);
+        HudRegistry.register(glideStats, 4, 1240);
+
+        registry.register(new FireworkBoostModule());
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

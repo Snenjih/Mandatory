@@ -79,7 +79,7 @@
 | [x] DONE | Auto Shield | [tasks/combat/auto_shield.md](combat/auto_shield.md) |
 | [x] DONE | Reach Display | [tasks/combat/reach_display.md](combat/reach_display.md) |
 | [x] DONE | Arrow Counter | [tasks/combat/arrow_counter.md](combat/arrow_counter.md) |
-| [ ] TODO | Damage Dealt HUD | [tasks/combat/damage_dealt_hud.md](combat/damage_dealt_hud.md) |
+| [x] DONE | Damage Dealt HUD | [tasks/combat/damage_dealt_hud.md](combat/damage_dealt_hud.md) |
 | [ ] TODO | Combo Counter HUD | [tasks/combat/combo_counter.md](combat/combo_counter.md) |
 
 ---

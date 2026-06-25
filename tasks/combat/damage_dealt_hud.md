@@ -2,7 +2,7 @@
 
 **ID:** `damage_dealt_hud`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/damage_dealt_hud/DamageDealtHudModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.damage_dealt_hud`
 
