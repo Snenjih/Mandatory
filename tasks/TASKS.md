@@ -73,7 +73,7 @@
 | Status | Module | Spec File |
 |---|---|---|
 | [x] DONE | Attack Cooldown Indicator | [tasks/combat/attack_cooldown_indicator.md](combat/attack_cooldown_indicator.md) |
-| [ ] TODO | Hit Indicator | [tasks/combat/hit_indicator.md](combat/hit_indicator.md) |
+| [x] DONE | Hit Indicator | [tasks/combat/hit_indicator.md](combat/hit_indicator.md) |
 | [ ] TODO | Kill Counter | [tasks/combat/kill_counter.md](combat/kill_counter.md) |
 | [ ] TODO | CPS Counter | [tasks/combat/cps_counter.md](combat/cps_counter.md) |
 | [ ] TODO | Auto Shield | [tasks/combat/auto_shield.md](combat/auto_shield.md) |

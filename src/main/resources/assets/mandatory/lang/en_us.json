@@ -461,5 +461,16 @@
   "mandatory.attack_cooldown_indicator.show_border": "Show Border",
   "mandatory.attack_cooldown_indicator.only_in_combat": "Only in Combat",
   "mandatory.attack_cooldown_indicator.color_ready": "Ready Color",
-  "mandatory.attack_cooldown_indicator.color_charging": "Charging Color"
+  "mandatory.attack_cooldown_indicator.color_charging": "Charging Color",
+
+  "mandatory.module.hit_indicator.name": "Hit Indicator",
+  "mandatory.module.hit_indicator.description": "Shows a visual flash and text when you land a hit on an entity.",
+  "mandatory.hit_indicator.bg_color": "Background Color",
+  "mandatory.hit_indicator.text_color": "Text Color",
+  "mandatory.hit_indicator.text_scale": "Text Scale",
+  "mandatory.hit_indicator.flash_enabled": "Screen Flash",
+  "mandatory.hit_indicator.flash_color": "Flash Color",
+  "mandatory.hit_indicator.flash_duration": "Flash Duration",
+  "mandatory.hit_indicator.show_text": "Show Hit Text",
+  "mandatory.hit_indicator.show_damage": "Show Damage"
 }

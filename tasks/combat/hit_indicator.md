@@ -2,7 +2,7 @@
 
 **ID:** `hit_indicator`  
 **Category:** COMBAT  
-**Status:** [ ] TODO  
+**Status:** [x] DONE  
 **Class:** `modules/impl/hit_indicator/HitIndicatorModule.java`  
 **Package:** `de.snenjih.mandatory.modules.impl.hit_indicator`
 
