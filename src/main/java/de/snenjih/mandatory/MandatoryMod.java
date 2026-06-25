@@ -73,6 +73,7 @@ import de.snenjih.mandatory.modules.impl.pitch_lock.PitchLockModule;
 import de.snenjih.mandatory.modules.impl.glide_stats.GlideStatsModule;
 import de.snenjih.mandatory.modules.impl.firework_boost.FireworkBoostModule;
 import de.snenjih.mandatory.modules.impl.elytra_landing_swap.ElytraLandingSwapModule;
+import de.snenjih.mandatory.modules.impl.mention_highlight.MentionHighlightModule;
 import de.snenjih.mandatory.cosmetics.network.CosmeticNetworkHandler;
 import de.snenjih.mandatory.cosmetics.render.CosmeticFeatureRenderer;
 import de.snenjih.mandatory.cosmetics.render.ParticleEmitter;
@@ -296,6 +297,7 @@ public class MandatoryMod implements ClientModInitializer {
 
         registry.register(new FireworkBoostModule());
         registry.register(new ElytraLandingSwapModule());
+        registry.register(new MentionHighlightModule());
 
         // Right-Shift opens the Mandatory menu from in-game
         KeyBinding openMenuKey = KeyBindingHelper.registerKeyBinding(

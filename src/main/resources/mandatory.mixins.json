@@ -29,7 +29,8 @@
     "AntiVignetteMixin",
     "BossBarCustomizerMixin",
     "DamageIndicatorMixin",
-    "MouseButtonMixin"
+    "MouseButtonMixin",
+    "ChatHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1
